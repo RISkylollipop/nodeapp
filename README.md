@@ -21,3 +21,4 @@ Patient can now edit their profile including passwords
 
 
 logout Functionality now working for patients, doctors and admins
+Added the database prompt that i used
