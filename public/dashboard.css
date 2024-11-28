@@ -1,0 +1,1285 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: #e9edc9;
+    display: block;
+    line-height: 2rem;
+    max-width: 95%;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+}
+
+header img {
+    width: 50px;
+    margin-top: 10px;
+    border-radius: 10%;
+}
+
+header h3 {
+    display: none;
+}
+
+.dashboardtext {
+    font-size: 2rem;
+    margin-left: 42%;
+}
+
+nav {
+    background-color: #ccd5ae;
+    padding-top: 5%;
+    padding-right: -5%;
+    width: 230px;
+    height: 100vh;
+}
+
+.bottomlist {
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+}
+
+.toplist {
+    margin-left: -15%;
+
+}
+
+nav ul {
+    list-style: none;
+    display: block;
+}
+
+nav ul li {
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 10px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+
+}
+
+nav ul li a i {
+    margin-right: 3px;
+}
+
+nav ul li a:hover {
+    background-color: #e9edc9;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+
+.navbars img {
+    display: none;
+}
+
+nav h2 {
+    display: block;
+}
+
+#check {
+    display: none;
+}
+.heart{
+    position: absolute;
+    border-radius: 10px;
+}
+.imagetext{
+    margin-left: 40%;
+    color: white;
+}
+
+.doctortext{
+    margin-left: 30%;
+}
+
+.directmessage{
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+directmessage i{
+    margin-right: 5px;
+}
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 10px;
+    /* transition: all 5s ease; */
+}
+table{
+    width: 100%;
+    overflow: scroll;
+}
+.navbars {
+    position: fixed;
+    left: -230px;
+    transition: all 3s ease;
+}
+
+label #btn {
+    left: 20px;
+    top: 15%;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    padding: 6px 10px;
+
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -150px;
+    top: 18%;
+    font-size: 25px;
+    transition: all 3s ease;
+}
+
+#check:checked~.navbars {
+    left: 0;
+}
+
+#check:checked~label #btn {
+    left: 200px;
+    top: 10%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked~label #cancel {
+    left: 40%;
+    position: fixed;
+}
+section{
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+/* label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+label #btn{
+    left: 40px;
+    top: 70px;
+    font-size: 40px;
+    color: white;
+    padding: 6px 10px;
+}
+#check:checked ~ nav{
+    left: 0;
+}
+label #cancel{
+    z-index: 1111;
+    left: -150px;
+    top: 16px;
+    font-size: 25px;
+    color: black;
+    padding: 4px 6px;
+
+    /* left: 40%;
+    top: 12%; */
+/* } */
+
+/* #check:checked ~ label #btn{
+    left: 200px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 150px;
+} */
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.col-1 {width: 8.33%;}
+
+.col-2 {width: 16.66%;}
+
+.col-3 {width: 25%;}
+
+.col-4 {width: 33.33%;}
+
+.col-5 {width: 41.66%;}
+
+.col-6 {width: 50%;}
+
+.col-7 {width: 58.33%;}
+
+.col-8 {width: 66.66%;}
+
+.col-9 {width: 75%;}
+
+.col-10 {width: 83.33%;}
+
+.col-11 {width: 91.66%;}
+
+.col-12 {width: 100%;}
+
+
+
+[class*="col-"] {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 5px;
+  
+    border-radius: 10px;
+}
+
+@media (min-width: 200px) and (max-width: 355px) {
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding-top: 10px;
+        background-color: white;
+        justify-items: start;
+    }
+
+    .dashboardtext {
+        display: none;
+        font-size: 15px;
+    }
+
+    nav {
+       
+        padding-right: -5%;
+        padding-top: 10px;
+        width: 140px;
+        height: 105vh;
+        margin-top: 13%;
+    }
+
+    
+
+    /* header h3 {
+        position: absolute;
+        right: 3%;
+        top: 5%;
+    } */
+
+    nav h2 {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .navbars img {
+        margin-left: 30px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        width: 50px;
+        border-radius: 10%;
+    }
+
+    nav ul li {
+        padding-left: 10px;
+    }
+
+    nav ul li {
+        font-size: 10px;
+        margin: 5px;
+        margin-top: 5px;
+
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 20%;
+        left: -15%;
+    }
+    header img{
+       display: inline;
+       max-width: 50%;
+    }
+label #btn{
+    font-size: 20px;
+    top: 10%;
+    left: 1%;
+}
+    section{
+        margin-top: 20%;
+        margin-left: 10%;
+        max-width: 80% ;
+        transition: all 3s ease;
+    }
+        section div {
+            margin-bottom: 10px;
+        }
+        table{
+            width: 100%;
+        }
+        #check:checked~label #cancel {
+            position: fixed;
+            top: 16%;
+            left: 34%;
+        }
+        #check:checked~section{
+            width: 45%;
+            
+            margin-left: 45%;
+            transition: all 3s ease;
+        }
+
+    .searchbtn,
+    .search {
+        display: none;
+    }
+}
+
+
+@media (min-width: 357px) and (max-width: 385px) {
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container-fluid{
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        width: 100%;
+        background-color: white;
+        padding-bottom: 20px;
+        /* justify-items: flex-end; */
+    }
+
+    .dashboardtext {
+        font-size: 30px;
+        margin-left: 30px;
+        text-align: center;
+
+    }
+
+    header img {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        width: 30px;
+        margin-bottom: 20px;
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 15px;
+        width: 170px;
+        height: 100vh;
+        margin-top: -17%;
+    }
+
+    nav ul li {
+        font-size: 15px;
+        margin: 10px;
+        margin-top: 20px;
+
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 10%;
+        left: -2%;
+    }
+
+    .menu {
+        margin-bottom: 10px;
+    }
+
+    label #btn {
+        position: absolute;
+        top: 8%;
+    }
+
+section{
+    margin: 20px 20px;
+    transition: all 3s ease;
+}
+    section div {
+        margin-bottom: 10px;
+    }
+
+    #check:checked~label #cancel {
+        position: fixed;
+        top: 10%;
+        left: 36%;
+    }
+    section .row{
+        justify-content: center;
+    }
+    section .row div{
+        margin-left: 10px;
+    }
+    #check:checked~section{
+        margin-left: 200px;
+        width: 50%;
+        transition: all 3s ease;
+    }
+    .searchbtn,
+    .search {
+        display: none;
+
+    }
+    table{
+        width: 100%;
+    }
+    .profile{
+        position: absolute;
+        right: 8%;
+    }
+    [class*="col-"] {
+        box-sizing: border-box;
+        margin: 30px;
+        padding: 5px;
+      
+        border-radius: 10px;
+    }
+    /* }
+.col-1 {width: 25%;}
+
+.col-2 {width: 50%;}
+
+.col-3 {width: 75%;}
+
+.col-4 {width: 100%} */
+
+/* .col-5 {width: 41.66%;}
+
+.col-6 {width: 50%;} */
+
+}
+
+@media (min-width: 390px) and (max-width: 410px) {
+
+    header {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+header img {
+    width: 30px;
+    margin-bottom: 10px;
+}
+   
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 14%;
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 150px;
+        max-height: 100vh;
+        margin-top: -13%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    nav ul li {
+        font-size: 13px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 13%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 3%;
+    }
+
+    #check:checked~label #cancel {
+        position: fixed;
+        left: 30%;
+        top: 12.5%;
+    }
+
+    .searchbtn, .search {
+        display: none;
+        /* position: absolute;
+        max-width: 40px;
+        font-size: 12px;
+        right: 6%;
+        padding: 4px;
+        top: 2%; */
+    }
+    table{
+        width: 100%;
+    }
+    /* .search {
+        width: 90px;
+        position: absolute;
+        top: 1.5%;
+        right: 15%;
+    } */
+
+    .profile{
+        position: absolute;
+        top: -2%;
+        right: 2%;
+    }
+    #check:checked~section{
+        margin-left: 180px;
+        width: 50%;
+        transition: all 3s ease;
+    }
+
+}
+
+@media (min-width: 410px) and (max-width: 599px) {
+    header {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+header img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+   
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 14%;
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 170px;
+        max-height: 100vh;
+        margin-top: -11%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    nav ul li {
+        font-size: 16px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 13%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 34%;
+    }
+
+    #check:checked~label #cancel {
+        position: fixed;
+        left: 30%;
+        top: 12.5%;
+    }
+
+    .searchbtn {
+        position: absolute;
+        max-width: 40px;
+        font-size: 12px;
+        right: 6%;
+        padding: 4px;
+        top: 2%;
+    }
+
+    .search {
+        width: 90px;
+        position: absolute;
+        top: 1.5%;
+        right: 15%;
+    }
+    table{
+        width: 100%;
+    }
+    .profile{
+        position: absolute;
+        top: 15%;
+        right: 4%;
+    }
+
+    #check:checked~section{
+        margin-left: 160px;
+        width: 50%;
+        transition: all 3s ease;
+    }
+
+}
+@media (min-width: 601px) and (max-width: 700px) {
+
+
+    header {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+header img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+    /* header h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    nav h2 {
+        margin-left: 10px;
+    } */
+
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        font-size: 30px;
+        margin-left: 14%;
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 200px;
+        max-height: 100vh;
+        margin-top: -9.5%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    nav ul li {
+        font-size: 16px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 13%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 28%;
+    }
+
+    #check:checked~label #cancel {
+        position: fixed;
+        left: 25%;
+        top: 12.5%;}
+   
+
+    .searchbtn {
+        position: absolute;
+        max-width: 50px;
+        font-size: 13px;
+        right: 6%;
+        padding: 5px;
+        top: 2%;
+    }
+
+    .search {
+        width: 150px;
+        position: absolute;
+        top: 1.5%;
+        right: 14%;
+    }
+    table{
+        width: 100%;
+    }
+    .profile{
+        position: absolute;
+        top: 15%;
+        right: 6%;
+    }
+    #check:checked~section{
+        margin-left: 120px;
+        width: 50%;
+        transition: all 3s ease;
+    }
+
+
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  
+    header {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+header img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+    /* header h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    nav h2 {
+        margin-left: 10px;
+    } */
+
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        margin-left: 18%;
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 200px;
+        max-height: 100vh;
+        margin-top: -7%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    nav ul li {
+        font-size: 16px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 10%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 23%;
+    }
+
+    #check:checked~label #cancel {
+        left: 20%;
+        top: 12.5%;
+        position: fixed;
+    
+    }
+   
+
+    .searchbtn {
+        position: absolute;
+        right: 6%;
+        top: 1%;
+    }
+    table{
+        width: 100%;
+    }
+    .search {
+        width: 200px;
+        position: absolute;
+        top: 1%;
+        right: 15%;
+    }
+
+    .profile{
+        position: absolute;
+        top: 8%;
+        right: 6%;
+    }
+    #check:checked~section{
+        margin-left: 100px;
+        transition: all 3s ease;
+    }
+
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+
+    header {
+        width: 100%;
+        background-color: white;
+    }
+header img {
+    width: 50px;
+}
+    header h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    nav h2 {
+        margin-left: 10px;
+    }
+
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        /* display: none; */
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 200px;
+        max-height: 100vh;
+        margin-top: -5%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    /* .navbars img {
+        margin-left: 30px;
+        margin-top: -30px;
+        width: 80px;
+        border-radius: 10%;
+    } */
+
+    nav ul li {
+        font-size: 16px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 10%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    /* section {
+        margin-left: 50px;
+        margin-right: 10px;
+        transition: all 3s ease;
+    } */
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 20%;
+    }
+
+    #check:checked~label #cancel {
+        left: 14%;
+        top: 10%;
+        position: fixed;
+    }
+    /* #check:checked~section {
+        margin-left: 250px;
+        transition: all 3.5s ease-in-out;
+    } */
+    /* #check:checked~section div{
+        margin-left: 5px;
+    } */
+    table{
+        width: 100%;
+    }
+
+    .searchbtn {
+        position: absolute;
+        right: 7%;
+        top: 3%;
+    }
+
+    .search {
+        width: 200px;
+        position: absolute;
+        top: 3%;
+        right: 13%;
+    }
+
+    .profile{
+        position: absolute;
+        top: 7%;
+        right: 2%;
+    }
+
+
+}
+
+@media (min-width: 1010px) {
+
+    header {
+        width: 100%;
+        background-color: white;
+    }
+header img {
+    width: 50px;
+}
+    header h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    nav h2 {
+        margin-left: 10px;
+    }
+
+    .dashboardtext {
+        
+        display: inline-block;
+        text-align: center;
+        /* display: none; */
+    }
+
+    nav {
+        padding-right: -5%;
+        padding-top: 20px;
+        padding-bottom: 10%;
+        line-height: 20px;
+        width: 200px;
+        max-height: 100vh;
+        margin-top: -5%;
+
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px;
+        /* transition: all 5s ease; */
+    }
+
+    label #btn {
+        top: 13%;
+    }
+
+    /* .navbars img {
+        margin-left: 30px;
+        margin-top: -30px;
+        width: 80px;
+        border-radius: 10%;
+    } */
+
+    nav ul li {
+        font-size: 16px;
+        margin: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .bottomlist {
+        position: absolute;
+        bottom: 10%;
+        left: -10%;
+        margin-top: 2%;
+    }
+    section div{
+        margin-left: 10px;
+    }
+
+    /* section {
+        margin-left: 50px;
+        margin-right: 10px;
+        transition: all 3s ease;
+    } */
+
+    section{
+        display: block;
+        width: 70%;
+    }
+    section .row{
+        margin-left: 20%;
+    }
+table{
+    width: 100%;
+}
+    #check:checked~label #cancel {
+        left: 14%;
+        top: 10%;
+        position: fixed;
+    }
+    /* #check:checked~section {
+        margin-left: 250px;
+        transition: all 3.5s ease-in-out;
+    } */
+    /* #check:checked~section div{
+        margin-left: 5px;
+    } */
+   
+
+    .searchbtn {
+        position: absolute;
+        right: 7%;
+        top: 3%;
+    }
+
+    .search {
+        width: 200px;
+        position: absolute;
+        top: 3%;
+        right: 13%;
+    }
+
+    .profile{
+        position: absolute;
+        top: 7%;
+        right: 5%;
+    }
+
+}
+
+
+/* .col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+
+}
+
+.col-4 {
+    width: 33.33%;
+
+}
+
+.col-5 {
+    width: 41.66%;
+
+}
+
+.col-6 {
+    width: 50%;
+
+}
+
+.col-7 {
+    width: 58.33%;
+
+}
+
+.col-8 {
+    width: 66.66%;
+
+}
+
+.col-9 {
+    width: 75%;
+
+}
+
+.col-10 {
+    width: 83.33%;
+
+}
+
+.col-11 {
+    width: 91.66%;
+
+}
+
+.col-12 {
+    width: 100%;
+
+} */
+
+
+/* .col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 100%;
+}
+
+.col-3 {
+    width: 100%;
+}
+
+.col-4 {
+    width: 100%;
+} */
+
+
+/* @media (min-width: 600px) {
+    .col-1 {
+        width: 50%;
+    }
+
+    .col-2 {
+        width: 50%;
+    }
+
+    .col-3 {
+        width: 33.33%;
+    }
+
+    .col-4 {
+        width: 25%;
+    }
+} */
+
+/* Large screen (Desktops) */
+/* @media (min-width: 1024px) {
+    .col-1 {
+        width: 25%;
+    }
+
+    .col-2 {
+        width: 25%;
+    }
+
+    .col-3 {
+        width: 33.33%;
+    }
+
+    .col-4 {
+        width: 25%;
+    }
+} */
+
+
+/* @media (min-width: 1440px) {
+    .col-1 {
+        width: 20%;
+    }
+
+    .col-2 {
+        width: 20%;
+    }
+
+    .col-3 {
+        width: 20%;
+    }
+
+    .col-4 {
+        width: 20%;
+    }
+}

@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img src="logotele1.jpg" alt="LOGO"></a>
+                <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="LOGO"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +55,21 @@
                                 <label class="btn btn-light">Logins and Register</label>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>Patient<a class="dropdown-item" href="/signup">Register</a><a class="dropdown-item"
-                                        href="/signin">Login</a></li>
+                                <li>Doctors<a class="dropdown-item" href="/registeradmin">Register</a><a
+                                        class="dropdown-item" href="/admin/login">Login</a></li>
                                 {{!-- <li>Doctor<a class="dropdown-item" href="/doctorrigister">Register</a> <a
                                         class="dropdown-item" href="/doctorlogin">Login</a></li> --}}
                                 {{!-- <li><a class="dropdown-item" href="/admin">Admin Page</a></li> --}}
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/bookappointment">book AppointMent</a></li>
-                                 <li class="nav-item">
-                            <a class="nav-link dropdown-item" href="/patient/viewdoctor">View Doctors</a>
-                        </li>
+                                <li><a class="dropdown-item" href="/admin/viewappointment">View AppointMent</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-item" href="/admin/viewpatient">View Patients</a>
+                                </li>
                             </ul>
                         </li>
-                      
+
                     </ul>
                     {{!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -90,8 +90,8 @@
             <img src="/profileimg.jpg" class="card-img-top" alt="profile picture">
             <!-- <i class="bi bi-person-circle"></i> -->
             <div class="card-body">
-
-                <form action="/auth/signin" method="post">
+                <h3 style="text-align: center;">Admin Login</h3>
+                <form action="/userlogin" method="post">
 
                     <div>
                         {{#if error}}
@@ -109,7 +109,7 @@
                         {{/if}}
 
                     </div>
-                    <h4 style="text-align: center;">Patient Login</h4>
+                  
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" name="email" id="address" placeholder="Email Address">
                         <label for="email">Email Address</label>
@@ -122,11 +122,12 @@
                     </div>
 
                     <input type="submit" class="btn btn-secondary register" value="Login"> 
-                    <p class="text-end">If you do not have account please register <a href="/signup">Here</a></p>
+                    
+
                 </form>
 
             </div>
-        </div> </div>
+        </div </div>
 
 
 

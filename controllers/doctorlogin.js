@@ -23,7 +23,7 @@ exports.doctorlogin = (req, res) => {
                     error: `Invalid Email or password`
                 })
             }
-            const token = jwt.sign({ patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email },
+            const token = jwt.sign({role: 'doctor', doctor_id: result[0].doctor_id, firstname: result[0].firstname, email: result[0].email },
                 process.env.JWT_SECRET,
                 {
                     expiresIn: process.env.JWT_EXPIRES
@@ -36,8 +36,125 @@ exports.doctorlogin = (req, res) => {
 
             }
             res.cookie(`userRegister`, token, cookieoptions)
-            res.redirect(`/doctordash`)
+            res.redirect(`/doctor/dashboard`)
         })
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Design by Kelani Yunus Oluwadamilare
+// email yunuskelani2@gmail.com//
+// phone: +2348140470626 

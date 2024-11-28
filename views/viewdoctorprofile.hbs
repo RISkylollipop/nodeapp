@@ -30,11 +30,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-
-                        {{!-- Design by Kelani Yunus Oluwadamilare
-                        email yunuskelani2@gmail.com//
-                        phone: +2348140470626 --}}
-
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.facebook.com" target="_blank">Message Us <i
                                     class="bi bi-facebook"></i></a>
@@ -56,9 +51,9 @@
                                     class="bi bi-telephone-fill"></i></a>
                         </li>
                         <li class="nav-item dropdown">
-                            {{!-- <a class="nav-link" href="/viewpatient" role="button">
+                            <a class="nav-link" href="/doctor/dashboard" role="button">
                                 <label class="btn btn-light">Back</label>
-                            </a> --}}
+                            </a>
                             {{!-- <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/signup">Register</a><a class="dropdown-item"
                                         href="/signin">Login</a></li>
@@ -101,9 +96,14 @@
                 </div>
                 {{/if}}
                 {{#each rows}}
-                <form action="/editpatient/{{this.patient_id}}" method="POST">
+                <form action="/doctor/dashboard/edit-profile/{{this.doctor_id}}" method="POST">
+                    <div style="text-align: center;  color:white;">
+                        <h4 >Edit Your Profile</h4>
 
-                    <h4 style="text-align: center;">Edit Patient Data</h4>
+                        <h5>Please Input all Details</h5>
+
+                    </div>
+
 
                     <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control" name="firstname" id="firstname"
@@ -122,9 +122,7 @@
                         <small class="emailerror"></small>
                         <label for="email">Email Address</label>
                     </div>
-                    {{!-- Design by Kelani Yunus Oluwadamilare
-                    email yunuskelani2@gmail.com//
-                    phone: +2348140470626 --}}
+
                     <div class="form-floating mb-3">
                         <input type="tel" class="form-control phone" name="phone" value="{{this.phone}}" id="phone"
                             placeholder="Phone Number">
@@ -152,10 +150,21 @@
                         <label for="date_Of_birth">Date_Of_Birth</label>
                     </div>
 
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control password" onkeyup="pass()" onkeydown="pass()"
+                            name="password" id="password" placeholder="Password" required>
+                        <small class="passworderror"></small>
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control passwordconfirm" name="passwordconfirm"
+                            id="passwordconfirm" placeholder="Confirm Password" required>
+                        <label for="passwordconfirm">Confirm Password</label>
+                    </div>
 
 
-
-                    <input type="submit" class="btn btn-primary register" value="SUBMIT">
+                    <input type="submit" class="btn btn-primary register" value="UPDATE PROFILE">
 
                 </form>
                 {{/each}}
@@ -176,8 +185,75 @@
       "></script>
     {{!--
     <script src="/js/bootstrap.bundle.min.js"></script> --}}
-
-    <script src="home.js"></script>
+    <script scr="/home.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Design by Kelani Yunus Oluwadamilare
+email yunuskelani2@gmail.com//
+phone: +2348140470626 --}}

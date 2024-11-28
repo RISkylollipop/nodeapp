@@ -26,7 +26,7 @@ ul li{
 .card{
     display: block;
     margin: auto;
-    width: 60%;
+    width: 90%;
 }
 
 .card-img-top{
@@ -44,8 +44,30 @@ ul li{
     display: block;
     margin: auto;
 }
+   
+th, td{
+    border: 2px solid black;   
+}
+td{
+    font-size: 10px;
+}
+.theading th{
+    background-color: lightgreen;
+    color: white;
+    /* max-width: fit-content; */
+}
+.theading{
+    text-transform: capitalize; 
+}
+
+
 @media screen and (max-width: 600px){
     .navbar-center{
         padding-left: 0;
     }
+}
+table{
+    /* display: flex;
+    flex-wrap: wrap; */
+    max-width: fit-content;
 }

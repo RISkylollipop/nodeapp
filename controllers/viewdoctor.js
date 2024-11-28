@@ -1,14 +1,20 @@
 const db = require(`../database`)
 const express = require(`express`)
+// Design by Kelani Yunus Oluwadamilare 
+// email yunuskelani2@gmail.com//
+// phone: +2348140470626
 const { search } = require("../routes/pages")
 const router = express.Router()
 
 exports.doctor = (req, res)=>{
     db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors where status = "active"`, (err, rows)=>{
         if(err){
+            
+            
             console.log(err);
             
         }else{
+            console.log(rows);
             res.render(`viewdoctors`,{rows});     
         }        
     } )   
@@ -30,7 +36,7 @@ exports.find = (req, res)=>{
 
 
 exports.viewpatient = (req, res)=>{
-    db.query(`select patient_id, firstname, lastname, email, gender, status, phone from patients where status = 'active'`, (err, rows)=>{
+    db.query(`select patient_id, firstname, lastname, email, gender, address,  phone from patients where status = 'active'`, (err, rows)=>{
         if(err){
             console.log(err);
             

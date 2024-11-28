@@ -11,6 +11,8 @@ if(!token){
 try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
     req.patients = decoded;
+    // console.log(decoded);
+    
     next();
 } catch (error) {
     console.log(error);

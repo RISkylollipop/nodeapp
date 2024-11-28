@@ -18,7 +18,7 @@
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="logotele1.jpg" alt="Logo"></a>
+        <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -64,17 +64,18 @@
   <div class="container">
 
     <div class="card card-cont mt-5 mb-5">
-      <img src="/profileimg.jpg" class="card-img-top" alt="profile picture">
+      {{!-- <img src="/profileimg.jpg" class="card-img-top" alt="profile picture"> --}}
       <!-- <i class="bi bi-person-circle"></i> -->
       <div class="card-body">
+        <h5>Welcome {{doctor.firstname}} {{admin.firstname}} Edit appointment with Patient Consent</h5>
 
-        <form action="/auth/bookappointment" method="post">
+        {{#each rows}}
+        <form action="/editappointment/{{this.appointment_id}}" method="post">
 
           <div>
             {{#if error}}
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
               {{error}}
-              <p>Please Register<a href="/signup">Here</a> if you do not have an account</p>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             {{/if}}
@@ -86,32 +87,23 @@
             </div>
             {{/if}}
 
-            {{#each result}}
-            <h4>Welcome {{this.firstname}}</h4>
-            {{/each}}
+
 
           </div>
-          <h4 style="text-align: center;">Book AppointMent</h4 > <div class="text-end" style="margin-bottom: 20px;"><a href="/dashboard" type="btn btn-light"><i class="bi bi-backspace-reverse-fill"></i>Back</a></div>
+          <h4 style="text-align: center;">Edit AppointMent</h4>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Surname">
+            <input type="text" class="form-control" name="firstname" id="firstname" value="{{this.firstname}}"
+              placeholder="Surname">
             <label for="firstname">Surname</label>
           </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control first" name="lastname" id="lastname" placeholder="First Given Name">
-            <label for="lastname">First Name</label>
-          </div>
 
           <div class="form-floating mb-3">
-            <input type="email" class="form-control email" name="email" id="address" onkeyup="emailval()"
+            <input type="email" class="form-control email" name="email" id="address" value="{{this.email}}"
               placeholder="Email Address">
             <small class="emailerror"></small>
             <label for="email">Email Address</label>
           </div>
 
-          <div class="form-floating mb-3">
-            <input type="tel" class="form-control phone" name="phone" id="phone" placeholder="Phone Number">
-            <label for="phone">Phone Number</label>
-          </div>
           <div class="form-floating mb-3">
             <input type="date" class="form-control phone" name="appointment_date" id="appointment_date"
               placeholder="Appointment_date">
@@ -122,27 +114,15 @@
               placeholder="Appointment_time">
             <label for="time">Appointment_time</label>
           </div>
-          {{!-- Design by Kelani Yunus Oluwadamilare
-          email yunuskelani2@gmail.com//
-          phone: +2348140470626 --}}
 
-          <label for="doctorlist">Select a doctor</label>
-          <select name="doctorlist" id="doctorlist" style="width: 60%">
 
-            {{#each rows}}
-            <option value="{{this.doctor_id}}">{{this.firstname}} , {{this.lastname}} [{{this.specialty}}] {{this.status}}</option>
-            {{/each}}
 
-          </select>
-          <br><br><br>
 
           <input type="submit" class="btn btn-primary register" value="Book AppointMent">
-          
         </form>
-
+        {{/each}}
       </div>
-    </div>
-  </div>
+    </div </div>
 
 
 
@@ -154,14 +134,17 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
       "></script>
-  {{!--
-  <script src="/js/bootstrap.bundle.min.js"></script> --}}
-  <script scr="home.js"></script>
+    {{!--
+    <script src="/js/bootstrap.bundle.min.js"></script> --}}
+    <script scr="home.js"></script>
 </body>
 
 </html>
+
+
+
 
 
 

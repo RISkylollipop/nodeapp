@@ -50,18 +50,11 @@ exports.register = (req, res)=>{
 
 
 exports.doctorregister = (req, res)=>{
-    // firstname
-    // lastname:                            
-    // email: 
-    // phone: 
-    // address: 
-    // date_of_birth: 
-    // gender: 
-    // password: 
-    // passwordconfirm:
+    // Details coming from Request body
 
     // {{!-- firstname, lastname, specialty, date_of_birth, email, phone, gender, password, date_joined, address, status --}}
     // console.log(req.body);
+
     const {firstname, lastname, email, phone, date_of_birth, address, password, gender, passwordconfirm, date_joined, status, specialty,} = req.body;
 
     if (!email || !phone || !firstname){
@@ -92,7 +85,7 @@ exports.doctorregister = (req, res)=>{
                 }else{
                     res.render(`registerdoctor`, {message: `Dear ${lastname}, 
                         Details Registered Successfully, 
-                        Meet Your Head of Admin for the Next Step`})
+                        Meet Your Head of Admin for Your Appointments`})
                 }
             })
         })
@@ -102,3 +95,61 @@ exports.doctorregister = (req, res)=>{
     // res.send(`form submitted`)
     
 }
+
+
+exports.adduser = (req, res)=>{
+    // console.log(req.body);
+
+    // firstname:  lastname:  email:  gender: status: passwordpasswordconfirm
+
+    const {firstname, lastname, email, gender, status, password, passwordconfirm} = req.body
+
+    if(!email || !password){
+      return  res.render(`adduser`,{error: `Some Fields Are Missing`})
+    }else if(password !== passwordconfirm){
+        return res.render(`adduser`, {error: `Password Do Not Match`})
+    }else{
+        db.query(`select email from admins where email = ?`, [email], async (err, result)=>{
+            if(err){console.log(err);
+            }else if(result.length > 0){
+                return res.render(`adduser`, {error: `Email Already Exist`})
+            }else{
+                const hashnewpass = await bcrypt.hash(password, 12);
+                db.query(`insert into admins set ?`, {firstname:firstname, lastname:lastname, email:email, gender:gender, status:status, password:hashnewpass}, (err, result)=>{
+                    if(err){console.log(err);
+                    }else{
+                        res.render(`adduser`, {message: `User ${firstname}, ${lastname} Registered Successfully`})
+                    }
+                })
+            }
+        })
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Design by Kelani Yunus Oluwadamilare
+// email yunuskelani2@gmail.com//
+//  phone: +2348140470626
