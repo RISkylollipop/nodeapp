@@ -86,7 +86,7 @@ exports.update = (req, res)=>{
         // res.send(`Updated`)
         if(err){
             console.log(err);
-            return res.redirect(`/viewpatient`)
+            return res.redirect(`/admin/viewpatient`)
             
         }else{
             db.query(`select patient_id, firstname, lastname, email, gender, address, phone from patients where status = 'active' `, (err, rows)=>{

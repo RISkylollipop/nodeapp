@@ -1,6 +1,6 @@
 drop database hospital_testing; -- If exited
 create database hospital_testing; -- Your database name
-use hospital_testing;             --Your datebase name that will be in the database connection
+use hospital_testing;
 
 create table patients(
 patient_id int primary key auto_increment,
@@ -26,7 +26,7 @@ email varchar (150),
 phone varchar(50),
 gender varchar(30),
 password varchar (250),
-date_jointed date,
+date_joined date,
 address varchar(200),
 status varchar(30)
 );
