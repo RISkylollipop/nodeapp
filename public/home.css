@@ -26,7 +26,9 @@ ul li{
 .card{
     display: block;
     margin: auto;
-    width: 90%;
+    padding-bottom: 5%;
+    width: fit-content;
+    height: fit-content;
 }
 
 .card-img-top{
@@ -44,12 +46,13 @@ ul li{
     display: block;
     margin: auto;
 }
-   
+
 th, td{
     border: 2px solid black;   
 }
 td{
-    font-size: 10px;
+    font-size: 15px;
+    color: white;
 }
 .theading th{
     background-color: lightgreen;
@@ -66,8 +69,26 @@ td{
         padding-left: 0;
     }
 }
-table{
-    /* display: flex;
-    flex-wrap: wrap; */
-    max-width: fit-content;
+
+/* .table{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.table > div {
+    flex: 1 1 calc(100%/3);
+    box-sizing: border-box;
+} */
+@media (min-width: 350px) and (max-width: 768px) {
+    .table > div {
+        flex: 1 1 100%; 
+    }
+    th, td{
+        border: 2px solid black;   
+        font-size: 10px;
+    }
+    /* td{
+        max-height: 20px; 
+        overflow: hidden;
+    } */
 }

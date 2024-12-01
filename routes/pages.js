@@ -84,8 +84,6 @@ router.get(`/admin/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
 
 
 
-
-
 router.get(`/logout`, (req, res)=>{
     res.clearCookie(`userRegister`)
     res.redirect(`/signin`)
@@ -110,7 +108,8 @@ router.post(`/viewpatient`,  isAuthenticateddoctororadmin)
 router.get(`/editpatient/:id`, isAuthenticateddoctororadmin)
 router.post(`/editpatient/:id`,  isAuthenticated)
 router.get(`/delete/:id`, isAuthenticateddoctororadmin)
-router.get(`/viewappointment`,  isAuthenticateddoctororadmin)
+router.get(`/admin/viewappointment`,  isAuthenticateddoctororadmin)
+router.get(`/doctor/viewappointment`,  isAuthenticateddoctororadmin)
 router.post('/viewappointment',  isAuthenticateddoctororadmin)
 router.get(`/editappointment/:id`,isAuthenticateddoctororadmin)
 router.get(`/doctor/cancel/:id`, isAuthenticateddoctororadmin)

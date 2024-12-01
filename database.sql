@@ -1,6 +1,6 @@
-drop database hospital_testing; -- If exited
-create database hospital_testing; -- Your database name
-use hospital_testing;
+drop database hospital_old -- If exited
+create database hospital_old; -- Your database name
+use hospital_old;
 
 create table patients(
 patient_id int primary key auto_increment,

@@ -107,18 +107,18 @@
 
                     <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control" name="firstname" id="firstname"
-                            value="{{this.firstname}}" placeholder="Surname">
+                            value="{{this.firstname}}" placeholder="Surname" required>
                         <label for="firstname">Surname</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control first" name="lastname" value="{{this.lastname}}"
-                            id="lastname" placeholder="First Given Name">
+                            id="lastname" placeholder="First Given Name" required>
                         <label for="lastname">First Name</label>
                     </div>
 
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control email" name="email" value="{{this.email}}" id="email"
-                            onkeyup="emailval()" placeholder="Email Address">
+                            onkeyup="emailval()" placeholder="Email Address" readonly>
                         <small class="emailerror"></small>
                         <label for="email">Email Address</label>
                     </div>
@@ -127,19 +127,19 @@
                     phone: +2348140470626 --}}
                     <div class="form-floating mb-3">
                         <input type="tel" class="form-control phone" name="phone" value="{{this.phone}}" id="phone"
-                            placeholder="Phone Number">
+                            placeholder="Phone Number" readonly>
                         <label for="phone">Phone Number</label>
                     </div>
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" name="address" value="{{this.address}}" id="address"
-                            placeholder="Home Address">
+                            placeholder="Home Address" required>
                         <label for="address">Home Address</label>
                     </div>
 
                     <div class="form-floating mb-3">
                         <label for="gender"></label>
-                        <select name="gender" id="gender" class="form-select">
+                        <select name="gender" id="gender" class="form-select" required>
                             <option value="N/A">Select</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
@@ -148,7 +148,7 @@
 
                     <div class="form-floating mb-3">
                         <input type="date" class="form-control" name="date_of_birth" value="{{this.date_of_birth}}"
-                            id="date_Of_birth" placeholder="Date_Of_Birth">
+                            id="date_Of_birth" placeholder="Date_Of_Birth" required>
                         <label for="date_Of_birth">Date_Of_Birth</label>
                     </div>
 

@@ -37,6 +37,7 @@ router.get(`/admin/viewappointment`,  bookappointment.viewappointment)
 router.post('/viewappointment',  bookappointment.findappointment)
 
 router.get(`/cancel/:id`, bookappointment.updateappointment)
+router.post(`/doctor/schedules`, bookappointment.createschedule)
 
 router.get(`/editappointment/:id`, bookappointment.editappointment)
 
@@ -48,7 +49,7 @@ router.post(`/dashboard/edit-profile/:id`, isAuthenticated, login.updateprofile)
 router.get(`/doctor/dashboard/edit-profile/:id`,  login.doctorviewprofile)
 router.post(`/doctor/dashboard/edit-profile/:id`, login.doctorupdateprofile)
 
-
+router.get(`/doctor/schedules`, bookappointment.viewschedules)
 
 router.post(`/doctorregister`, register.doctorregister)
 router.post(`/login`, doctorlogin.doctorlogin)
