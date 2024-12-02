@@ -1,29 +1,31 @@
-body{
+body {
     background: linear-gradient(to right, lightblue, rgb(135, 135, 248));
 }
 
 
-.container-fluid{
+.container-fluid {
     display: block;
     width: 100%;
 }
-.navbar-center{
+
+.navbar-center {
     padding-left: 12%;
 }
 
-ul li{
+ul li {
     font-size: 15px;
     padding-left: 10px;
 }
 
-.bi-person-circle{
+.bi-person-circle {
     font-size: 40px;
 }
-.dash{
+
+.dash {
     text-transform: capitalize;
 }
 
-.card{
+.card {
     display: block;
     margin: auto;
     padding-bottom: 5%;
@@ -31,64 +33,166 @@ ul li{
     height: fit-content;
 }
 
-.card-img-top{
+.card-img-top {
 
-    width: 100px; 
-    display: block; 
+    width: 100px;
+    display: block;
     margin: auto;
 }
-.form-select{
+
+.form-select {
     width: 50%;
     display: block;
     margin: auto;
 }
-.alert-warning{
+
+.alert {
     display: block;
     margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 1%;
+}
+.card,
+.alert {
+    display: block;
+    margin: auto;
+    padding-bottom: 5%;
+    width: fit-content;
+    height: fit-content;
 }
 
-th, td{
-    border: 2px solid black;   
+
+th,
+td {
+    border: 2px solid black;
 }
-td{
+
+td {
     font-size: 15px;
     color: white;
 }
-.theading th{
+
+.theading th {
     background-color: lightgreen;
     color: white;
     /* max-width: fit-content; */
 }
-.theading{
-    text-transform: capitalize; 
+
+.theading {
+    text-transform: capitalize;
 }
 
+.find {
+    width: 200px;
+    position: absolute;
+    right: 7%
+}
 
-@media screen and (max-width: 600px){
-    .navbar-center{
+@media screen and (max-width: 600px) {
+    .navbar-center {
         padding-left: 0;
     }
 }
 
-/* .table{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+
+@media (min-width: 250px) and (max-width: 345px) {
+    .table>div {
+        flex: 1 1 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        font-size: 6px;
+    }
+
+    .find {
+        width: 90px;
+        position: absolute;
+        right: 14%;
+        font-size: 12px;
+    }
+
+    .subfind {
+        font-size: 12px;
+        width: fit-content;
+
+    }
 }
-.table > div {
-    flex: 1 1 calc(100%/3);
-    box-sizing: border-box;
-} */
-@media (min-width: 350px) and (max-width: 768px) {
-    .table > div {
-        flex: 1 1 100%; 
+
+@media (min-width: 350px) and (max-width: 450px) {
+    .table>div {
+        flex: 1 1 100%;
     }
-    th, td{
-        border: 2px solid black;   
-        font-size: 10px;
+
+    th,
+    td {
+        border: 1px solid black;
+        font-size: 8px;
     }
-    /* td{
-        max-height: 20px; 
-        overflow: hidden;
-    } */
+
+    .find {
+        width: 90px;
+        position: absolute;
+        right: 14%;
+        font-size: 12px;
+    }
+
+    .subfind {
+        font-size: 12px;
+        width: fit-content;
+
+    }
+}
+
+@media (min-width: 450px) and (max-width: 599px) {
+    .table>div {
+        flex: 1 1 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        font-size: 8px;
+    }
+
+    .find {
+        width: 90px;
+        position: absolute;
+        right: 14%;
+        font-size: 12px;
+    }
+
+    .subfind {
+        font-size: 12px;
+        width: fit-content;
+
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .table>div {
+        flex: 1 1 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        font-size: 12px;
+    }
+
+    .find {
+        width: 90px;
+        position: absolute;
+        right: 14%;
+        font-size: 12px;
+    }
+
+    .subfind {
+        font-size: 12px;
+        width: fit-content;
+
+    }
 }

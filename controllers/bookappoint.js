@@ -59,9 +59,9 @@ on appointment.doctor_id = doctors.doctor_id;`
     db.query(viewappointments, (err, rows) => {
         try {
             res.render(`appointments`, {
-                
-                rows: rows 
-            
+
+                rows: rows
+
             })
         } catch (err) {
             console.log(err);
@@ -129,10 +129,11 @@ on appointment.doctor_id = doctors.doctor_id;`
             db.query(viewappointments, (err, rows) => {
 
                 try {
-                    res.render(`appointments`, { 
-                        
+                    res.render(`appointments`, {
+
                         rows: rows,
-                    message: `Appointment Cancelled Successfully`})
+                        message: `Appointment Cancelled Successfully`
+                    })
                 } catch (error) {
                     console.log(error);
                     res.redirect(`/viewappointment`)
@@ -144,7 +145,7 @@ on appointment.doctor_id = doctors.doctor_id;`
 
 }
 
-exports.editappointment = (req, res)=>{
+exports.editappointment = (req, res) => {
     const viewappointments = `select appointment_id,  
     appointment_date,
     appointment.firstname, 
@@ -156,11 +157,12 @@ exports.editappointment = (req, res)=>{
     from 
     appointment join doctors
     on appointment.doctor_id = doctors.doctor_id where appointment_id = ?;`
-    db.query(viewappointments,[req.params.id], (err, rows)=>{
-        if(err){console.log(err);
-        }else{
-            
-            
+    db.query(viewappointments, [req.params.id], (err, rows) => {
+        if (err) {
+            console.log(err);
+        } else {
+
+
             res.render(`editappointment`, { rows })
         }
     })
@@ -171,7 +173,7 @@ exports.postponeappointment = (req, res) => {
     // declaring of req body coming from the form
 
 
-    const {appointment_date, appointment_time} = req.body
+    const { appointment_date, appointment_time } = req.body
 
     // declaring todays date to avoid reschedule of appointment_date to past date
     const today = Date.now()
@@ -185,7 +187,7 @@ exports.postponeappointment = (req, res) => {
     // comparing of the today's date and postponement date
 
 
-    if(datecompare < today){
+    if (datecompare < today) {
         const viewappointments = `select appointment_id,  
         appointment_date,
         appointment.firstname, 
@@ -197,21 +199,21 @@ exports.postponeappointment = (req, res) => {
         from 
         appointment join doctors
         on appointment.doctor_id = doctors.doctor_id;`
-        
-        
-            db.query(viewappointments, (err, rows) => {
-                try {
-                    res.render(`appointments`, {
-                        rows: rows,
-                        error: 'Please Select future Date'
-                    
-                    })
-                } catch (err) {
-                    console.log(err);
-                }
-            })
-       
-    }else{
+
+
+        db.query(viewappointments, (err, rows) => {
+            try {
+                res.render(`appointments`, {
+                    rows: rows,
+                    error: 'Please Select future Date'
+
+                })
+            } catch (err) {
+                console.log(err);
+            }
+        })
+
+    } else {
         // res.send(`form submitted`)
 
         // Sending of two db request at a time
@@ -235,75 +237,82 @@ exports.postponeappointment = (req, res) => {
     appointment join doctors
     on appointment.doctor_id = doctors.doctor_id;`
                 db.query(viewappointments, (err, rows) => {
-    
+
                     try {
-                        res.render(`appointments`, { 
-                        rows: rows,
-                        message: 'Appointment Postponed Successfully'})
+                        res.render(`appointments`, {
+                            rows: rows,
+                            message: 'Appointment Postponed Successfully'
+                        })
                     } catch (error) {
                         console.log(error);
                         res.redirect(`/viewappointment`)
-    
+
                     }
                 })
             }
         })
-    } 
+    }
 
 }
 
 
-exports.viewschedules = (req, res)=>{
+exports.viewschedules = (req, res) => {
 
     const viewschedule = `select * from doctor_schedules;`
-    db.query(viewschedule, (err, rows)=>{
-        if(err){console.log(err);
-        }else{
+    db.query(viewschedule, (err, rows) => {
+        if (err) {
+            console.log(err);
+        } else {
             res.status(200).render(`schedules`, { rows })
         }
     })
 }
 
-exports.createschedule = (req, res)=>{
+exports.createschedule = (req, res) => {
     console.log(req.body);
 
-     const {appointment_type,email,status,note, appointment_time, appointment_date} = req.body
+    const { appointment_type, email, status, note, appointment_time, appointment_date } = req.body
 
     const today = Date.now()
 
     let dateconvert = new Date(appointment_date)
     let datecompare = dateconvert.getTime()
 
-    if(datecompare < today){
+    if (datecompare < today) {
         const viewschedule = `select * from doctor_schedules;`
-    db.query(viewschedule, (err, rows)=>{
-        if(err){console.log(err);
-        }else{
-            res.status(200).render(`schedules`, { rows: rows, error: `Please Select a Future Date` })
-        }
-    })
-    }else{
-        db.query(`select * from doctors where email = ?`, [email], (err, result)=>{
-            if(err){console.log(err);
-            }else if(!result[0]){
+        db.query(viewschedule, (err, rows) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.status(200).render(`schedules`, { rows: rows, error: `Please Select a Future Date` })
+            }
+        })
+    } else {
+        db.query(`select * from doctors where email = ?`, [email], (err, result) => {
+            if (err) {
+                console.log(err);
+            } else if (!result[0]) {
                 const viewschedule = `select * from doctor_schedules;`
-                db.query(viewschedule, (err, rows)=>{
-                    if(err){console.log(err);
-                    }else{
+                db.query(viewschedule, (err, rows) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
                         res.status(200).render(`schedules`, { rows: rows, error: `No Doctor with this Email Address` })
                     }
                 })
-            }else{
+            } else {
                 const doctor_id = result[0].doctor_id
                 // doctor_id, email, schedule_date, schedule_time, status, note, appointment_type from database
                 const insertquery = `insert into doctor_schedules set ?`
-                db.query(insertquery, {appointment_type:appointment_type,email:email,status:status,note:note, schedule_date:appointment_date, doctor_id:doctor_id},(err, result)=>{
-                    if(err){console.log(err);
-                    }else{
+                db.query(insertquery, { appointment_type: appointment_type, email: email, status: status, note: note, schedule_date: appointment_date, doctor_id: doctor_id }, (err, result) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
                         const viewschedule = `select * from doctor_schedules;`
-                        db.query(viewschedule, (err, rows)=>{
-                            if(err){console.log(err);
-                            }else{
+                        db.query(viewschedule, (err, rows) => {
+                            if (err) {
+                                console.log(err);
+                            } else {
                                 res.status(200).render(`schedules`, { rows: rows, message: `Schedule Booked` })
                             }
                         })
@@ -314,7 +323,19 @@ exports.createschedule = (req, res)=>{
     }
 }
 
+exports.findschedule = (req, res) => {
+    // console.log(req.body);
+    const findschedule = req.body.findschedule
 
+    db.query(`select * from doctor_schedules where email like ? or note like ? or appointment_type like ?`, ['%' + findschedule + '%', '%' + findschedule + '%','%' + findschedule + '%'], (err, rows) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.status(200).render(`schedules`, { rows })
+        }
+    })
+
+}
 
 
 

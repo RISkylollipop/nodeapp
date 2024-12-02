@@ -50,24 +50,9 @@
               <a class="nav-link" href="https://wa.me/2348140470626" target="_blank">Mail Us <i
                   class="bi bi-whatsapp"></i></a>
             </li>
-            {{!-- <li class="nav-item">
-              <a class="nav-link btn btn-light" style="margin-right: 3px;" href="/dashboard"><i
-                  class="bi bi-arrow-left-square-fill"><b>Back</b></i> </a>
-            </li> --}}
-            {{!-- <li class="nav-item">
-              <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
-                  class="bi bi-telephone-fill"></i></a>
-            </li> --}}
+            <label class="btn btn-light" onclick="goBack()">Back</label>
 
-
-            <form action="/admin/viewpatient" method="POST" class="d-flex" role="search">
-              <input class="form-control me-2" name="find" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
-            {{!-- <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a></a>
-            </li> --}}
+           
         </div>
       </div>
     </nav>
@@ -80,9 +65,19 @@
   </div>
   {{/if}}
   <div class="container mt-5">
+    
     {{!-- provider_id, firstname, lastname, provider_specialty, email, phone_number, date_joined --}}
     <table class="table mt-5" style="border: 2px solid black;">
+
       <h2 style="margin-bottom: -40px; text-align: center; color:white;">Patients Data</h2>
+
+      <form action="/admin/viewpatient" method="POST" class="d-flex" role="search">
+      <input class="form-control me-2 find" name="find" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success subfind" style="position: absolute; right: 1%" type="submit">Search</button>
+    </form>
+
+
+
       <thead>
         <tr>
           <th scope="col">patient_id</th>
@@ -170,6 +165,7 @@
       "></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
   <script scr="home.js"></script>
+  <script src="/back.js"></script>
 </body>
 
 </html>

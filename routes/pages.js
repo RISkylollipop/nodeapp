@@ -119,6 +119,11 @@ router.post(`/doctor/editappointment/:id`, isAuthenticateddoctororadmin)
 router.get(`/dashboard/edit-profile/:id`, isAuthenticated)
 router.post(`/dashboard/edit-profile/:id`, isAuthenticated)
 
+router.get(`/doctor/schedules`, isAuthenticateddoctororadmin)
+router.get(`/admin/schedules`, isAuthenticateddoctororadmin)
+
+router.post(`/doctor/schedules`, isAuthenticateddoctororadmin )
+router.post(`/schedules/find`,isAuthenticateddoctororadmin)
 
 
 

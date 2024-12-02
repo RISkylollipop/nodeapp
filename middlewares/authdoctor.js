@@ -20,7 +20,7 @@ else{
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
-        console.log(decoded);
+        // console.log(decoded);
 
         if (decoded.role === 'doctor') {
             req.doctors = decoded

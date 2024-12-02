@@ -48,7 +48,7 @@ exports.viewpatient = (req, res)=>{
 
 
 exports.findpatient = (req, res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     
      const find = req.body.find
      
