@@ -7,7 +7,7 @@ body {
     max-width: 100%;
 }
 
-.container{
+.container {
     background-color: #e9edc9;
     width: 100%;
     /* padding: 0;
@@ -34,7 +34,7 @@ header h3 {
     margin-left: 42%;
 }
 
-.profile{
+.profile {
     position: absolute;
     top: 10%;
 }
@@ -99,34 +99,38 @@ nav h2 {
 #check {
     display: none;
 }
-.heart{
+
+.heart {
     position: absolute;
     border-radius: 10px;
 }
-.imagetext{
+
+.imagetext {
     margin-left: 40%;
     color: white;
 }
 
-.doctortext{
+.doctortext {
     margin-left: 30%;
 }
-.pdoctortext{
+
+.pdoctortext {
     margin-top: 40px;
 }
 
 
-.directmessage{
+.directmessage {
     text-align: center;
     display: block;
     margin: auto;
     width: 80%;
 }
-directmessage i{
+
+directmessage i {
     margin-right: 5px;
 }
 
-.tipsprg{
+.tipsprg {
     padding: 0 10px;
 }
 
@@ -137,10 +141,12 @@ label #cancel {
     border-radius: 10px;
     /* transition: all 5s ease; */
 }
-table{
+
+table {
     width: 100%;
     overflow: scroll;
 }
+
 .navbars {
     position: fixed;
     left: -230px;
@@ -180,7 +186,8 @@ label #cancel {
     left: 40%;
     position: fixed;
 }
-section{
+
+section {
     display: block;
     margin: auto;
     width: 100%;
@@ -232,33 +239,58 @@ label #cancel{
     width: 100%;
 }
 
-.row::after{
+.row::after {
     display: block;
     content: "";
 }
-.col-1 {width: 8.33%;}
 
-.col-2 {width: 16.66%;}
+.col-1 {
+    width: 8.33%;
+}
 
-.col-3 {width: 25%;}
+.col-2 {
+    width: 16.66%;
+}
 
-.col-4 {width: 33.33%;}
+.col-3 {
+    width: 25%;
+}
 
-.col-5 {width: 41.66%;}
+.col-4 {
+    width: 33.33%;
+}
 
-.col-6 {width: 50%;}
+.col-5 {
+    width: 41.66%;
+}
 
-.col-7 {width: 58.33%;}
+.col-6 {
+    width: 50%;
+}
 
-.col-8 {width: 66.66%;}
+.col-7 {
+    width: 58.33%;
+}
 
-.col-9 {width: 75%;}
+.col-8 {
+    width: 66.66%;
+}
 
-.col-10 {width: 83.33%;}
+.col-9 {
+    width: 75%;
+}
 
-.col-11 {width: 91.66%;}
+.col-10 {
+    width: 83.33%;
+}
 
-.col-12 {width: 100%;}
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
 
 
 
@@ -266,7 +298,7 @@ label #cancel{
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
-  
+
     border-radius: 10px;
 }
 
@@ -287,7 +319,7 @@ label #cancel{
     }
 
     nav {
-       
+
         padding-right: -5%;
         padding-top: 10px;
         width: 140px;
@@ -295,7 +327,7 @@ label #cancel{
         margin-top: 13%;
     }
 
-    
+
 
     /* header h3 {
         position: absolute;
@@ -332,38 +364,45 @@ label #cancel{
         bottom: 20%;
         left: -15%;
     }
-    header img{
-       display: inline;
-       max-width: 50%;
+
+    header img {
+        display: inline;
+        max-width: 50%;
     }
-label #btn{
-    font-size: 20px;
-    top: 10%;
-    left: 1%;
-}
-    section{
+
+    label #btn {
+        font-size: 20px;
+        top: 10%;
+        left: 1%;
+    }
+
+    section {
         margin-top: 20%;
         margin-left: 10%;
-        max-width: 80% ;
+        max-width: 80%;
         transition: all 3s ease;
     }
-        section div {
-            margin-bottom: 10px;
-        }
-        table{
-            width: 100%;
-        }
-        #check:checked~label #cancel {
-            position: fixed;
-            top: 16%;
-            left: 34%;
-        }
-        #check:checked~section{
-            width: 45%;
-            
-            margin-left: 45%;
-            transition: all 3s ease;
-        }
+
+    section div {
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #check:checked~label #cancel {
+        position: fixed;
+        top: 16%;
+        left: 34%;
+    }
+
+    #check:checked~section {
+        width: 45%;
+
+        margin-left: 45%;
+        transition: all 3s ease;
+    }
 
     .searchbtn,
     .search {
@@ -373,14 +412,16 @@ label #btn{
 
 
 @media (min-width: 357px) and (max-width: 385px) {
-    body{
+    body {
         margin: 0;
         padding: 0;
     }
-    .container-fluid{
+
+    .container-fluid {
         margin: 0;
         padding: 0;
     }
+
     header {
         width: 100%;
         background-color: white;
@@ -412,7 +453,7 @@ label #btn{
     }
 
     nav ul li {
-        font-size: 15px;
+        font-size: 12px;
         margin: 10px;
         margin-top: 20px;
 
@@ -433,61 +474,61 @@ label #btn{
         top: 8%;
     }
 
-section{
-    margin: 20px 20px;
-    transition: all 3s ease;
-}
+
     section div {
         margin-bottom: 10px;
     }
 
     #check:checked~label #cancel {
         position: fixed;
-        top: 10%;
-        left: 36%;
-    }
-    section .row{
-        justify-content: center;
-    }
-    section .row div{
-        margin-left: 10px;
-    }
-    #check:checked~section{
-        margin-left: 200px;
-        width: 50%;
+        top: 6%;
+        left: 38%;
         transition: all 3s ease;
     }
+
+    #check:checked~section {
+        margin-left: 150px;
+        margin-right: 0px;
+        width: 50%;
+        transition: all ease 3s;
+    }
+
+    section .row div {
+        margin: 20px 30px;
+        /* transition: all 3s ease; */
+        /* justify-content: center; */
+    }
+
+    section {
+        width: 90%;
+        display: block;
+        margin: auto;
+        /* margin-left: 10px; */
+        transition: all ease 5s;
+    }
+
     .searchbtn,
     .search {
         display: none;
 
     }
-    table{
+
+    table {
         width: 100%;
     }
-    .profile{
+
+    .profile {
         position: absolute;
-        right: 8%;
+        top: 6%;
+        right: 3%;
     }
+
     [class*="col-"] {
         box-sizing: border-box;
-        margin: 30px;
+        margin: 10px;
         padding: 5px;
-      
         border-radius: 10px;
     }
-    /* }
-.col-1 {width: 25%;}
-
-.col-2 {width: 50%;}
-
-.col-3 {width: 75%;}
-
-.col-4 {width: 100%} */
-
-/* .col-5 {width: 41.66%;}
-
-.col-6 {width: 50%;} */
 
 }
 
@@ -499,13 +540,14 @@ section{
         margin: 0;
         padding: 0;
     }
-header img {
-    width: 30px;
-    margin-bottom: 10px;
-}
-   
+
+    header img {
+        width: 30px;
+        margin-bottom: 10px;
+    }
+
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         font-size: 20px;
@@ -531,9 +573,11 @@ header img {
         border-radius: 10px;
         /* transition: all 5s ease; */
     }
-label #cancel{
-    transition: all 3s ease;
-}
+
+    label #cancel {
+        transition: all 3s ease;
+    }
+
     label #btn {
         top: 8%;
     }
@@ -542,7 +586,7 @@ label #cancel{
         font-size: 13px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -551,16 +595,18 @@ label #cancel{
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
-    section{
+    section {
         display: block;
         width: 70%;
         transition: all 3s ease;
     }
-    section .row{
+
+    section .row {
         margin-left: 3%;
         transition: all 3s ease;
     }
@@ -572,7 +618,8 @@ label #cancel{
         transition: all 3s ease;
     }
 
-    .searchbtn, .search {
+    .searchbtn,
+    .search {
         display: none;
         /* position: absolute;
         max-width: 40px;
@@ -581,22 +628,18 @@ label #cancel{
         padding: 4px;
         top: 2%; */
     }
-    table{
+
+    table {
         width: 100%;
     }
-    /* .search {
-        width: 90px;
-        position: absolute;
-        top: 1.5%;
-        right: 15%;
-    } */
 
-    .profile{
+    .profile {
         position: absolute;
-        top: -2%;
+        top: 1.2%;
         right: 2%;
     }
-    #check:checked~section{
+
+    #check:checked~section {
         margin-left: 160px;
         width: 50%;
         transition: all 3s ease;
@@ -605,19 +648,19 @@ label #cancel{
 }
 
 @media (min-width: 410px) and (max-width: 599px) {
-    
-header img {
-    width: 50px;
-    margin-bottom: 10px;
-}
-   
+
+    header img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         font-size: 20px;
         margin-left: 14%;
-        
+
     }
 
     nav {
@@ -647,7 +690,7 @@ header img {
         font-size: 16px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -656,15 +699,17 @@ header img {
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
-    section{
+    section {
         display: block;
         width: 70%;
     }
-    section .row{
+
+    section .row {
         margin-left: 30%;
         margin-right: 0;
     }
@@ -691,16 +736,18 @@ header img {
         top: 2%;
         right: 12%;
     }
-    table{
+
+    table {
         width: 100%;
     }
-    .profile{
+
+    .profile {
         position: absolute;
         top: 15%;
         right: 4%;
     }
 
-    #check:checked~section{
+    #check:checked~section {
         margin-left: 140px;
         margin-right: 0px;
         width: 50%;
@@ -708,6 +755,7 @@ header img {
     }
 
 }
+
 @media (min-width: 601px) and (max-width: 700px) {
 
 
@@ -717,10 +765,12 @@ header img {
         margin: 0;
         padding: 0;
     }
-header img {
-    width: 50px;
-    margin-bottom: 10px;
-}
+
+    header img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
     /* header h2 {
         font-size: 40px;
         margin-bottom: 10px;
@@ -731,7 +781,7 @@ header img {
     } */
 
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         font-size: 30px;
@@ -765,7 +815,7 @@ header img {
         font-size: 16px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -774,23 +824,26 @@ header img {
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
-    section{
+    section {
         display: block;
         width: 70%;
     }
-    section .row{
+
+    section .row {
         margin-left: 22%;
     }
 
     #check:checked~label #cancel {
         position: fixed;
         left: 25%;
-        top: 12.5%;}
-   
+        top: 12.5%;
+    }
+
 
     .searchbtn {
         position: absolute;
@@ -807,15 +860,18 @@ header img {
         top: 1.5%;
         right: 14%;
     }
-    table{
+
+    table {
         width: 100%;
     }
-    .profile{
+
+    .profile {
         position: absolute;
         top: 15%;
         right: 6%;
     }
-    #check:checked~section{
+
+    #check:checked~section {
         margin-left: 100px;
         width: 50%;
         transition: all 3s ease;
@@ -825,17 +881,19 @@ header img {
 }
 
 @media (min-width: 700px) and (max-width: 900px) {
-  
+
     header {
         width: 100%;
         background-color: white;
         margin: 0;
         padding: 0;
     }
-header img {
-    width: 50px;
-    margin-bottom: 10px;
-}
+
+    header img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
     /* header h2 {
         font-size: 40px;
         margin-bottom: 10px;
@@ -846,7 +904,7 @@ header img {
     } */
 
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         margin-left: 18%;
@@ -879,7 +937,7 @@ header img {
         font-size: 16px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -888,15 +946,17 @@ header img {
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
-    section{
+    section {
         display: block;
         width: 70%;
     }
-    section .row{
+
+    section .row {
         margin-left: 23%;
     }
 
@@ -904,18 +964,20 @@ header img {
         left: 20%;
         top: 12.5%;
         position: fixed;
-    
+
     }
-   
+
 
     .searchbtn {
         position: absolute;
         right: 6%;
         top: 1%;
     }
-    table{
+
+    table {
         width: 100%;
     }
+
     .search {
         width: 200px;
         position: absolute;
@@ -923,12 +985,13 @@ header img {
         right: 15%;
     }
 
-    .profile{
+    .profile {
         position: absolute;
         top: 8%;
         right: 6%;
     }
-    #check:checked~section{
+
+    #check:checked~section {
         margin-left: 100px;
         transition: all 3s ease;
     }
@@ -941,9 +1004,11 @@ header img {
         width: 100%;
         background-color: white;
     }
-header img {
-    width: 50px;
-}
+
+    header img {
+        width: 50px;
+    }
+
     header h2 {
         font-size: 40px;
         margin-bottom: 10px;
@@ -954,7 +1019,7 @@ header img {
     }
 
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         /* display: none; */
@@ -994,7 +1059,7 @@ header img {
         font-size: 16px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -1003,7 +1068,8 @@ header img {
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
@@ -1013,11 +1079,12 @@ header img {
         transition: all 3s ease;
     } */
 
-    section{
+    section {
         display: block;
         width: 70%;
     }
-    section .row{
+
+    section .row {
         margin-left: 20%;
     }
 
@@ -1026,6 +1093,7 @@ header img {
         top: 10%;
         position: fixed;
     }
+
     /* #check:checked~section {
         margin-left: 250px;
         transition: all 3.5s ease-in-out;
@@ -1033,7 +1101,7 @@ header img {
     /* #check:checked~section div{
         margin-left: 5px;
     } */
-    table{
+    table {
         width: 100%;
     }
 
@@ -1050,7 +1118,7 @@ header img {
         right: 13%;
     }
 
-    .profile{
+    .profile {
         position: absolute;
         top: 7%;
         right: 2%;
@@ -1060,13 +1128,15 @@ header img {
 }
 
 @media (min-width: 1010px) {
-    body{
+    body {
         padding: 0;
         margin: 0;
     }
-header img {
-    width: 50px;
-}
+
+    header img {
+        width: 50px;
+    }
+
     header h2 {
         font-size: 40px;
         margin-bottom: 10px;
@@ -1077,7 +1147,7 @@ header img {
     }
 
     .dashboardtext {
-        
+
         display: inline-block;
         text-align: center;
         /* display: none; */
@@ -1117,7 +1187,7 @@ header img {
         font-size: 16px;
         margin: 10px;
         margin-top: 20px;
-        
+
     }
 
     .bottomlist {
@@ -1126,7 +1196,8 @@ header img {
         left: -10%;
         margin-top: 2%;
     }
-    section div{
+
+    section div {
         margin-left: 10px;
     }
 
@@ -1136,21 +1207,25 @@ header img {
         transition: all 3s ease;
     } */
 
-    section{
+    section {
         display: block;
         width: 75%;
     }
-    section .row{
+
+    section .row {
         margin-left: 10%;
     }
-table{
-    width: 100%;
-}
+
+    table {
+        width: 100%;
+    }
+
     #check:checked~label #cancel {
         left: 14%;
         top: 10%;
         position: fixed;
     }
+
     /* #check:checked~section {
         margin-left: 250px;
         transition: all 3.5s ease-in-out;
@@ -1158,7 +1233,7 @@ table{
     /* #check:checked~section div{
         margin-left: 5px;
     } */
-   
+
 
     .searchbtn {
         position: absolute;
@@ -1172,8 +1247,9 @@ table{
         top: 3%;
         right: 7%;
     }
-    .profile{
-        font-size:15px;
+
+    .profile {
+        font-size: 15px;
         position: absolute;
         top: 12%;
         right: 1%;

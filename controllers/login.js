@@ -128,9 +128,9 @@ exports.doctorupdateprofile = (req, res)=>{
 
 
 exports.updateprofile = (req, res) => {
-    console.log(req.body);
-    console.log(req.url);
-    console.log(req.params);
+    // console.log(req.body);
+    // console.log(req.url);
+    // console.log(req.params);
 
 
 
