@@ -39,6 +39,12 @@ header h3 {
     top: 10%;
 }
 
+.menu{
+    display: block;
+    margin-top: 22px;
+    margin-left: 60px;
+}
+
 nav {
     background-color: #ccd5ae;
     padding-top: 5%;
@@ -534,6 +540,7 @@ label #cancel{
 
 @media (min-width: 390px) and (max-width: 410px) {
 
+
     header {
         width: 100%;
         background-color: white;
@@ -577,7 +584,11 @@ label #cancel{
     label #cancel {
         transition: all 3s ease;
     }
-
+.menu{
+        display: block;
+        margin-top: 22px;
+        margin-left: 60px;
+    }
     label #btn {
         top: 8%;
     }
@@ -681,7 +692,11 @@ label #cancel{
         border-radius: 10px;
         /* transition: all 5s ease; */
     }
-
+    .menu{
+        display: block;
+        margin-top: 22px;
+        margin-left: 60px;
+    }
     label #btn {
         top: 13%;
     }
@@ -894,15 +909,6 @@ label #cancel{
         margin-bottom: 10px;
     }
 
-    /* header h2 {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
-
-    nav h2 {
-        margin-left: 10px;
-    } */
-
     .dashboardtext {
 
         display: inline-block;
@@ -931,6 +937,11 @@ label #cancel{
 
     label #btn {
         top: 13%;
+    }
+    .menu{
+        display: block;
+        margin-top: 27px;
+        margin-left: -40%;
     }
 
     nav ul li {
@@ -1043,7 +1054,11 @@ label #cancel{
         border-radius: 10px;
         /* transition: all 5s ease; */
     }
-
+    .menu{
+        display: block;
+        margin-top: 27px;
+        margin-left: -40%;
+    }
     label #btn {
         top: 13%;
     }
@@ -1145,7 +1160,7 @@ label #cancel{
     nav h2 {
         margin-left: 10px;
     }
-
+    
     .dashboardtext {
 
         display: inline-block;
@@ -1171,7 +1186,11 @@ label #cancel{
         border-radius: 10px;
         /* transition: all 5s ease; */
     }
-
+    .menu{
+        display: block;
+        margin-top: 27px;
+        margin-left: -40%;
+    }
     label #btn {
         top: 13%;
     }
