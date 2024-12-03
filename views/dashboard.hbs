@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no>
     <title>Dashboard</title>
-    {{!-- <link rel="stylesheet" href="/css/bootstrap-grid.min.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css"> --}}
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
@@ -13,96 +14,167 @@
 </head>
 
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid" style="width: 100%;">
         <img src="/images/logotele1.jpg" alt="logo" srcset="">
-        <h3 style="margin-top: 10px; font-size: 15px;">Welcome Ade</h3>
+        {{!-- <h3 style="margin-top: 10px; font-size: 15px;">Welcome Ade</h3> --}}
         <h2 class="dashboardtext">Dashboard</h2>
         <form class="d-flex" role="search">
             <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success searchbtn" type="submit">Search</button>
-            <a href="/dashboard/edit-profile/{{patient.patient_id}}" type="button" class="btn btn-light profile"
-                style="top: 10%; font-size:15px"><i class="bi bi-person-square">
-                    Edit Profile</i></a>
         </form>
     </header>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <h3 class="menu" style="margin-left: 70px; margin-top: 20px;"><i class="bi bi-list" id="btn"></i>Menu</h3>
-        <i class="bi bi-x-circle-fill" id="cancel"></i>
-    </label>
-    <nav class="navbars">
-        <ul class="toplist">
-            <img src="/images/logotele1.jpg" alt="logo" srcset="">
-            <h2>Welcome <br>
-                {{patient.firstname}}</h2>
 
 
-            <li><a href=""><i class="bi bi-house-up-fill"></i> Home</a></li>
+    <a href="/dashboard/edit-profile/{{patient.patient_id}}" type="button" class="btn btn-light profile"><i
+            class="bi bi-person-square">
+            Edit Profile</i></a>
 
-            <li><a href="/bookappointment"><i class="bi bi-bookmarks-fill"></i> Book Appointment</a></li>
 
-            <li><a href="/patient/viewdoctor"><i class="bi bi-person-fill"></i> View Doctors</a></li>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <label for="check">
+            <h3 class="menu" style="margin-left: 70px; margin-top: 20px;"><i class="bi bi-list" id="btn"></i>Menu</h3>
+            <i class="bi bi-x-circle-fill" id="cancel"></i>
+        </label>
+        <nav class="navbars">
+            <ul class="toplist">
+                <img src="/images/logotele1.jpg" alt="logo" srcset="">
+                <h2 style="max-width: fit-content; font-size:100%">Welcome <br>
+                    {{patient.firstname}}</h2>
 
-            <li><a href=""><i class="bi">&#x1F9EA;</i> Labs</a></li>
 
-            <li><a href=""><i class="bi bi-capsule"></i> Medicine</a></li>
-            <li>
-            <li><a href=""><i class="bi bi-clipboard2-pulse"></i> Medical Test</a></li>
-            <li>
-            <li><a href=""><i class="bi bi-prescription2"></i></i> Prescriptions</a></li>
-            <li>
-            <li><a href=""><i class="bi bi-file-medical"></i> Health Record</a></li>
-            <li>
-                <ul class="bottomlist">
+                <li><a href=""><i class="bi bi-house-up-fill"></i> Home</a></li>
 
-                    <li><a href=""><i class="bi bi-gear-fill"></i> General</a></li>
+                <li><a href="/bookappointment"><i class="bi bi-bookmarks-fill"></i> Book Appointment</a></li>
 
-                    <li><a href="/logout"><i class="bi bi-box-arrow-left"></i> </i>Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <section>
-        <div class="row">
-            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; justify-content:space-between ">
-                <img src="/images/heartbeat.png" alt="" class="heart">
-                <h5 class="imagetext">Heart rate</h5>
-                <p class="imagetext">90BPM</p>
-            </div>
-            <div class="col-md-6 col-sm-12" style="background-color: #403d39; justify-content:space-between ">
-                <img src="/images/weight-management.png" alt="" class="heart">
-                <h5 class="imagetext" style="margin-left: 20%;">Total Weight</h5>
-                <p class="imagetext">72KG</p>
-            </div>
-            <div class="col-md-6 col-sm-12" style="background-color: #EB5E28; justify-content:space-between ">
-                <img src="/images/Human-red-blood-cells.png" alt="" class="heart">
-                <h5 class="imagetext" >Blood cells</h5>
-                <p class="imagetext">1500μL</p>
-            </div>
-        </div>
+                <li><a href="/patient/viewdoctor"><i class="bi bi-person-fill"></i> View Doctors</a></li>
 
-        <div class="row mt-3">
-            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9;">
-                <img src="/images/team-3copy.jpg" alt="" class="heart">
-                <h4 class="doctortext">Sara Ab</h4>
-                <p style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
-                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
-            </div>
-            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; ">
-                <img src="/images/team-2copy.jpg" alt="" class="heart">
-                <h4 class="doctortext">Mike Myers</h3>
-                <p style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
-                <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
-            </div>
-            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; ">
-                <img src="/images/team-1copy.jpg" alt="" class="heart">
-                 <h4 class="doctortext">Jordan	Michael</h4>
-                <p>Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
-                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+                <li><a href=""><i class="bi">&#x1F9EA;</i> Labs</a></li>
+
+                <li><a href=""><i class="bi bi-capsule"></i> Medicine</a></li>
+                <li>
+                <li><a href=""><i class="bi bi-clipboard2-pulse"></i> Medical Test</a></li>
+                <li>
+                <li><a href=""><i class="bi bi-prescription2"></i></i> Prescriptions</a></li>
+                <li>
+                <li><a href=""><i class="bi bi-file-medical"></i> Health Record</a></li>
+                <li>
+                    <ul class="bottomlist">
+
+                        <li><a href=""><i class="bi bi-gear-fill"></i> General</a></li>
+
+                        <li><a href="/logout"><i class="bi bi-box-arrow-left"></i> </i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <div class="row">
+                <div class="col-lg col-md-4 col-sm-12" style="background-color: #ccc5b9;  ">
+                    <img src="/images/heartbeat.png" alt="" class="heart">
+                    <h5 class="imagetext">Heart rate</h5>
+                    <p class="imagetext">90BPM</p>
+                </div>
+                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #403d39;  ">
+                    <img src="/images/weight-management.png" alt="" class="heart">
+                    <h5 class="imagetext" style="margin-left: 20%;">Total Weight</h5>
+                    <p class="imagetext">72KG</p>
+                </div>
+                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #EB5E28;  ">
+                    <img src="/images/Human-red-blood-cells.png" alt="" class="heart">
+                    <h5 class="imagetext">Blood cells</h5>
+                    <p class="imagetext">1500μL</p>
+                </div>
             </div>
 
-        </div>
-    </section>
+            <div class="row mt-3">
+                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #ccc5b9;">
+                    <img src="/images/team-3copy.jpg" alt="" class="heart">
+                    <h4 class="doctortext">Sara Ab</h4>
+                    <p class="pdoctortext">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                    <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
+                        class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
+                </div>
+                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #ccc5b9; ">
+
+                    <img src="/images/team-2copy.jpg" alt="" class="heart">
+                    <h4 class="doctortext">Mike Myers</h3>
+                        <p class="pdoctortext">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                        <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
+                            class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
+                </div>
+                <div class="col-lg col-md-4 col-sm-12" style="background-color: #ccc5b9; ">
+                    <img src="/images/team-1copy.jpg" alt="" class="heart">
+                    <h4 class="doctortext">Jordan Michael</h4>
+                    <p class="pdoctortext">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                    <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
+                        class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-9 col-md-9 col-sm-9" style="background-color: #e9edc9;; width:100%">
+                    <h5 style="background-color: ;">Explore Departments <a href="">See More</a></h5>
+                </div>
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/cadiologyimg.jpg" alt="Cadiology Image">
+                    <h4>Cardiologist</h4>
+                </div>
+
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/laboratoryimg.jpg" alt="Laboratory Image">
+                    <h4>Laboratory</h4>
+                </div>
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/dentalimg.jpg" alt="Dental image">
+                    <h4>Dentist</h4>
+                </div>
+                {{!-- <div class="col-lg-4" style="background-color: aqua;">
+                    <h3>Hello there</h3>
+                </div> --}}
+
+
+
+
+
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-9 col-md-9 col-sm-9" style="background-color: #e9edc9;; width:100%">
+                    <h5 style="background-color: ;">Latest Health Tips <a href="">See More</a></h5>
+                </div>
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/cadiologyimg.jpg" alt="Cadiology Image">
+                    <p class="tipsprg">Sugary drinks like sodas, fruit juices, and sweetened teas are the primary source of added sugar
+                        in the American diet. Unfortunately, findings from several studies point to sugar-sweetened
+                        beverages increasing risk
+                        of heart disease and type 2 diabetes, even in people who are not carrying excess body fat</p>
+                </div>
+
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/laboratoryimg.jpg" alt="Laboratory Image">
+                    <p class="tipsprg">Some people avoid nuts because they are high in fat. However, nuts and seeds are incredibly
+                        nutritious. They are packed with protein, fiber, and a variety of vitamins and minerals.
+                        Nuts may help you lose weight and reduce the risk of developing type 2 diabetes and heart
+                        disease.</p>
+                </div>
+                <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
+                    <img src="/images/dentalimg.jpg" alt="Dental image">
+                    <p class="tipsprg">Ultra-processed foods (UPFs) are foods containing ingredients that are significantly modified
+                        from their original form. They often contain additives like added sugar, highly refined oil,
+                        salt, preservatives, artificial sweeteners, colors, and flavors as well.</p>
+                </div>
+                {{!-- <div class="col-lg-4" style="background-color: aqua;">
+                    <h3>Hello there</h3>
+                </div> --}}
+
+
+
+
+
+            </div>
+
+        </section>
+    </div>
 </body>
 <script src="/js/bootstrap.bundle.min.js"></script>
 

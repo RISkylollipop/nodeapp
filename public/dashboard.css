@@ -1,10 +1,17 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: #e9edc9;
     display: block;
+    background-color: #e9edc9;
     line-height: 2rem;
-    max-width: 95%;
+    max-width: 100%;
+}
+
+.container{
+    background-color: #e9edc9;
+    width: 100%;
+    /* padding: 0;
+    margin: 0; */
 }
 
 header {
@@ -25,6 +32,11 @@ header h3 {
 .dashboardtext {
     font-size: 2rem;
     margin-left: 42%;
+}
+
+.profile{
+    position: absolute;
+    top: 10%;
 }
 
 nav {
@@ -99,6 +111,10 @@ nav h2 {
 .doctortext{
     margin-left: 30%;
 }
+.pdoctortext{
+    margin-top: 40px;
+}
+
 
 .directmessage{
     text-align: center;
@@ -109,6 +125,11 @@ nav h2 {
 directmessage i{
     margin-right: 5px;
 }
+
+.tipsprg{
+    padding: 0 10px;
+}
+
 label #btn,
 label #cancel {
     position: absolute;
@@ -210,6 +231,11 @@ label #cancel{
     flex-wrap: wrap;
     width: 100%;
 }
+
+.row::after{
+    display: block;
+    content: "";
+}
 .col-1 {width: 8.33%;}
 
 .col-2 {width: 16.66%;}
@@ -238,7 +264,7 @@ label #cancel{
 
 [class*="col-"] {
     box-sizing: border-box;
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
   
     border-radius: 10px;
@@ -484,6 +510,7 @@ header img {
         text-align: center;
         font-size: 20px;
         margin-left: 14%;
+        /* display: none; */
     }
 
     nav {
@@ -504,9 +531,11 @@ header img {
         border-radius: 10px;
         /* transition: all 5s ease; */
     }
-
+label #cancel{
+    transition: all 3s ease;
+}
     label #btn {
-        top: 13%;
+        top: 8%;
     }
 
     nav ul li {
@@ -529,15 +558,18 @@ header img {
     section{
         display: block;
         width: 70%;
+        transition: all 3s ease;
     }
     section .row{
         margin-left: 3%;
+        transition: all 3s ease;
     }
 
     #check:checked~label #cancel {
         position: fixed;
         left: 30%;
-        top: 12.5%;
+        top: 7.5%;
+        transition: all 3s ease;
     }
 
     .searchbtn, .search {
@@ -565,7 +597,7 @@ header img {
         right: 2%;
     }
     #check:checked~section{
-        margin-left: 180px;
+        margin-left: 160px;
         width: 50%;
         transition: all 3s ease;
     }
@@ -573,12 +605,7 @@ header img {
 }
 
 @media (min-width: 410px) and (max-width: 599px) {
-    header {
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        padding: 0;
-    }
+    
 header img {
     width: 50px;
     margin-bottom: 10px;
@@ -590,6 +617,7 @@ header img {
         text-align: center;
         font-size: 20px;
         margin-left: 14%;
+        
     }
 
     nav {
@@ -637,7 +665,8 @@ header img {
         width: 70%;
     }
     section .row{
-        margin-left: 34%;
+        margin-left: 30%;
+        margin-right: 0;
     }
 
     #check:checked~label #cancel {
@@ -648,18 +677,19 @@ header img {
 
     .searchbtn {
         position: absolute;
-        max-width: 40px;
+        max-width: 45px;
         font-size: 12px;
-        right: 6%;
-        padding: 4px;
+        right: 2%;
+        padding: 7px 10px 7px 5px;
         top: 2%;
     }
 
     .search {
         width: 90px;
+        font-size: 15px;
         position: absolute;
-        top: 1.5%;
-        right: 15%;
+        top: 2%;
+        right: 12%;
     }
     table{
         width: 100%;
@@ -671,7 +701,8 @@ header img {
     }
 
     #check:checked~section{
-        margin-left: 160px;
+        margin-left: 140px;
+        margin-right: 0px;
         width: 50%;
         transition: all 3s ease;
     }
@@ -752,7 +783,7 @@ header img {
         width: 70%;
     }
     section .row{
-        margin-left: 28%;
+        margin-left: 22%;
     }
 
     #check:checked~label #cancel {
@@ -785,7 +816,7 @@ header img {
         right: 6%;
     }
     #check:checked~section{
-        margin-left: 120px;
+        margin-left: 100px;
         width: 50%;
         transition: all 3s ease;
     }
@@ -1029,10 +1060,9 @@ header img {
 }
 
 @media (min-width: 1010px) {
-
-    header {
-        width: 100%;
-        background-color: white;
+    body{
+        padding: 0;
+        margin: 0;
     }
 header img {
     width: 50px;
@@ -1058,7 +1088,7 @@ header img {
         padding-top: 20px;
         padding-bottom: 10%;
         line-height: 20px;
-        width: 200px;
+        width: 220px;
         max-height: 100vh;
         margin-top: -5%;
 
@@ -1108,10 +1138,10 @@ header img {
 
     section{
         display: block;
-        width: 70%;
+        width: 75%;
     }
     section .row{
-        margin-left: 20%;
+        margin-left: 10%;
     }
 table{
     width: 100%;
@@ -1132,7 +1162,7 @@ table{
 
     .searchbtn {
         position: absolute;
-        right: 7%;
+        right: 1%;
         top: 3%;
     }
 
@@ -1140,13 +1170,13 @@ table{
         width: 200px;
         position: absolute;
         top: 3%;
-        right: 13%;
+        right: 7%;
     }
-
     .profile{
+        font-size:15px;
         position: absolute;
-        top: 7%;
-        right: 5%;
+        top: 12%;
+        right: 1%;
     }
 
 }
@@ -1246,7 +1276,7 @@ table{
     }
 } */
 
-/* Large screen (Desktops) */
+
 /* @media (min-width: 1024px) {
     .col-1 {
         width: 25%;
@@ -1263,10 +1293,10 @@ table{
     .col-4 {
         width: 25%;
     }
-} */
+}
 
 
-/* @media (min-width: 1440px) {
+ @media (min-width: 1440px) {
     .col-1 {
         width: 20%;
     }
@@ -1282,4 +1312,4 @@ table{
     .col-4 {
         width: 20%;
     }
-}
+} */
