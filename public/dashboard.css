@@ -102,6 +102,12 @@ nav h2 {
     display: block;
 }
 
+#calendar{
+    width: 400px;
+    height: 300px;
+    background-color: #ccc5b9;
+}
+
 #check {
     display: none;
 }

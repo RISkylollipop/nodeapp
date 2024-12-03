@@ -48,14 +48,16 @@
                         <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
                                 class="bi bi-telephone-fill"></i></a>
                     </li>
+                    <label class="btn btn-light" onclick="goBack()">Back</label>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <label class="btn btn-light">Logout/profile</label>
+                            <label class="btn btn-light">Menu</label>
                         </a>
                         <ul class="dropdown-menu" style="margin-left: 50px;">
                              {{!-- <li><a class="dropdown-item" href="#">Profile</a></li> --}}
                               <li><a class="dropdown-item" href="/admin/viewpatient">View Patients</a></li>
+                              <li><a class="dropdown-item" href="/admin/viewdoctor">View Available Doctors</a></li>
                                <li><a class="dropdown-item" href="/admin/viewappointment">View Appointment</a></li>
                                <li><a class="dropdown-item" href="/admin/schedules">View/Create Schedules</a></li>
                             <hr class="dropdown-divider">
@@ -78,6 +80,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     {{!-- <script src="/js/bootstrap.bundle.min.js"></script> --}}
     <script src="home.js"></script>
+    <script src="/back.js"></script>
 
 </body>
 

@@ -17,8 +17,9 @@ router.post(`/signin`, login.login)
 
 router.post(`/bookappointment`, isAuthenticated, bookappointment.book)
 
+router.get(`/admin/viewdoctor`, isAuthenticated, viewdoctor.doctor)
 router.get(`/patient/viewdoctor`, isAuthenticated, viewdoctor.doctor)
-router.post(`/patient/viewdoctor`, isAuthenticated, viewdoctor.find)
+router.post(`/admin/viewdoctor`, isAuthenticated, viewdoctor.find)
 // // // // // // //
 router.get(`/admin/viewpatient`,  viewdoctor.viewpatient)
 

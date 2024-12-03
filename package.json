@@ -13,10 +13,12 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
+    "fullcalendar": "^6.1.15",
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.4",

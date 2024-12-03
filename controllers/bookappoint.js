@@ -82,9 +82,10 @@ doctors.specialty,
 appointment.status 
 from 
 appointment join doctors
-on appointment.doctor_id = doctors.doctor_id where appointment.firstname like ? or appointment.email`
+on appointment.doctor_id = doctors.doctor_id 
+where appointment.firstname like ? or appointment.email like ? or doctors.email like ? or doctors.specialty like ? or appointment.status like ?`
 
-    db.query(findappointments, ['%' + find + '%', '%' + find + '%'], (err, rows) => {
+    db.query(findappointments, ['%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%'], (err, rows) => {
         try {
             res.render(`appointments`, { rows })
         } catch (error) {

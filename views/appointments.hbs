@@ -48,10 +48,9 @@
               <a class="nav-link" href="https://wa.me/2348140470626" target="_blank">Mail Us <i
                   class="bi bi-whatsapp"></i></a>
             </li>
-            {{!-- <li class="nav-item">
-              <a class="nav-link btn btn-light" style="margin-right: 3px;" href="/doctordash"><i
-                  class="bi bi-arrow-left-square-fill"><b>Back</b></i> </a>
-            </li> --}}
+            <li class="nav-item">
+              <label class="btn btn-light" onclick="goBack()">Back</label>
+            </li>
             {{!-- <li class="nav-item">
               <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
                   class="bi bi-telephone-fill"></i></a>
@@ -90,7 +89,7 @@
 
         <h3>WElcome {{doctor.firstname}}</h3>
         <table class="table mt-5">
-          <h2 style="margin-bottom: -40px; text-align: center; color:white;">Patients Data</h2>
+          <h2 style="margin-bottom: -40px; text-align: center; color:white;">Patients Appointment Data</h2>
           <thead>
             <tr class="theading">
               <th scope="col">appointment_id</th>
@@ -147,6 +146,7 @@
   {{!--
   <script src="/js/bootstrap.bundle.min.js"></script> --}}
   <script scr="home.js"></script>
+  <script src="/back.js"></script>
 </body>
 
 </html>

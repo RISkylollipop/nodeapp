@@ -1,4 +1,5 @@
 const express = require(`express`);
+// const fullcalendar = require(`fullcalendar`)
 const db = require(`./database`)
 const cookieParser = require(`cookie-parser`);
 const { isAuthenticated } = require(`./middlewares/auth`);
@@ -52,6 +53,10 @@ router.get(`/dashboard`, isAuthenticated, (req, res)=>{
     res.render(`dashboard`,{ patient: req.patients })
 })
 
+app.get(`/calendar`, (req, res)=>{
+
+    res.render(`calendar`)
+})
 
 router.get(`/dashboard/edit-profile`, (req, res)=>{
     console.log(req.url);

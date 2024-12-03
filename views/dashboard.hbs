@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
+    {{!--
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/main.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/main.min.js"></script> --}}
     <link rel="stylesheet" href="/dashboard.css">
+
+    <style>
+
+
+
+    </style>
 </head>
 
 <body>
@@ -87,19 +97,74 @@
                 </div>
             </div>
 
+
+
+
+            <div class="row mt-3" style="background-color: #e9edc9;">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <h4 style="color: white;">Book Your Appointment below</h4>
+                    <a href="/bookappointment" id="calendar"></a></a>
+                </div>
+
+                <div class="col-lg col-md col-sm">
+
+                    <div class="row" style="padding-top: 20px;">
+                        <div class="col-lg">
+                            <img src="/images/ourdoctor.png" alt="">
+                        </div>
+                        <div class="col-lg" style="margin-left: -100px;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg">
+                            <img src="/images/surgeryprocess.png" alt="">
+                        </div>
+                        <div class="col-lg" style="margin-left: -100px;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg">
+                            <img src="/images/labworkers.png" alt="">
+                        </div>
+                        <div class="col-lg" style="margin-left: -100px;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
             <div class="row mt-3">
                 <div class="col-lg col-md-4 col-sm-12 " style="background-color: #ccc5b9;">
-                    <img src="/images/team-3copy.jpg" alt="" class="heart">
-                    <h4 class="doctortext">Sara Ab</h4>
-                    <p class="pdoctortext">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
-                    <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
-                        class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
+                    
+                    <img src="/images/team-2copy.jpg" alt="" class="heart">
+                    <h4 class="doctortext">Mike Myers</h3>
+                        <p style="margin: 40px">Appointment: 3:00pm</p>
+                        <p class="pdoctortext"><b>Primary Concern: </b>Persistent Blurred Vision and significant eye
+                            discomfort, diagnose and manage vision problems, including refractive errors like myopia,
+                            hyperopia, and astigmatism. They also treat common eye conditions such as dry eye,
+                            infections, and allergies.</p>
+                        <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
+                            class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
+
                 </div>
-                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #ccc5b9; ">
+                <div class="col-lg col-md-4 col-sm-12 " style="background-color: #ccc5b9; line-height:1rem; ">
 
                     <img src="/images/team-2copy.jpg" alt="" class="heart">
                     <h4 class="doctortext">Mike Myers</h3>
-                        <p class="pdoctortext">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                        <p style="margin: 40px">Appointment: 3:00pm</p>
+                        <p class="pdoctortext"><b>Primary Concern: </b>Persistent Blurred Vision and significant eye
+                            discomfort, diagnose and manage vision problems, including refractive errors like myopia,
+                            hyperopia, and astigmatism. They also treat common eye conditions such as dry eye,
+                            infections, and allergies.</p>
                         <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;"
                             class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i> Direct Message</a>
                 </div>
@@ -129,7 +194,7 @@
                     <img src="/images/dentalimg.jpg" alt="Dental image">
                     <h4>Dentist</h4>
                 </div>
-                {{!-- <div class="col-lg-4" style="background-color: aqua;">
+                {{!-- <div class="col-lg-4">
                     <h3>Hello there</h3>
                 </div> --}}
 
@@ -144,7 +209,8 @@
                 </div>
                 <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
                     <img src="/images/cadiologyimg.jpg" alt="Cadiology Image">
-                    <p class="tipsprg">Sugary drinks like sodas, fruit juices, and sweetened teas are the primary source of added sugar
+                    <p class="tipsprg">Sugary drinks like sodas, fruit juices, and sweetened teas are the primary source
+                        of added sugar
                         in the American diet. Unfortunately, findings from several studies point to sugar-sweetened
                         beverages increasing risk
                         of heart disease and type 2 diabetes, even in people who are not carrying excess body fat</p>
@@ -152,18 +218,20 @@
 
                 <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
                     <img src="/images/laboratoryimg.jpg" alt="Laboratory Image">
-                    <p class="tipsprg">Some people avoid nuts because they are high in fat. However, nuts and seeds are incredibly
+                    <p class="tipsprg">Some people avoid nuts because they are high in fat. However, nuts and seeds are
+                        incredibly
                         nutritious. They are packed with protein, fiber, and a variety of vitamins and minerals.
                         Nuts may help you lose weight and reduce the risk of developing type 2 diabetes and heart
                         disease.</p>
                 </div>
                 <div class="col-lg col-md col-sm" style="justify-items: center; background-color:white">
                     <img src="/images/dentalimg.jpg" alt="Dental image">
-                    <p class="tipsprg">Ultra-processed foods (UPFs) are foods containing ingredients that are significantly modified
+                    <p class="tipsprg">Ultra-processed foods (UPFs) are foods containing ingredients that are
+                        significantly modified
                         from their original form. They often contain additives like added sugar, highly refined oil,
                         salt, preservatives, artificial sweeteners, colors, and flavors as well.</p>
                 </div>
-                {{!-- <div class="col-lg-4" style="background-color: aqua;">
+                {{!-- <div class="col-lg-4">
                     <h3>Hello there</h3>
                 </div> --}}
 
@@ -176,6 +244,18 @@
         </section>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendarEl = document.getElementById('calendar')
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        })
+        calendar.render();
+
+    })
+</script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 
 </html>

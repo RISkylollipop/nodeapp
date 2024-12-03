@@ -14,7 +14,7 @@ exports.doctor = (req, res)=>{
             console.log(err);
             
         }else{
-            console.log(rows);
+            // console.log(rows);
             res.render(`viewdoctors`,{rows});     
         }        
     } )   

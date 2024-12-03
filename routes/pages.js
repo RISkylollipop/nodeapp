@@ -53,6 +53,10 @@ router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
 
 // ADMINS
 
+router.get(`/admin`, (req, res)=>{
+    res.status(200).render(`adminpage`)
+})
+
 router.get(`/registeradmin`, (req, res)=>{
     res.render(`adduser`)
 })

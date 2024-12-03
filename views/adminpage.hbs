@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/home.css">
+
+    <style>
+        #calendar{
+            width: 400px;
+            margin: 40px auto;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="logotele1.jpg" alt="LOGO"></a>
+        <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="LOGO"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -44,43 +51,41 @@
               <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
                   class="bi bi-telephone-fill"></i></a>
             </li>
-            <label class="btn btn-light" onclick="goBack()">Back</label>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <label class="btn btn-light">Logins and Register</label>
               </a>
               <ul class="dropdown-menu" style="margin-left: 50px;">
-                 <li><a class="dropdown-item" href="/signup">Register</a>
-                <li><a class="dropdown-item" href="/signin">Login</a> </li>
+                 <li><a class="dropdown-item" href="/admin/register">Register</a>
+                <li><a class="dropdown-item" href="/admin/login">Login</a> </li>
                   <hr class="dropdown-divider">
                 </li>
-                 <li><a class="dropdown-item" href="/bookappointment">book AppointMent</a></li>
+                 {{!-- <li><a class="dropdown-item" href="/bookappointment">book AppointMent</a></li> --}}
               </ul>
             </li>
-            {{!-- <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> --}}
-          </ul>
-          {{!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> --}}
     </div>
   </div>
 </nav>
 
-<h2>Welcome To Patient Page</h2>
+<h2>Welcome To Medic Health Admin Page</h2>
 
+<div id="calendar"></div>
 
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+      calendar.render();
+    });
+  </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     {{!-- <script src="/js/bootstrap.bundle.min.js"></script> --}}
     <script src="home.js"></script>
-    <script src="/back.js"></script>
 </body>
 </html>
