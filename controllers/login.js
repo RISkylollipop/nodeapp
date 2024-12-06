@@ -22,7 +22,7 @@ exports.login = (req, res) => {
                     error: `Invalid Email or password`
                 })
             }
-            const token = jwt.sign({ patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email }, process.env.JWT_SECRET, {
+            const token = jwt.sign({role:'patient', patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email }, process.env.JWT_SECRET, {
                 expiresIn: process.env.JWT_EXPIRES
             })
 
@@ -35,7 +35,7 @@ exports.login = (req, res) => {
 
             // console.log(cookieoptions);
 
-            res.cookie(`userRegister`, token, cookieoptions)
+            res.cookie(`patientRegister`, token, cookieoptions)
             res.redirect(`/dashboard`)
         })
     }

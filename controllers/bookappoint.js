@@ -11,7 +11,7 @@ exports.book = (req, res) => {
     // appointment_date: 
     // appointment_time: 
 
-    const { firstname, lastname, email, phone, appointment_date, appointment_time } = req.body;
+    const { firstname, lastname, email, phone, appointment_date, appointment_time, status } = req.body;
     // console.log(req.body);
     doctor_id = parseInt(req.body.doctorlist)
     // console.log(doctor_id);
@@ -23,7 +23,6 @@ exports.book = (req, res) => {
     db.query(`select * from patients where email = ?`, [email], (err, result) => {
         if (err) { console.log(err); }
         else if (!result[0]) {
-            alert(`Please Use Your Register Email Address and Surname`)
             res.redirect(`/bookappointment`)
         }
         else if (result[0]) {
@@ -32,7 +31,7 @@ exports.book = (req, res) => {
             //    console.log(patientid);
 
         }
-        db.query(`insert into appointment set ?`, { firstname: firstname, appointment_date: appointment_date, email: email, appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id }, (err, result) => {
+        db.query(`insert into appointment set ?`, { firstname: firstname, appointment_date: appointment_date, email: email, appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, status:status }, (err, result) => {
             if (err) console.log(err);
             else {
                 res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}` })
@@ -57,7 +56,7 @@ on appointment.doctor_id = doctors.doctor_id;`
 
 
     db.query(viewappointments, (err, rows) => {
-        try {
+        try { 
             res.render(`appointments`, {
 
                 rows: rows
@@ -270,7 +269,7 @@ exports.viewschedules = (req, res) => {
 }
 
 exports.createschedule = (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
     const { appointment_type, email, status, note, appointment_time, appointment_date } = req.body
 

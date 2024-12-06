@@ -18,7 +18,7 @@
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="logotele1.jpg" alt="Logo"></a>
+        <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,14 +48,9 @@
               <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
                   class="bi bi-telephone-fill"></i></a>
             </li>
-            {{!-- <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> --}}
+
           </ul>
-          {{!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> --}}
+
         </div>
       </div>
     </nav>
@@ -68,7 +63,7 @@
       <!-- <i class="bi bi-person-circle"></i> -->
       <div class="card-body">
 
-        <form action="/auth/bookappointment" method="post">
+        <form action="/bookappointment" method="post">
 
           <div>
             {{#if error}}
@@ -91,53 +86,55 @@
             {{/each}}
 
           </div>
-          <h4 style="text-align: center;">Book AppointMent</h4 > <div class="text-end" style="margin-bottom: 20px;"><a href="/dashboard" type="btn btn-light"><i class="bi bi-backspace-reverse-fill"></i>Back</a></div>
+          <h4 style="text-align: center;">Book AppointMent</h4>
+          <div class="text-end" style="margin-bottom: 20px;"><a href="/dashboard" class="btn btn-light"><i
+                class="bi bi-backspace-reverse-fill"></i>Back</a></div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Surname">
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Surname" required>
             <label for="firstname">Surname</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control first" name="lastname" id="lastname" placeholder="First Given Name">
+            <input type="text" class="form-control first" name="lastname" id="lastname" placeholder="First Given Name" required>
             <label for="lastname">First Name</label>
           </div>
 
           <div class="form-floating mb-3">
             <input type="email" class="form-control email" name="email" id="address" onkeyup="emailval()"
-              placeholder="Email Address">
+              placeholder="Email Address" required>
             <small class="emailerror"></small>
             <label for="email">Email Address</label>
           </div>
 
           <div class="form-floating mb-3">
-            <input type="tel" class="form-control phone" name="phone" id="phone" placeholder="Phone Number">
+            <input type="tel" class="form-control phone" name="phone" id="phone" placeholder="Phone Number" required>
             <label for="phone">Phone Number</label>
           </div>
           <div class="form-floating mb-3">
             <input type="date" class="form-control phone" name="appointment_date" id="appointment_date"
-              placeholder="Appointment_date">
+              placeholder="Appointment_date" required>
             <label for="appointment_date">Appointment_date</label>
           </div>
           <div class="form-floating mb-3">
             <input type="time" class="form-control phone" name="appointment_time" id="appointment_time"
-              placeholder="Appointment_time">
+              placeholder="Appointment_time" required>
             <label for="time">Appointment_time</label>
           </div>
-          {{!-- Design by Kelani Yunus Oluwadamilare
-          email yunuskelani2@gmail.com//
-          phone: +2348140470626 --}}
 
           <label for="doctorlist">Select a doctor</label>
-          <select name="doctorlist" id="doctorlist" style="width: 60%">
-
+          <select name="doctorlist" id="doctorlist" style="width: 60%" required>
+            <option value="N/A" selected disabled>Select Doctor</option>
             {{#each rows}}
-            <option value="{{this.doctor_id}}">{{this.firstname}} , {{this.lastname}} [{{this.specialty}}] {{this.status}}</option>
+            <option value="{{this.doctor_id}}">{{this.firstname}} , {{this.lastname}} [{{this.specialty}}]
+              {{this.status}}</option>
             {{/each}}
 
           </select>
           <br><br><br>
+          <p>Confirm Booking of this appointment<input type="checkbox" name="status" value="scheduled" id="Check"
+              required> </p>
 
           <input type="submit" class="btn btn-primary register" value="Book AppointMent">
-          
+
         </form>
 
       </div>
