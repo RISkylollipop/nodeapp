@@ -185,6 +185,9 @@ label #cancel {
 
 #check:checked~.navbars {
     left: 0;
+    position: fixed;
+    z-index: 1000;
+    
 }
 
 #check:checked~label #btn {

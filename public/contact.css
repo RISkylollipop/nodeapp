@@ -1,0 +1,98 @@
+
+
+
+form {
+    display: block;
+    width: 70%;
+    margin: 20% auto;
+}
+iframe{
+    display: block;
+    margin: 50px auto;
+
+}
+input {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.input_group_label {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+}
+
+.form-label {
+    position: absolute;
+    margin-top: -10%;
+    transition: all 3s ease;
+}
+
+
+input {
+    top: 2%
+}
+
+
+
+input::placeholder {
+    color: transparent;
+}
+
+
+input {
+    border-radius: 10px;
+    width: 90%;
+    border: 2px solid lightblue;
+    outline: 2px;
+    background-color: transparent;
+}
+
+card {
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 20px 20px 5px rgba(248, 247, 247, 0.7),
+        -20px -20px -2px rgba(248, 247, 247, 0.3);
+}
+
+
+@media (min-width: 900px){
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+    }
+    footer{
+		padding-top: 5%;
+        height: fit-content;
+	}
+    nav ul{
+        margin-left: 20%;
+    }
+    input {
+        margin-bottom: 30px;
+        height: 50px;
+    }
+    
+    .input_group_label {
+        position: absolute;
+        top: 20%;
+        left: 20px;
+    }
+    
+    .form-label {
+        position: absolute;
+        margin-top: -5%;
+        transition: all 3s ease;
+    }
+    
+    
+    input {
+        top: 2%
+    }
+}

@@ -68,3 +68,18 @@ router.post(`/admin/quickmessage`, comment.commentadmin)
 
 
 module.exports = router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
