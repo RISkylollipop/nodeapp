@@ -39,3 +39,15 @@ db.query(`insert into comments set ?`, {email:email, comment:comment}, (err, res
     }
 })    
 }
+
+exports.commentadmin = (req, res)=>{
+    // console.log(req.body); email comment
+
+const {comment, email}= req.body
+db.query(`insert into comments set ?`, {email:email, comment:comment}, (err, result)=>{
+    if(err){console.log(err);
+    }else{
+        res.status(200).redirect(`/admin`)
+    }
+})    
+}

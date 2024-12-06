@@ -85,7 +85,11 @@ router.get(`/admin/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
 
 
 
+// Contact
 
+router.get('/contact', (req, res)=>{
+    res.status(200).render(`contact`)
+})
 
 
 router.get(`/logout`, (req, res)=>{

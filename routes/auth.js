@@ -64,6 +64,7 @@ router.post(`/userlogin`, login.userlogin)
 router.post(`/quickmessage`, comment.comment)
 router.post(`/patient/quickmessage`, comment.commentpatient)
 router.post(`/doctor/quickmessage`, comment.commentdoctor)
+router.post(`/admin/quickmessage`, comment.commentadmin)
 
 
 module.exports = router
