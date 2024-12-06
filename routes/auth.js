@@ -7,6 +7,7 @@ const bookappointment = require(`../controllers/bookappoint`)
 const viewdoctor = require(`../controllers/viewdoctor`)
 const router = require("./pages");
 const deleted = require(`../controllers/delete`)
+const comment = require(`../controllers/comment`)
 const { isAuthenticated } = require(`../middlewares/auth`)
 const { isAuthenticateddoctororadminoradmin } = require(`../middlewares/authdoctor`)
 
@@ -60,7 +61,9 @@ router.post(`/login`, doctorlogin.doctorlogin)
 router.post(`/adduser`, register.adduser)
 router.post(`/userlogin`, login.userlogin)
 
-
+router.post(`/quickmessage`, comment.comment)
+router.post(`/patient/quickmessage`, comment.commentpatient)
+router.post(`/doctor/quickmessage`, comment.commentdoctor)
 
 
 module.exports = router

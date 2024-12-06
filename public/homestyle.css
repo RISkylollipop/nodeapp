@@ -6,8 +6,19 @@ footer {
 	line-height: 1.5rem;
 }
 
+.header{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the header stays above other elements */
+    background-color: #fff; /* Optional: Set a background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 body {
 	background-color: aliceblue;
+	padding-top: 60px;
 }
 
 /* section3 starts here */

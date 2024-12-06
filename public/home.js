@@ -51,3 +51,12 @@ function passmatch() {
     }
 }
 
+// alert('letgo')
+let commentsub = document.getElementById('commentsub')
+let commentform = document.getElementById('commentform')
+let commenttext = document.getElementById('commenttext')
+
+commentform.addEventListener(`submit`, function commnentsubmit() {
+    commenttext.textContent = "Comment Submitted successfullly"
+    commenttext.style.color = "green"
+})

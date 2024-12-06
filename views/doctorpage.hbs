@@ -7,7 +7,7 @@
     <title>Medics Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="Logo"></a>
@@ -68,9 +68,9 @@
                                 {{!-- <li><a class="dropdown-item" href="/viewpatient">View Patients</a></li> --}}
                             </ul>
                         </li>
-                        
+
                     </ul>
-                  
+
                 </div>
             </div>
         </nav>
@@ -327,151 +327,159 @@
         </div>
         </div>
     </section>
-{{!-- <section id="register">
-    <div class="container">
+    {{!-- <section id="register">
+        <div class="container">
 
-        <div class="card card-cont mt-5 mb-5">
-            <img src="/profileimg.jpg" class="card-img-top" alt="profile picture">
-            <!-- <i class="bi bi-person-circle"></i> -->
-            <div class="card-body">
+            <div class="card card-cont mt-5 mb-5">
+                <img src="/profileimg.jpg" class="card-img-top" alt="profile picture">
+                <!-- <i class="bi bi-person-circle"></i> -->
+                <div class="card-body">
 
-                <form action="/auth/doctorregister" method="post">
+                    <form action="/auth/doctorregister" method="post">
 
-                    <div>
-                        {{#if error}}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            {{error}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div>
+                            {{#if error}}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{error}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {{/if}}
+
+                            {{#if message}}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {{/if}}
+
                         </div>
-                        {{/if}}
-
-                        {{#if message}}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <h4 style="text-align: center;">Doctor Register Here</h4>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                placeholder="Surname" required>
+                            <label for="firstname">Surname</label>
                         </div>
-                        {{/if}}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control first" name="lastname" id="lastname"
+                                placeholder="First Given Name" required>
+                            <label for="lastname">First Name</label>
+                        </div>
 
-                    </div>
-                    <h4 style="text-align: center;">Doctor Register Here</h4>
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Surname" required>
-                        <label for="firstname">Surname</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control first" name="lastname" id="lastname"
-                            placeholder="First Given Name" required>
-                        <label for="lastname">First Name</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control email" name="email" id="email" onkeyup="emailval()"
+                                placeholder="Email Address" required>
+                            <small class="emailerror"></small>
+                            <label for="email">Email Address</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control email" name="email" id="email" onkeyup="emailval()"
-                            placeholder="Email Address" required>
-                        <small class="emailerror"></small>
-                        <label for="email">Email Address</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control phone" name="phone" id="phone"
+                                placeholder="Phone Number" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="tel" class="form-control phone" name="phone" id="phone" placeholder="Phone Number" required>
-                        <label for="phone">Phone Number</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="address" id="address" placeholder="Home Address" required>
-                        <label for="address">Home Address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="date" class="form-control" name="date_of_birth" id="date_Of_birth"
-                            placeholder="Date_Of_Birth" required>
-                        <label for="date_Of_birth">Date_Of_Birth</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <label for="gender"></label>
-                        <select name="gender" id="gender" class="form-select" required>
-                            <option value="N/A">Select</option>
-                            <option value="Female">Female</option>
-                            <option value="Male">Male</option>
-                        </select>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="address" id="address"
+                                placeholder="Home Address" required>
+                            <label for="address">Home Address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="date_of_birth" id="date_Of_birth"
+                                placeholder="Date_Of_Birth" required>
+                            <label for="date_Of_birth">Date_Of_Birth</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="gender"></label>
+                            <select name="gender" id="gender" class="form-select" required>
+                                <option value="N/A">Select</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
 
 
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control password" onkeyup="pass()" onkeydown="pass()"
-                            name="password" id="password" placeholder="Password">
-                        <small class="passworderror"></small>
-                        <label for="password">Password</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control password" onkeyup="pass()" onkeydown="pass()"
+                                name="password" id="password" placeholder="Password">
+                            <small class="passworderror"></small>
+                            <label for="password">Password</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control passwordconfirm" name="passwordconfirm"
-                            id="passwordconfirm" placeholder="Confirm Password">
-                        <label for="passwordconfirm">Confirm Password</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control passwordconfirm" name="passwordconfirm"
+                                id="passwordconfirm" placeholder="Confirm Password">
+                            <label for="passwordconfirm">Confirm Password</label>
+                        </div>
 
-                    <input type="submit" class="btn btn-primary register" value="Register">
-                </form>
-                <p style="text-align: center;">If you already have an account login <a href="#login">here</a></p>
-            </div>
-        </div> </div>
-</section> --}}
-
-
-
-
-        {{!-- <footer style="background-color: currentColor;"> --}}
-
-
-        </footer>
-
-        {{!-- <footer class="mt-5" style="background-color: aquamarine;">
-            <div class="sectfoot">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h3>Address</h3>
-                        <ul class="line">
-                            <li><b>&#61987;</b> 123 street Gaa Odota</li>
-                            <li><b>&#128222;</b> +234-814-047-0626</li>
-                            <li><b>&#128231;</b> Info@example.com</li>
-                            <ul>
-                                <li><a href=""><img src="twitter.avif" alt=""></a></li>
-                                <li><a href=""><img src="facebookicon.png" alt=""></a></li>
-                                <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
-                            </ul>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h3>Services</h3>
-                        <ul>
-                            <li style="font-weight: 900;"><b><b>&#x3E;</b></b> Cadiology</li>
-                            <li style="font-weight: 900;">&#x3E; Surgery</li>
-                            <li style="font-weight: 900;">&#x3E; Pulmonary</li>
-                            <li style="font-weight: 900;">&#x3E; Neurology</li>
-                            <li style="font-weight: 900;">&#x3E; Orthopedics</li>
-                            <li style="font-weight: 900;">&#x3E; Laboratory</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li>&#x3E;<a href=""> About Us</a></li>
-                            <li>&#x3E; <a href=""> Contact Us</a></li>
-                            <li>&#x3E; <a href=""> Our Services</a></li>
-                            <li>&#x3E; <a href=""> Terms & Condition</a></li>
-                            <li>&#x3E; <a href=""> Support</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h3>Newsletter</h3>
-                        <h4>Lorem ipsum dolor sit amet consectetur, <br>
-                            adipisicing elit. Fuga</h4>
-                        <input type="email" placeholder="Email.."> <button type="submit">Sign Up</button>
-                    </div>
+                        <input type="submit" class="btn btn-primary register" value="Register">
+                    </form>
+                    <p style="text-align: center;">If you already have an account login <a href="#login">here</a></p>
                 </div>
             </div>
-        </footer> --}}
+        </div>
+    </section> --}}
+
+
+
+
+
+
+    <footer class="mt-5" style="background-color: aquamarine;">
+        <div class="sectfoot">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h3>Address</h3>
+                    <ul class="line">
+                        <li><b>&#61987;</b> 123 street Gaa Odota</li>
+                        <li><b>&#128222;</b> +234-814-047-0626</li>
+                        <li><b>&#128231;</b> Info@example.com</li>
+                        <ul>
+                            <li><a href=""><img src="twitter.avif" alt=""></a></li>
+                            <li><a href=""><img src="facebookicon.png" alt=""></a></li>
+                            <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h3>Services</h3>
+                    <ul>
+                        <li style="font-weight: 900;"><b><b>&#x3E;</b></b> Cadiology</li>
+                        <li style="font-weight: 900;">&#x3E; Surgery</li>
+                        <li style="font-weight: 900;">&#x3E; Pulmonary</li>
+                        <li style="font-weight: 900;">&#x3E; Neurology</li>
+                        <li style="font-weight: 900;">&#x3E; Orthopedics</li>
+                        <li style="font-weight: 900;">&#x3E; Laboratory</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>&#x3E;<a href=""> About Us</a></li>
+                        <li>&#x3E; <a href=""> Contact Us</a></li>
+                        <li>&#x3E; <a href=""> Our Services</a></li>
+                        <li>&#x3E; <a href=""> Terms & Condition</a></li>
+                        <li>&#x3E; <a href=""> Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+        <h3>Quick Message</h3>
+        <h5>Drop us a Quick Message For Assistance Here</h5>
+        <h4 id="commenttext"></h4>
+        <form action="/doctor/quickmessage" method="post" id="commentform">
+          <input type="email" name="email" class="email" id="email" placeholder="Email.." required><br><br>
+          <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
+          <button type="submit" onclick="" id="commentsub">Add Comment</button>
+        </form>
+
+      </div>
+            </div>
+        </div>
+    </footer>
 
 
 
@@ -481,14 +489,15 @@
 
 
 
-        <script scr="home.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    <script scr="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
       "></script>
-       {{!-- <script src="/js/bootstrap.bundle.min.js"></script>
-        --}}
+    {{!--
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    --}}
 
-        <script src="home.js"></script>
-        <script src="/back.js"></script>
+    <script src="home.js"></script>
+    <script src="/back.js"></script>
 </body>
 
 </html>
