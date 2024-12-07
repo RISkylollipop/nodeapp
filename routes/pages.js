@@ -52,7 +52,7 @@ router.get(`/doctor/login`, (req, res)=>{
 //     res.render(`doctordashboard`, {doctor: req.doctors})
 // })
 
-router.get(`/doctor/dashboard/new`, isAuthenticateddoctororadmin, (req, res)=>{
+router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
     res.render(`docdashboard`, {doctor: req.doctors})
 })
 
