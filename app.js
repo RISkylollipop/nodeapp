@@ -31,12 +31,9 @@ app.set(`view engine`, `hbs`)
 
 router.get(`/bookappointment`, isAuthenticated, (req, res)=>{
     db.query(`select * from doctors`, (err, rows)=>{
-        if(err){
-            
-            
-            console.log(err);
-            
-        }else{
+        if(err){console.log(err);
+            }
+            else{
         // console.log(rows);
         
             res.render(`bookappointment`,{ rows})

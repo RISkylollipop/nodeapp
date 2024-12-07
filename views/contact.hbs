@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/contact.css">
+
 </head>
 
 <body>
@@ -66,9 +68,23 @@
         </nav>
     </header>
     <div class="container mt-5">
-        <div class="card" style="width: 50%; margin: 50px auto; display:block; ">
+        <div class="card">
 
-            <form action="" method="">
+            {{#if error}}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{error}}
+                <p>Please Register<a href="/signup">Here</a> if you do not have an account</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+
+            {{#if message}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+            <form action="/message" method="post">
                 <div class="input-group">
                     <label for="fullname" class="form-label input_group_label">Full Name</label><br>
                     <input type="text" class="fullname" name="fullname" placeholder="Surname First"
@@ -128,7 +144,7 @@
         </ul>
     </div>
 
-    <footer class="mt-5" style="background-color: aquamarine;">
+    <footer class="mt-5">
         <div class="row">
             <div class="col-lg col-md col-sm">
                 <h3>Address</h3>
@@ -179,7 +195,8 @@
                 <h5 id="commenttext"></h5>
                 <form action="/admin/quickmessage" method="post" id="commentform">
                     <h5 style="line-height: 1rem;">Email address</h5>
-                    <input type="email" name="email" class="email" id="email" placeholder="Email.."
+
+                    <input type="email" name="email" class="email commentinput" id="email" placeholder="Email.."
                         style="margin-bottom: 0;" required><br><br>
                     <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
                     <button type="submit" onclick="" id="commentsub">Add Comment</button>
@@ -189,6 +206,8 @@
 
         </div>
         </div>
+
+       <p>&copy; 2024 MEDIC'S HEALTH. All Rights Reserved.</p>
     </footer>
 
 

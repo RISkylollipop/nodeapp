@@ -2,21 +2,26 @@ body {
     margin: 0%;
     padding: 0%;
     display: block;
+    font-family: Arial, sans-serif;
     background-color: #e9edc9;
     line-height: 2rem;
     max-width: 100%;
 }
 
 .container {
+    margin-top: 60px;
     background-color: #e9edc9;
     width: 100%;
-    /* padding: 0;
-    margin: 0; */
 }
 
 header {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header img {
@@ -78,7 +83,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #fff;
 
 }
 
@@ -87,7 +92,7 @@ nav ul li a i {
 }
 
 nav ul li a:hover {
-    background-color: #e9edc9;
+    background-color:  #2c3e50;
     padding: 5px 10px;
     border-radius: 10px;
     transition: 0.5s;
@@ -207,7 +212,23 @@ section {
     margin: auto;
     width: 100%;
 }
+footer{
+    width: 100%;
+    position: absolute;
+    margin-bottom: 0;
+    padding: 5% 30px 0 30px;
+    background-color: #fefae0;
+}
 
+footer ul li{
+    list-style: none;
+    margin-left: -40px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 20px;
+}
 /* label #btn, label #cancel{
     position: absolute;
     cursor: pointer;
@@ -1241,9 +1262,17 @@ label #cancel{
     }
 
     section .row {
-        margin-left: 10%;
+        margin-left: 10px;
     }
-
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 30.33333333%;
+    }
+    ul .social li{
+        display: inline;
+        list-style: none;
+        margin-top: 30px;
+    }
     table {
         width: 100%;
     }

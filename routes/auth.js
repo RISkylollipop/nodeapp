@@ -23,6 +23,7 @@ router.get(`/patient/viewdoctor`, isAuthenticated, viewdoctor.doctor)
 router.post(`/admin/viewdoctor`, isAuthenticated, viewdoctor.find)
 // // // // // // //
 router.get(`/admin/viewpatient`,  viewdoctor.viewpatient)
+router.get(`/doctor/viewpatient`,  viewdoctor.viewpatient)
 
 router.post(`/admin/viewpatient`,  viewdoctor.findpatient)
 
@@ -66,6 +67,7 @@ router.post(`/patient/quickmessage`, comment.commentpatient)
 router.post(`/doctor/quickmessage`, comment.commentdoctor)
 router.post(`/admin/quickmessage`, comment.commentadmin)
 
+router.post(`/message`, comment.message)
 
 module.exports = router
 

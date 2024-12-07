@@ -1,10 +1,37 @@
 body {
-    background: linear-gradient(to right, lightblue, rgb(135, 135, 248));
+    background-color: #CCC5B9;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 0;
+    background-color: #fefae0;
+    padding: 5% 30px 0 30px;
+}
+footer p {
+    text-align: center;
+    font-size: 20px;
+}
+footer ul li{
+    list-style: none;
+    margin-left: -40px;
+}
 .container-fluid {
     display: block;
     width: 100%;
+}
+.container{
+    margin-top: 100px;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-center {
@@ -14,6 +41,14 @@ body {
 ul li {
     font-size: 15px;
     padding-left: 10px;
+
+}
+
+ul .social li {
+    display: inline;
+    list-style: none;
+    padding-top: 10px;
+    margin-left: -40px;
 }
 
 .bi-person-circle {
@@ -22,13 +57,14 @@ ul li {
 
 .dash {
     text-transform: capitalize;
+    margin: 0;
 }
 
 .card {
     display: block;
     margin: auto;
     padding-bottom: 5%;
-    width: fit-content;
+    width: 80%;
     height: fit-content;
 }
 
@@ -53,7 +89,7 @@ ul li {
     padding-bottom: 0;
     margin-bottom: 1%;
 }
-.card,
+
 .alert {
     display: block;
     margin: auto;
@@ -195,3 +231,13 @@ td {
 
     }
 }
+
+
+/* OUR SERVICES STYLYING */
+/* ol li{
+    margin: 20px;
+}
+
+ol li ul li{
+    list-style: disc;
+} */

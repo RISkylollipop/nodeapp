@@ -1,3 +1,21 @@
-body{
-    background-color: blueviolet;
+.container{
+    margin-top: 200px;
+}
+
+.card{
+    margin-top: 100px;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 50px 20px 10px;
+}
+
+form{
+    display: block;
+    width: 60%;
+    margin: 10px 20px 10px 20px;
+}
+
+footer ul li{
+    list-style: none;
+    margin-left: -40px;
 }

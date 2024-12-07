@@ -46,10 +46,15 @@ router.get(`/doctor/login`, (req, res)=>{
     res.render(`logindoctor`)
 })
 
-router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
-    res.render(`doctordashboard`, {doctor: req.doctors})
-})
 
+
+// router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
+//     res.render(`doctordashboard`, {doctor: req.doctors})
+// })
+
+router.get(`/doctor/dashboard/new`, isAuthenticateddoctororadmin, (req, res)=>{
+    res.render(`docdashboard`, {doctor: req.doctors})
+})
 
 // ADMINS
 
@@ -91,7 +96,15 @@ router.get('/contact', (req, res)=>{
     res.status(200).render(`contact`)
 })
 
-
+router.get('/terms', (req, res)=>{
+    res.status(200).render(`terms`)
+})
+// router.get(`/doc/dashboard`, (req, res)=>{
+//     res.render(`docdashboard`)
+// })
+router.get(`/services`, (req, res)=>{
+    res.status(200).render(`ourservice`)
+})
 router.get(`/logout`, (req, res)=>{
     res.clearCookie(`userRegister`)
     res.redirect(`/signin`)

@@ -17,7 +17,7 @@
 
 <body>
   <script scr="logout.js"></script>
-  <div class="container-fluid">
+  <div class="container-fluid header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="LOGO"></a>
@@ -50,7 +50,7 @@
               <a class="nav-link" href="https://wa.me/2348140470626" target="_blank">Mail Us <i
                   class="bi bi-whatsapp"></i></a>
             </li>
-           <li><label class="btn btn-light" onclick="goBack()">Back</label></li> 
+            <li><label class="btn btn-light" onclick="goBack()">Back</label></li>
         </div>
       </div>
     </nav>
@@ -63,16 +63,17 @@
   </div>
   {{/if}}
   <div class="container mt-5">
-    
+
     {{!-- provider_id, firstname, lastname, provider_specialty, email, phone_number, date_joined --}}
     <table class="table mt-5" style="border: 2px solid black;">
 
       <h2 style="margin-bottom: -40px; text-align: center; color:white;">Patients Data</h2>
 
       <form action="/admin/viewpatient" method="POST" class="d-flex" role="search">
-      <input class="form-control me-2 find" name="find" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success subfind" style="position: absolute; right: 1%" type="submit">Search</button>
-    </form>
+        <input class="form-control me-2 find" name="find" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success subfind" style="position: absolute; right: 1%"
+          type="submit">Search</button>
+      </form>
 
 
 
@@ -151,7 +152,59 @@
 
 
 
+  <footer class="mt-5">
+    <div class="row">
+      <div class="col-lg col-md col-sm">
+        <h3>Address</h3>
+        <ul class="line">
+          <li><b>&#61987;</b> 123 street Gaa Odota</li>
+          <li><b>&#128222;</b> +234-814-047-0626</li>
+          <li><b>&#128231;</b> Info@example.com</li>
+          <ul class="social">
+            <li><a href=""><img src="twitter.avif" alt=""></a></li>
+            <li><a href=""><img src="facebookicon.png" alt=""></a></li>
+            <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
+          </ul>
+        </ul>
+      </div>
 
+      <div class="col-lg col-md col-sm">
+        <h3>Services</h3>
+        <ul>
+          <li style="font-weight: 900;"><b><b>&#x3E;</b></b> Cadiology</li>
+          <li style="font-weight: 900;">&#x3E; Surgery</li>
+          <li style="font-weight: 900;">&#x3E; Pulmonary</li>
+          <li style="font-weight: 900;">&#x3E; Neurology</li>
+          <li style="font-weight: 900;">&#x3E; Orthopedics</li>
+          <li style="font-weight: 900;">&#x3E; Laboratory</li>
+        </ul>
+      </div>
+
+      <div class="col-lg col-md col-sm">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>&#x3E;<a href=""> About Us</a></li>
+          <li>&#x3E; <a href="/contact"> Contact Us</a></li>
+          <li>&#x3E; <a href=""> Our Services</a></li>
+          <li>&#x3E; <a href="/terms"> Terms & Condition</a></li>
+          <li>&#x3E; <a href=""> Support</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg col-md col-sm">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.5980338483387!2d4.507510964573659!3d8.46119319762045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103653068219dffd%3A0x2f768084315e15fe!2sDATAHOOD!5e0!3m2!1sen!2sng!4v1733487569576!5m2!1sen!2sng"
+          width="300" height="200" style="border:0;" allowfullscreen="true" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+
+    </div>
+    </div>
+
+    <p>&copy; Medics Telemedicine 2025</p>
+  </footer>
 
 
 

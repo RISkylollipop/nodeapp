@@ -9,8 +9,10 @@ var phone = document.querySelector(`.phone`)
 var passwordconfirm = document.querySelector(`.passwordconfirm`)
 var passwordconfirmerror = document.querySelector(`.passwordconfirmerror`)
 
-// regbtn.style.display = "none"
-// alert(`shall we`)
+
+// function printpage() {
+//     window.print()
+// }
 
 
 function emailval() {
@@ -51,7 +53,15 @@ function passmatch() {
     }
 }
 
-// alert('letgo')
+let date = document.querySelector('.date')
+let datetop = document.querySelector('.datetop')
+
+let today = new Date()
+let formatdate = today.toLocaleDateString()
+date.textContent = formatdate
+datetop.textContent = today
+
+
 let commentsub = document.getElementById('commentsub')
 let commentform = document.getElementById('commentform')
 let commenttext = document.getElementById('commenttext')
