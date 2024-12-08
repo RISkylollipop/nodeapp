@@ -1,5 +1,5 @@
 const express = require(`express`);
-// const fullcalendar = require(`fullcalendar`)
+const fs = require(`fs`)
 const db = require(`./database`)
 const cookieParser = require(`cookie-parser`);
 const { isAuthenticated } = require(`./middlewares/auth`);
@@ -7,6 +7,8 @@ const { isAuthenticateddoctororadmin } = require(`./middlewares/authdoctor`)
 const router = require(`./routes/pages`)
 const path = require(`path`)
 
+
+fs.readFile(__dirname, (``))
 const app = express();
 const port = process.env.PORT || 3500
 

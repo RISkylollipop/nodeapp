@@ -109,41 +109,129 @@ exports.find = (req, res) => {
 
 }
 
-exports.updateappointment = (req, res) => {
-    // console.log(req.body);
-    db.query(`update appointment set status = 'Cancelled' where appointment_id = ?`, [req.params.id], (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            const viewappointments = `select appointment_id,  
-appointment_date,
-appointment.firstname, 
-appointment.email, 
-appointment.doctor_id,
-doctors.email as doctoremail,
-doctors.specialty,
-appointment.status
-from 
-appointment join doctors
-on appointment.doctor_id = doctors.doctor_id;`
-            db.query(viewappointments, (err, rows) => {
+// exports.updateappointment = (req, res) => {
+//     // console.log(req.body);
+//     db.query(`update appointment set status = 'Cancelled' where appointment_id = ?`, [req.params.id], (err, result) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             const viewappointments = `select appointment_id,  
+// appointment_date,
+// appointment.firstname, 
+// appointment.email, 
+// appointment.doctor_id,
+// doctors.email as doctoremail,
+// doctors.specialty,
+// appointment.status
+// from 
+// appointment join doctors
+// on appointment.doctor_id = doctors.doctor_id;`
+//             db.query(viewappointments, (err, rows) => {
 
-                try {
-                    res.render(`appointments`, {
+//                 try {
+//                     res.render(`appointments`, {
 
-                        rows: rows,
-                        message: `Appointment Cancelled Successfully`
-                    })
-                } catch (error) {
-                    console.log(error);
-                    res.redirect(`/viewappointment`)
+//                         rows: rows,
+//                         message: `Appointment Cancelled Successfully`
+//                     })
+//                 } catch (error) {
+//                     console.log(error);
+//                     res.redirect(`/viewappointment`)
 
-                }
-            })
-        }
-    })
+//                 }
+//             })
+//         }
+//     })
 
-}
+// }
+
+
+// exports.postponeappointment = (req, res) => {
+//     // console.log(req.body);
+//     // declaring of req body coming from the form
+
+
+//     const { appointment_date, appointment_time } = req.body
+
+//     // declaring todays date to avoid reschedule of appointment_date to past date
+//     const today = Date.now()
+//     // console.log(appointment_date);
+//     let dateconvert = new Date(appointment_date)
+//     const datecompare = dateconvert.getTime();
+
+
+//     // console.log(today);
+//     // console.log(datecompare);
+//     // comparing of the today's date and postponement date
+
+
+//     if (datecompare < today) {
+//         const viewappointments = select appointment_id,  
+//         appointment_date,
+//         appointment.firstname, 
+//         appointment.email, 
+//         appointment.doctor_id,
+//         doctors.email as doctoremail,
+//         doctors.specialty,
+//         appointment.status
+//         from 
+//         appointment join doctors
+//         on appointment.doctor_id = doctors.doctor_id;
+
+
+//         db.query(viewappointments, (err, rows) => {
+//             try {
+//                 res.render(appointments, {
+//                     rows: rows,
+//                     error: 'Please Select future Date'
+
+//                 })
+//             } catch (err) {
+//                 console.log(err);
+//             }
+//         })
+
+//     } else {
+//         // res.send(form submitted)
+
+//         // Sending of two db request at a time
+
+//         const updateappointment = update appointment set appointment_date = ?, appointment_time = ? where appointment_id = ?;
+//         update appointment set status = 'rescheduled' where appointment_id = ?
+
+//         db.query(updateappointment, [appointment_date, appointment_time, req.params.id, req.params.id], (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 const viewappointments = select appointment_id,  
+//     appointment_date,
+//     appointment.firstname, 
+//     appointment.email, 
+//     appointment.doctor_id,
+//     doctors.email as doctoremail,
+//     doctors.specialty,
+//     appointment.status
+//     from 
+//     appointment join doctors
+//     on appointment.doctor_id = doctors.doctor_id;
+//                 db.query(viewappointments, (err, rows) => {
+
+//                     try {
+//                         res.render(appointments, {
+//                             rows: rows,
+//                             message: 'Appointment Postponed Successfully'
+//                         })
+//                     } catch (error) {
+//                         console.log(error);
+//                         res.redirect(/viewappointment)
+
+//                     }
+//                 })
+//             }
+//         })
+//     }
+
+// }
 
 exports.editappointment = (req, res) => {
     const viewappointments = `select appointment_id,  

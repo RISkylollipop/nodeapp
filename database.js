@@ -26,23 +26,27 @@
 // module.exports = db;
 
 
-
-const { Pool } = require(`pg`)
+const fs = require('fs');
+const mysql = require(`mysql2`)
 require(`dotenv`).config();
 
+fs.readFileSync
 
-const db = new Pool({
+const db = mysql.createPool ({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASS,
     database: process.env.DATABASE,
-    port: process.env.PORT || 5432,
+    port: process.env.PORT || 23168,
+    multipleStatements: true,
     ssl: {
-        rejectUnauthorized: false,
+       ca: fs.readFileSync(`ca.pem`)
     },
+
+    
 })
 
-db.connect((err, result)=>{
+db.getConnection((err, result)=>{
     if(!err){
         console.log(`Database Started`);
         
@@ -135,7 +139,7 @@ gender varchar(30)
 );`
 db.query(admins,(err, result)=>{
     if(!err){
-        console.log(`Appointment Table Created`);
+        console.log(`Admins Table Created`);
         
     }else{
         console.log(err);
@@ -143,23 +147,19 @@ db.query(admins,(err, result)=>{
     }
 })
 
-const doctorschedule = `
-    BEGIN;
-    
-    CREATE TABLE doctor_schedules (
-        schedule_id SERIAL PRIMARY KEY,
-        doctor_id INT,
-        email VARCHAR(200),
-        status VARCHAR(50),
-        note VARCHAR(250),
-        appointment_type VARCHAR(250),
-        schedule_date TIMESTAMP
-    );
+const doctorschedule = `create table doctor_schedules(
+schedule_id int primary key auto_increment,
+doctor_id int,
+email varchar(200),
+status varchar(50),
+note varchar(250),
+appointment_type varchar(250),
+schedule_date datetime
+);
 
-    ALTER SEQUENCE doctor_schedules_schedule_id_seq RESTART WITH 1001;
-
-    COMMIT;
-`;
+alter table doctor_schedules
+auto_increment = 1001;
+`
 
 
 
@@ -175,25 +175,25 @@ db.query(doctorschedule,(err, result)=>{
 })
 
 
-// const comments = `create table comments(
-// comment_id int primary key auto_increment,
-// comment varchar (250),
-// email varchar(100)
+const comments = `create table comments(
+comment_id int primary key auto_increment,
+comment varchar (250),
+email varchar(100)
 
-// );
-// alter table comments
-// auto_increment = 1000;`
+);
+alter table comments
+auto_increment = 1000;`
 
 
-// db.query(comments,(err, result)=>{
-//     if(!err){
-//         console.log(`comment Table Created`);
+db.query(comments,(err, result)=>{
+    if(!err){
+        console.log(`Comment Table Created ALL QUERY SUCCESSFULLY END`);
         
-//     }else{
-//         console.log(err);
+    }else{
+        console.log(err);
         
-//     }
-// })
+    }
+})
 
 // const message = `create table messages(
 // message_id int primary key auto_increment,
@@ -216,6 +216,15 @@ db.query(doctorschedule,(err, result)=>{
 //     }
 // })
 
+
+// db.query('SELECT 1 + 1 AS result', (err, results) => {
+//     if (err) {
+//         console.error('Error executing query:', err.message);
+//     } else {
+//         console.log('Query result:', results);
+//     }
+//     db.end(); // Close the connection after the test
+// });
 
 module.exports = db
 // const doctor = (`create table doctor (
