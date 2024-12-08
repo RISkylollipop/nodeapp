@@ -51,7 +51,39 @@ password varchar(200),
 status varchar (50),
 gender varchar(30)
 );
-select * from patients;
-select * from doctors;
-select * from appointment;
-select * from admins;
+
+
+create table doctor_schedules(
+schedule_id int primary key auto_increment,
+doctor_id int,
+email varchar(200),
+status varchar(50),
+note varchar(250),
+appointment_type varchar(250),
+schedule_date datetime
+);
+
+alter table doctor_schedules
+auto_increment = 1001;
+
+
+create table comments(
+comment_id int primary key auto_increment,
+comment varchar (250),
+email varchar(100)
+
+);
+alter table comments
+auto_increment = 1000;
+
+create table messages(
+message_id int primary key auto_increment,
+fullname varchar (250),
+email varchar(100),
+phone varchar(50),
+message varchar(255)
+
+);
+alter table messages
+auto_increment = 1000;
+
