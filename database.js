@@ -30,8 +30,6 @@ const fs = require('fs');
 const mysql = require(`mysql2`)
 require(`dotenv`).config();
 
-fs.readFileSync
-
 const db = mysql.createPool ({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
