@@ -53,7 +53,7 @@ db.query(`insert into comments set ?`, {email:email, comment:comment}, (err, res
 }
 
 exports.message = (req, res)=>{
-    console.log(req.body);
+    // console.log(req.body);
 
     // fullname: email phone: message
 const {fullname, email, message, phone} = req.body
