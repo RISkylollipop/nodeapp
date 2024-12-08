@@ -109,129 +109,41 @@ exports.find = (req, res) => {
 
 }
 
-// exports.updateappointment = (req, res) => {
-//     // console.log(req.body);
-//     db.query(`update appointment set status = 'Cancelled' where appointment_id = ?`, [req.params.id], (err, result) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             const viewappointments = `select appointment_id,  
-// appointment_date,
-// appointment.firstname, 
-// appointment.email, 
-// appointment.doctor_id,
-// doctors.email as doctoremail,
-// doctors.specialty,
-// appointment.status
-// from 
-// appointment join doctors
-// on appointment.doctor_id = doctors.doctor_id;`
-//             db.query(viewappointments, (err, rows) => {
+exports.updateappointment = (req, res) => {
+    // console.log(req.body);
+    db.query(`update appointment set status = 'Cancelled' where appointment_id = ?`, [req.params.id], (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            const viewappointments = `select appointment_id,  
+appointment_date,
+appointment.firstname, 
+appointment.email, 
+appointment.doctor_id,
+doctors.email as doctoremail,
+doctors.specialty,
+appointment.status
+from 
+appointment join doctors
+on appointment.doctor_id = doctors.doctor_id;`
+            db.query(viewappointments, (err, rows) => {
 
-//                 try {
-//                     res.render(`appointments`, {
+                try {
+                    res.render(`appointments`, {
 
-//                         rows: rows,
-//                         message: `Appointment Cancelled Successfully`
-//                     })
-//                 } catch (error) {
-//                     console.log(error);
-//                     res.redirect(`/viewappointment`)
+                        rows: rows,
+                        message: `Appointment Cancelled Successfully`
+                    })
+                } catch (error) {
+                    console.log(error);
+                    res.redirect(`/viewappointment`)
 
-//                 }
-//             })
-//         }
-//     })
+                }
+            })
+        }
+    })
 
-// }
-
-
-// exports.postponeappointment = (req, res) => {
-//     // console.log(req.body);
-//     // declaring of req body coming from the form
-
-
-//     const { appointment_date, appointment_time } = req.body
-
-//     // declaring todays date to avoid reschedule of appointment_date to past date
-//     const today = Date.now()
-//     // console.log(appointment_date);
-//     let dateconvert = new Date(appointment_date)
-//     const datecompare = dateconvert.getTime();
-
-
-//     // console.log(today);
-//     // console.log(datecompare);
-//     // comparing of the today's date and postponement date
-
-
-//     if (datecompare < today) {
-//         const viewappointments = select appointment_id,  
-//         appointment_date,
-//         appointment.firstname, 
-//         appointment.email, 
-//         appointment.doctor_id,
-//         doctors.email as doctoremail,
-//         doctors.specialty,
-//         appointment.status
-//         from 
-//         appointment join doctors
-//         on appointment.doctor_id = doctors.doctor_id;
-
-
-//         db.query(viewappointments, (err, rows) => {
-//             try {
-//                 res.render(appointments, {
-//                     rows: rows,
-//                     error: 'Please Select future Date'
-
-//                 })
-//             } catch (err) {
-//                 console.log(err);
-//             }
-//         })
-
-//     } else {
-//         // res.send(form submitted)
-
-//         // Sending of two db request at a time
-
-//         const updateappointment = update appointment set appointment_date = ?, appointment_time = ? where appointment_id = ?;
-//         update appointment set status = 'rescheduled' where appointment_id = ?
-
-//         db.query(updateappointment, [appointment_date, appointment_time, req.params.id, req.params.id], (err, result) => {
-//             if (err) {
-//                 console.log(err);
-//             } else {
-//                 const viewappointments = select appointment_id,  
-//     appointment_date,
-//     appointment.firstname, 
-//     appointment.email, 
-//     appointment.doctor_id,
-//     doctors.email as doctoremail,
-//     doctors.specialty,
-//     appointment.status
-//     from 
-//     appointment join doctors
-//     on appointment.doctor_id = doctors.doctor_id;
-//                 db.query(viewappointments, (err, rows) => {
-
-//                     try {
-//                         res.render(appointments, {
-//                             rows: rows,
-//                             message: 'Appointment Postponed Successfully'
-//                         })
-//                     } catch (error) {
-//                         console.log(error);
-//                         res.redirect(/viewappointment)
-
-//                     }
-//                 })
-//             }
-//         })
-//     }
-
-// }
+}
 
 exports.editappointment = (req, res) => {
     const viewappointments = `select appointment_id,  
@@ -257,97 +169,91 @@ exports.editappointment = (req, res) => {
 }
 
 exports.postponeappointment = (req, res) => {
-    const { appointment_date, appointment_time } = req.body;
+    // console.log(req.body);
+    // declaring of req body coming from the form
 
-    // Get today's date and time for comparison
-    const today = new Date(); // Get current date and time
-    const dateconvert = new Date(appointment_date);
-    
-    // Compare dates (ignore time part, but ensure appointment date is not in the past)
-    if (dateconvert.getTime() < today.getTime()) {
-        const viewappointments = `
-            SELECT appointment_id, appointment_date, appointment.firstname, 
-                   appointment.email, appointment.doctor_id, 
-                   doctors.email AS doctoremail, doctors.specialty, appointment.status
-            FROM appointment
-            JOIN doctors ON appointment.doctor_id = doctors.doctor_id;
-        `;
-        
-        // Return an error message if the appointment date is in the past
+
+    const { appointment_date, appointment_time } = req.body
+
+    // declaring todays date to avoid reschedule of appointment_date to past date
+    const today = Date.now()
+    // console.log(appointment_date);
+    let dateconvert = new Date(appointment_date)
+    const datecompare = dateconvert.getTime();
+
+
+    // console.log(today);
+    // console.log(datecompare);
+    // comparing of the today's date and postponement date
+
+
+    if (datecompare < today) {
+        const viewappointments =`select appointment_id,  
+        appointment_date,
+        appointment.firstname, 
+        appointment.email, 
+        appointment.doctor_id,
+        doctors.email as doctoremail,
+        doctors.specialty,
+        appointment.status
+        from 
+        appointment join doctors
+        on appointment.doctor_id = doctors.doctor_id;`
+
+
         db.query(viewappointments, (err, rows) => {
-            if (err) {
-                console.log(err);
-                return res.status(500).send("Internal server error");
-            }
+            try {
+                res.render(`appointments`, {
+                    rows: rows,
+                    error: 'Please Select future Date'
 
-            res.render('appointments', {
-                rows: rows,
-                error: 'Please select a future date'
-            });
-        });
+                })
+            } catch (err) {
+                console.log(err);
+            }
+        })
 
     } else {
-        // Both updates should be done as part of a transaction
-        const updateappointment = `
-            UPDATE appointment 
-            SET appointment_date = ?, appointment_time = ? 
-            WHERE appointment_id = ?;
-            UPDATE appointment 
-            SET status = 'rescheduled' 
-            WHERE appointment_id = ?;
-        `;
+        // res.send(form submitted)
 
-        db.beginTransaction((err) => {
+        // Sending of two db request at a time
+
+        const updateappointment =` update appointment set appointment_date = ?, appointment_time = ? where appointment_id = ?;
+        update appointment set status = 'rescheduled' where appointment_id = ?`
+
+        db.query(updateappointment, [appointment_date, appointment_time, req.params.id, req.params.id], (err, result) => {
             if (err) {
                 console.log(err);
-                return res.status(500).send("Transaction start failed");
-            }
-
-            // Execute the update queries within the transaction
-            db.query(updateappointment, [appointment_date, appointment_time, req.params.id, req.params.id], (err, result) => {
-                if (err) {
-                    return db.rollback(() => {
-                        console.log(err);
-                        res.status(500).send("Error during appointment update");
-                    });
-                }
-
-                // Query to get the updated list of appointments
-                const viewappointments = `
-                    SELECT appointment_id, appointment_date, appointment.firstname, 
-                           appointment.email, appointment.doctor_id, 
-                           doctors.email AS doctoremail, doctors.specialty, appointment.status
-                    FROM appointment
-                    JOIN doctors ON appointment.doctor_id = doctors.doctor_id;
-                `;
-                
-                // If the transaction was successful, commit it and render appointments
+            } else {
+                const viewappointments =` select appointment_id,  
+    appointment_date,
+    appointment.firstname, 
+    appointment.email, 
+    appointment.doctor_id,
+    doctors.email as doctoremail,
+    doctors.specialty,
+    appointment.status
+    from 
+    appointment join doctors
+    on appointment.doctor_id = doctors.doctor_id;`
                 db.query(viewappointments, (err, rows) => {
-                    if (err) {
-                        return db.rollback(() => {
-                            console.log(err);
-                            res.status(500).send("Error fetching appointments");
-                        });
-                    }
 
-                    db.commit((err) => {
-                        if (err) {
-                            return db.rollback(() => {
-                                console.log(err);
-                                res.status(500).send("Transaction commit failed");
-                            });
-                        }
-
-                        res.render('appointments', {
+                    try {
+                        res.render(`appointments`, {
                             rows: rows,
-                            message: 'Appointment postponed successfully'
-                        });
-                    });
-                });
-            });
-        });
+                            message: 'Appointment Postponed Successfully'
+                        })
+                    } catch (error) {
+                        console.log(error);
+                        res.redirect(`/viewappointment`)
+
+                    }
+                })
+            }
+        })
     }
-};
+
+}
 
 
 
