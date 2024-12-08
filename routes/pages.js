@@ -62,9 +62,9 @@ router.get(`/admin`, (req, res)=>{
     res.status(200).render(`adminpage`)
 })
 
-router.get(`/admin/register`, (req, res)=>{
-    res.render(`adduser`)
-})
+// router.get(`/admin/register`, (req, res)=>{
+//     res.render(`adduser`)
+// })
 
 router.get(`/admin/login`, (req,res)=>{
     res.render(`userlogin`)
