@@ -37,7 +37,6 @@ const db = new Pool({
     password: process.env.DATABASE_PASS,
     database: process.env.DATABASE,
     port: process.env.PORT || 5432,
-    multipleStatements: true,
     ssl: {
         rejectUnauthorized: false,
     },
@@ -144,18 +143,24 @@ db.query(admins,(err, result)=>{
     }
 })
 
-const doctorschedule = `create table doctor_schedules(
-schedule_id int primary key auto_increment,
-doctor_id int,
-email varchar(200),
-status varchar(50),
-note varchar(250),
-appointment_type varchar(250),
-schedule_date datetime
-);
+const doctorschedule = `
+    BEGIN;
+    
+    CREATE TABLE doctor_schedules (
+        schedule_id SERIAL PRIMARY KEY,
+        doctor_id INT,
+        email VARCHAR(200),
+        status VARCHAR(50),
+        note VARCHAR(250),
+        appointment_type VARCHAR(250),
+        schedule_date TIMESTAMP
+    );
 
-alter table doctor_schedules
-auto_increment = 1001;`
+    ALTER SEQUENCE doctor_schedules_schedule_id_seq RESTART WITH 1001;
+
+    COMMIT;
+`;
+
 
 
 
@@ -170,46 +175,46 @@ db.query(doctorschedule,(err, result)=>{
 })
 
 
-const comments = `create table comments(
-comment_id int primary key auto_increment,
-comment varchar (250),
-email varchar(100)
+// const comments = `create table comments(
+// comment_id int primary key auto_increment,
+// comment varchar (250),
+// email varchar(100)
 
-);
-alter table comments
-auto_increment = 1000;`
+// );
+// alter table comments
+// auto_increment = 1000;`
 
 
-db.query(comments,(err, result)=>{
-    if(!err){
-        console.log(`comment Table Created`);
+// db.query(comments,(err, result)=>{
+//     if(!err){
+//         console.log(`comment Table Created`);
         
-    }else{
-        console.log(err);
+//     }else{
+//         console.log(err);
         
-    }
-})
+//     }
+// })
 
-const message = `create table messages(
-message_id int primary key auto_increment,
-fullname varchar (250),
-email varchar(100),
-phone varchar(50),
-message varchar(255)
+// const message = `create table messages(
+// message_id int primary key auto_increment,
+// fullname varchar (250),
+// email varchar(100),
+// phone varchar(50),
+// message varchar(255)
 
-);
-alter table messages
-auto_increment = 1000;`
+// );
+// alter table messages
+// auto_increment = 1000;`
 
-db.query(message,(err, result)=>{
-    if(!err){
-        console.log(`message Table Created`);
+// db.query(message,(err, result)=>{
+//     if(!err){
+//         console.log(`message Table Created`);
         
-    }else{
-        console.log(err);
+//     }else{
+//         console.log(err);
         
-    }
-})
+//     }
+// })
 
 
 module.exports = db
