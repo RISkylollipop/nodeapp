@@ -40,13 +40,14 @@ const db = mysql.createPool ({
     port: process.env.PORT || 23168,
     multipleStatements: true,
     ssl: {
-        ca: fs.readFileSync('./path/to/ca.pem')
+        ca: fs.readFileSync('./ca.pem')
     },
 
     
 })
 
 db.getConnection((err, result)=>{
+
     if(!err){
         console.log(`Database Started`);
         

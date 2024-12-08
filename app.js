@@ -7,8 +7,6 @@ const { isAuthenticateddoctororadmin } = require(`./middlewares/authdoctor`)
 const router = require(`./routes/pages`)
 const path = require(`path`)
 
-
-fs.readFile(__dirname, (``))
 const app = express();
 const port = process.env.PORT || 3500
 
@@ -61,8 +59,21 @@ router.get(`/dashboard/edit-profile`, (req, res)=>{
     console.log(req.url);
     
     res.render(`viewprofile`)
+
 })
+
+
+const path = './path/to/aiven-ca.pem'; // Adjust the path accordingly
+if (fs.existsSync(path)) {
+    dbConfig.ssl = {
+        ca: fs.readFileSync(path),
+    };
+} else {
+    console.error('CA certificate file not found at path:', path);
+}
 app.listen(port,()=>{
     console.log(`listening on ${port}`);
     
 })
+
+
