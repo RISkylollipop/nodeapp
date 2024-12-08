@@ -63,14 +63,7 @@ router.get(`/dashboard/edit-profile`, (req, res)=>{
 })
 
 
-const path = './path/to/aiven-ca.pem'; // Adjust the path accordingly
-if (fs.existsSync(path)) {
-    dbConfig.ssl = {
-        ca: fs.readFileSync(path),
-    };
-} else {
-    console.error('CA certificate file not found at path:', path);
-}
+
 app.listen(port,()=>{
     console.log(`listening on ${port}`);
     
