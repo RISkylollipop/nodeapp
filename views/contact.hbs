@@ -22,8 +22,8 @@
         .map-responsive iframe {
             left: 0;
             top: 0;
-            height: 100%;
-            width: 100%;
+            height: 300px;
+            width: 300px;
             position: absolute;
         }
         .mb-2 { margin-bottom: 20px; }
@@ -35,7 +35,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img src="/images/logotele" alt="MEDIC'S HEALTH Logo"></a>
+                <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="MEDIC'S HEALTH Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -66,7 +66,6 @@
             {{#if error}}
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{error}}
-                <p>Please Register <a href="/signup">Here</a> if you do not have an account.</p>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             {{/if}}
@@ -128,7 +127,11 @@
                     </ul>
                 </div>
                 <div class="col-lg col-md col-sm map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.5980338483387!2d4.507510964573659!3d8.46119319762045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103653068219dffd%3A0x2f768084315e15fe!2sDATAHOOD!5e0!3m2!1sen!2sng!4v1733487569576!5m2!1sen!2sng"
+                    width="300" height="200" style="border:0;" allowfullscreen="true" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
                 </div>
             </div>
         </div>
