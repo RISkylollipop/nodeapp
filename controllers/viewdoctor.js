@@ -7,7 +7,7 @@ const { search } = require("../routes/pages")
 const router = express.Router()
 
 exports.doctor = (req, res)=>{
-    db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors where status = "active"`, (err, rows)=>{
+    db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors where status = 'active'`, (err, rows)=>{
         if(err){
             
             
@@ -22,7 +22,7 @@ exports.doctor = (req, res)=>{
 
 exports.find = (req, res)=>{
     const search = req.body.search
-    db.query(`select * from doctors where firstname like ? OR lastname LIKE ? OR email Like ? OR specialty like ?`, ["%" +search + '%', '%' + search + '%', '%' + search + '%', '%'+ search + `%`] , (err, rows)=>{
+    db.query(`select * from doctors where firstname like ? OR lastname LIKE ? OR email Like ? OR specialty like ?`, ['%' +search + '%', '%' + search + '%', '%' + search + '%', '%'+ search + `%`] , (err, rows)=>{
         if(!err){
             res.render(`viewdoctors`, {rows})
             

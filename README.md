@@ -1,5 +1,5 @@
-WEBSITE UPLOAD COMPLETED
-My first Node website
+WEBSITE UPLOAD COMPLETED AND LIVE ON https://medic-health.onrender.com/
+MEDICS TELEMEDICINE
 
 I just added almost all the Pages and added authentication for each Page like Dashboards.
 
@@ -30,3 +30,6 @@ Added a message us form connected to the Database to Contact Us Page
 Added our location Map to the Footer
 Added Contact us Page
 Added our Service Page
+
+
+COPYRIGHT 2024 MEDIC'S HEALTH. All Rights Reserved.
