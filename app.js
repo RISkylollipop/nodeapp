@@ -8,7 +8,7 @@ const router = require(`./routes/pages`)
 const path = require(`path`)
 
 const app = express();
-const port = process.env.PORT || 5432
+const port = process.env.PORT
 
 app.get(``, (req, res)=>{
     res.render(`index`)
