@@ -4,6 +4,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MEDIC'S HEALTH</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
+    <meta name="description" content="Contact MEDIC'S HEALTH for appointments, support, and inquiries.">
+    <meta name="keywords" content="MEDIC'S HEALTH, healthcare, contact, appointments">
+    <meta name="author" content="MEDIC'S HEALTH">
+    <style>
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+            height: 0;
+        }
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        .mb-2 { margin-bottom: 20px; }
+        .mt-3 { margin-top: 30px; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="/images/logotele" alt="MEDIC'S HEALTH Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com" target="_blank" data-bs-toggle="tooltip" title="Follow us on Facebook">Message Us <i class="bi bi-facebook"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.twitter.com" target="_blank" data-bs-toggle="tooltip" title="Follow us on Twitter">Twitter <i class="bi bi-twitter"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="mailto:kelanikdas1@gmail.com" target="_blank" data-bs-toggle="tooltip" title="Send us an Email">Chat Us <i class="bi bi-envelope-arrow-down-fill"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://wa.me/2348140470626" target="_blank" data-bs-toggle="tooltip" title="Chat us on WhatsApp">WhatsApp <i class="bi bi-whatsapp"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="tel:+2348140470626" target="_blank" data-bs-toggle="tooltip" title="Call Us">Call Us <i class="bi bi-telephone-fill"></i></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/patient">Patient Page</a></li>
+                                <li><a class="dropdown-item" href="/doctor">Doctor's Page</a></li>
+                                <li><a class="dropdown-item" href="/admin">Admin Page</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <div class="card p-4">
+            {{#if error}}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{error}}
+                <p>Please Register <a href="/signup">Here</a> if you do not have an account.</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+
+            {{#if message}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+
+            <form action="/message" method="post">
+                <div class="mb-2">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Surname First" required>
+                </div>
+                <div class="mb-2">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="mb-2">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="mb-2">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="4" placeholder="Type Your Message Here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg col-md col-sm">
+                    <h3>Address</h3>
+                    <ul class="list-unstyled">
+                        <li>123 Street, Gaa Odota</li>
+                        <li><b>Phone:</b> +234-814-047-0626</li>
+                        <li><b>Email:</b> info@example.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg col-md col-sm">
+                    <h3>Services</h3>
+                    <ul class="list-unstyled">
+                        <li>Cardiology</li>
+                        <li>Surgery</li>
+                        <li>Neurology</li>
+                        <li>Laboratory</li>
+                    </ul>
+                </div>
+                <div class="col-lg col-md col-sm">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg col-md col-sm map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                </div>
+            </div>
+        </div>
+        <p class="text-center mt-4">&copy; 2024 MEDIC'S HEALTH. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
@@ -220,4 +421,4 @@
     <script src="home.js"></script>
 </body>
 
-</html>
+</html> --}}
