@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 23168
 
 app.get(``, (req, res)=>{
-    res.render(`index`)
+    res.render(`home`)
 })
 
 app.use(cookieParser())
