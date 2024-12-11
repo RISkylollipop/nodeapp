@@ -2,475 +2,861 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{!-- <title>Medics Home</title>
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css"> --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/home.css">
-  <link rel="stylesheet" href="/homestyle.css">
+    <meta charset="utf-8">
+    <title>Medic's Health</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="Medic Health">
+    <meta content="" name="Medic Telemedicine">
+
+    <!-- Favicon -->
+    <link href="/medic.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container-fluid header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="LOGO"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>Zone d24, Gaa odota Area</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small id="date" class="date"></small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+242-814-047-0626</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1"
+                        href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1"
+                        href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+
+                    <a class="nav-link" href="mailto:kelanikdas1@gmail.com" target="_blank">Chat Us <i
+                            class="bi bi-envelope-arrow-down-fill"></i></a></a>
+
+                    <a class="nav-link" href="https://wa.me/2348140470626" target="_blank">Mail Us <i
+                            class="bi bi-whatsapp"></i></a>
+
+                    <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
+                            class="bi bi-telephone-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0 text-primary"><img src="/images/logotele1.jpg" alt="">     Medics</h1>
+            {{!-- <i class="far fa-hospital me-3"></i> --}}
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com" target="_blank">Message Us <i
-                  class="bi bi-facebook"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.twitter.com" target="_blank">Twitter <i
-                  class="bi bi-twitter"></i></a></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mailto:kelanikdas1@gmail.com" target="_blank">Chat Us <i
-                  class="bi bi-envelope-arrow-down-fill"></i></a></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://wa.me/2348140470626" target="_blank">Mail Us <i
-                  class="bi bi-whatsapp"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tel:+2348140470626" target="_blank">Call Us <i
-                  class="bi bi-telephone-fill"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <label class="btn btn-light">Logins and Register</label>
-              </a>
-              <ul class="dropdown-menu" style="margin-left: 50px;">
-                <li><a class="dropdown-item" href="/signup">Register</a>
-                <li><a class="dropdown-item" href="/signin">Login</a> </li>
-              </ul>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/services" class="nav-item nav-link">Service</a>
+                <a href="/contact" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login / Register</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="/signup" class="dropdown-item">Register</a>
+                        <a href="/signin" class="dropdown-item">Login</a>
+                       
+                </div>
+                <a href="/contact" class="nav-item nav-link">Location</a>
+            </div>
+
         </div>
-      </div>
     </nav>
-  </div>
+    <!-- Navbar End -->
 
-  <section class="section-light">
-    <div class="row">
-      <div class="col-lg-6 col-sm-12">
-        <div class="sectblue">
-          <h1 class="mb-5" style="text-align: center;">Good Health Is The Root Of All Happiness</h1>
 
-          <div class="sectdet">
+    <!-- Header Start -->
+    <div class="container-fluid header bg-primary p-0 mb-5">
+        <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Happiness</h1>
+                <div class="row g-4">
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">1523</h2>
+                            <p class="text-light mb-0">Expert Doctors/Nurse</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">289</h2>
+                            <p class="text-light mb-0">Experienced Medical Staff</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">17672</h2>
+                            <p class="text-light mb-0">House/online Patients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="/sect2imagereplace.jpg" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Cardiology</h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="/carousel-2.jpg" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">ANATOMY</h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="/carousel-3.jpg" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Pulmonary</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="/about-1.jpg" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="/about-2.jpg" alt=""
+                            style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
+                    <h1 class="mb-4">Why You Should Trust Us? Get to Know About Us!</h1>
+                    <p>You know how sometimes it's hard to get to the doctor's office? Either you're too busy, or
+                        it's too far away? That's where Medics comes in. Our website lets you see a doctor
+                        from the comfort of your own home. You can browse through our list of available doctors,
+                        pick one that fits your needs, and schedule a virtual appointment</p>
+                    <p class="mb-4">Then, at the appointed time,
+                        you just hop on a video call with the doctor and discuss your symptoms. They can diagnose you,
+                        prescribe medication if needed, and even send over a treatment plan. It's super convenient,
+                        secure,
+                        and HIPAA-compliant, so you don't have to worry about your personal info. Plus,
+                        it's great for people who live far away from good medical care or
+                        have mobility issues. We're basically bringing healthcare right to your fingertips!"
+                    </p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
+                <h1>Health Care Solutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Cardiology</h4>
+                        <p class="mb-4">Cardiology diagnoses and treats heart and blood vessel disorders.
+                            Cardiologists manage conditions like heart failure, coronary artery disease, hypertension,
+                            and arrhythmias through tests, medications, and interventions, improving heart health and
+                            saving lives..</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Pulmonary</h4>
+                        <p class="mb-4">Pulmonology diagnoses and treats lung and respiratory disorders, such as asthma,
+                            COPD,
+                            pneumonia, and sleep apnea. Pulmonologists use tests like spirometry and
+                            bronchoscopy to manage breathing issues,
+                            improve lung function, and enhance patient quality of life.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Neurology</h4>
+                        <p class="mb-4">diagnoses and treats disorders of the brain, spinal cord, and nerves.
+                            Neurologists manage conditions like Alzheimer's, Parkinson's, stroke, migraines,
+                            and epilepsy through tests, medications, and therapy.
+                            We also offer virtual care through teleneurology.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-wheelchair text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Orthopedics</h4>
+                        <p class="mb-4">Orthopedics diagnoses and treats disorders of the musculoskeletal system,
+                            including bones, joints, and muscles. Orthopedic specialists manage conditions like
+                            fractures,
+                            arthritis, osteoporosis, and sports injuries, using surgical and
+                            non-surgical methods to restore mobility and alleviate pain.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-tooth text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Dental Surgery</h4>
+                        <p class="mb-4"> Dental surgery treats various oral health issues through surgical procedures.
+                            Specialists perform operations like extractions, implants, root canals, and
+                            reconstructive surgery to restore oral function,
+                            alleviate pain, and enhance smiles.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            <i class="fa fa-vials text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Laboratory</h4>
+                        <p class="mb-4">Laboratory medicine diagnoses and monitors diseases through medical testing.
+                            Our Lab professionals analyze blood, tissue, and fluid samples to detect conditions
+                            like infections, cancer, and genetic disorders,
+                            providing crucial information for patient care and treatment.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p>
+                        <h1 class="text-white mb-4">Why Choose Us</h1>
+                        <p class="text-white mb-4 pb-2">Medics offers a convenient, accessible, and cost-effective way
+                            to
+                            receive medical care remotely.
+                            With Medics, patients can consult board-certified physicians from the comfort of their own
+                            homes,
+                            reducing travel time and wait periods. Medics also expands access to specialized care,
+                            especially
+                            for rural or underserved communities. Additionally, Medics platforms often provide secure
+                            and
+                            private online portals for medical history, prescriptions, and test results, streamlining
+                            communication
+                            and care coordination. By choosing Medics, patients can enjoy flexibility, efficiency, and
+                            enhanced
+                            continuity of care,
+                            improving overall health outcomes and quality of life.</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-user-md text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Experience</p>
+                                        <h5 class="text-white mb-0">Doctors</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-check text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Quality</p>
+                                        <h5 class="text-white mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-comment-medical text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Positive</p>
+                                        <h5 class="text-white mb-0">Consultation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-headphones text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">24 Hours</p>
+                                        <h5 class="text-white mb-0">Support</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="/feature.jpg"
+                            style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
+                <h1>Our Experience Doctors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/team-1.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Barry Bar </h5>
+                            <p class="text-primary">Pediatrics</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/team-2.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Walter King </h5>
+                            <p class="text-primary">Cardiology</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/team-3.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Tonu Creed</h5>
+                            <p class="text-primary">PrimaryCare</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/team-4.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Perry Pardon </h5>
+                            <p class="text-primary">Surgery</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- <h1 class="mb-4">Our Experience Doctors</h1>
+                <div class="doctor">
+                    <div class="row">
+
+                        <div class="card1">
+                            <img src="team-3.jpg" alt="">
+                            <div class="cardbody">
+                                <h5>Barry Bar </h5>
+                                <h6>Pediatrics</h6>
+                            </div>
+
+                            <ul>
+                                <a href="">
+                                    <li><img src="facebookicon.png" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="twitter.avif" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="whatsappicon.png" alt=""></li>
+                                </a>
+                            </ul>
+
+                        </div>
+
+                        <div class="card1">
+                            <img src="team-1.jpg" alt="">
+                            <div class="cardbody">
+                                <h5>Walter King </h5>
+                                <h6>Cardiology</h6>
+                            </div>
+
+                            <ul>
+                                <a href="">
+                                    <li><img src="facebookicon.png" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="twitter.avif" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="whatsappicon.png" alt=""></li>
+                                </a>
+                            </ul>
+
+                        </div>
+
+                        <div class="card1">
+                            <img src="team-2.jpg" alt="">
+                            <div class="cardbody">
+                                <h5>Tony Creed </h5>
+                                <h6>PrimaryCare</h6>
+                            </div>
+
+                            <ul>
+                                <a href="">
+                                    <li><img src="facebookicon.png" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="twitter.avif" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="whatsappicon.png" alt=""></li>
+                                </a>
+                            </ul>
+
+                        </div>
+
+                        <div class="card1">
+                            <img src="team-4.jpg" alt="">
+                            <div class="cardbody">
+                                <h5>Perry Pardon </h5>
+                                <h6>Surgery</h6>
+                            </div>
+
+                            <ul>
+                                <a href="">
+                                    <li><img src="facebookicon.png" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="twitter.avif" alt=""></li>
+                                </a>
+                                <a href="">
+                                    <li><img src="whatsappicon.png" alt=""></li>
+                                </a>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div> --}}
+
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
+                    {{!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
+                        diam et
+                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                    </p> --}}
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                            style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+234-814-047-0626</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                            style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-5" style="font-size:small">Medicsupport@gmail.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form action="/medic/support">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" name="fullname"
+                                        placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" name="email"
+                                        placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" name="phone"
+                                        placeholder="Your Mobile" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" name="emergency" id="emergency"
+                                        style="height: 55px;">
+                                        <option value="N/A" disabled selected>Select Case</option>
+                                        <optgroup label="Minor Acute Illnesses">
+                                            <option value="fever">Fever</option>
+                                            <option value="cold-flu">Cold and Flu Symptoms</option>
+                                            <option value="allergic-reaction">Mild Allergic Reactions</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Injury Management">
+                                            <option value="minor-cuts">Minor Cuts or Wounds</option>
+                                            <option value="sprains-strains">Sprains and Strains</option>
+                                            <option value="minor-burns">Minor Burns</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Mental Health Crises">
+                                            <option value="anxiety">Anxiety or Panic Attacks</option>
+                                            <option value="suicidal-ideation">Suicidal Ideation</option>
+                                        </optgroup>
+
+                                        <!-- Pediatric Emergencies -->
+                                        <optgroup label="Pediatric Emergencies">
+                                            <option value="child-fever">Fevers in Children</option>
+                                            <option value="dehydration">Dehydration Concerns</option>
+                                            <option value="rashes">Rashes</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Chronic Disease Flare-Ups">
+                                            <option value="asthma">Asthma Exacerbation</option>
+                                            <option value="diabetic-issues">Diabetic Issues</option>
+                                            <option value="hypertension">Hypertension</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Gastrointestinal Complaints">
+                                            <option value="diarrhea-vomiting">Diarrhea or Vomiting</option>
+                                            <option value="abdominal-pain">Abdominal Pain</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Skin and Soft Tissue Infections">
+                                            <option value="cellulitis">Cellulitis or Abscesses</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Infectious Diseases">
+                                            <option value="covid">COVID-19 Symptoms</option>
+                                            <option value="uti">UTIs</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Eye, Ear, Nose, and Throat Issues">
+                                            <option value="conjunctivitis">Conjunctivitis</option>
+                                            <option value="ear-pain">Ear Pain</option>
+                                            <option value="sore-throat">Sore Throat</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Prescription Issues">
+                                            <option value="prescription-refills">Prescription Refills</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Travel-Related Concerns">
+                                            <option value="travel-illness">Travel-Related Illnesses</option>
+                                        </optgroup>
+
+
+                                        <optgroup label="Emergency Triage">
+                                            <option value="stroke-heart-attack">Suspected Stroke or Heart Attack
+                                            </option>
+                                        </optgroup>
+
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="date"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text" class="form-control border-0 datetimepicker-input"
+                                            placeholder="Select Time" name="time" data-target="#time"
+                                            data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" rows="5"
+                                        placeholder="Describe the Problem"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonies</p>
+                <h1>What Our Patients Says!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-1.jpg"
+                        style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Telemedicine made it easy for me to consult a doctor from home. I was able to get a
+                            prescription for my cold without leaving the house.".</p>
+                        <h5 class="mb-1">Kelvin Pete</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-2.jpg"
+                        style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>CI was able to get quick mental health support when I needed it most, without the stress of
+                            traveling. It was comforting to talk to someone immediately.".</p>
+                        <h5 class="mb-1">Mary Swansea</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-3.jpg"
+                        style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>I felt heard and understood during my virtual appointment. The doctor was thorough and gave
+                            me clear instructions for managing my condition."</p>
+                        <h5 class="mb-1">Collins Cristian</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Zone D24 Gaa Odota, Ilorin Kwara State,
+                        Nigeria</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2348140470626</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Medicsupport@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="">Cardiology</a>
+                    <a class="btn btn-link" href="">Pulmonary</a>
+                    <a class="btn btn-link" href="">Neurology</a>
+                    <a class="btn btn-link" href="">Orthopedics</a>
+                    <a class="btn btn-link" href="">Laboratory</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 style="color: inherit;">Feedback Message</h4>
+                    <p>
+                        we appreciate Your Feedback
+                    </p>
+                    <h4 id="commenttext"></h4>
+                    <form action="/quickmessage" method="post" id="commentform">
+                        <input type="email" name="email" class="email" id="email" placeholder="Email.."
+                            required><br><br>
+                        <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
+                        <button type="submit" onclick="" id="commentsub">Add Comment</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
             <div class="row">
-              <div class="col-lg col-md col-sm">
-                <h1>1523</h1>
-                <h4>Expert Doctors/Nurse</h4>
-              </div>
-              <div class="col-lg col-md col-sm">
-                <h1>289</h1>
-                <h3>Experienced Medical Staff</h3>
-              </div>
-              <div class="col-lg col-md col-sm">
-                <h1>17672</h1>
-                <h3>House/online Patients</h3>
-              </div>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">2024 MEDIC'S HEALTH.</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-sm-12">
-        <div class="sect2bg">
-          <img src="doctorimagereplace.jpg" alt="" />
-          <h2>CADIOLOGY</h2>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container sectlight">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 sect3">
-          <img src="sect3img1.jpg" alt="" class="sect3img1">
-          <img src="sect3img2.jpg" alt="" class="sect3img2">
-          <h2 class="sect3h2">ANATOMY</h2>
-
-        </div>
-
-
-        <div class="col-lg-6 col-md-6 col-sm-12 about">
-          <div class="aboutus">
-            <span>
-              <h4>ABOUT US</h4>
-            </span>
-            <h1>Why You Should Trust Us? <br>
-              Get To Know About Us!</h1>
-            <p>You know how sometimes it's hard to get to the doctor's office? Either you're too busy, or
-              it's too far away? That's where Medics comes in. Our website lets you see a doctor
-              from the comfort of your own home. You can browse through our list of available doctors,
-              pick one that fits your needs, and schedule a virtual appointment. Then, at the appointed time,
-              you just hop on a video call with the doctor and discuss your symptoms. They can diagnose you,
-              prescribe medication if needed, and even send over a treatment plan. It's super convenient, secure,
-              and HIPAA-compliant, so you don't have to worry about your personal info. Plus,
-              it's great for people who live far away from good medical care or
-              have mobility issues. We're basically bringing healthcare right to your fingertips!"</p>
-
-            <ul>
-              <li><mark class="circle">&#9989;</mark> Quality Health Care</li>
-              <li>&#9989; Only Qualify Doctor</li>
-              <li>&#9989; Medical Research Professionals</li>
-            </ul>
-            <button class="btnabout">Read More</button>
-          </div>
-        </div>
-      </div>
-
-
     </div>
     </div>
-  </section>
-  <!-- Section 4 of the page starts here -->
-
-  <section>
-    <div class="services">
-      <h3>Services</h3>
-      <h1>Health Care Solutions</h1>
-
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-
-          <div class="cardimg">
-            <img src="cadiologyimg.jpg" alt="">
-            <h4>Cardiology</h4><br><br>
-            <div class="card-body">
-              Cardiology diagnoses and treats heart and blood vessel disorders.
-              Cardiologists manage conditions like heart failure, coronary artery disease, hypertension,
-              and arrhythmias through tests, medications, and interventions, improving heart health and saving lives.
-
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
+    <!-- Footer End -->
 
 
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-
-          <div class="cardimg">
-            <img src="pulmonaryimg.png" alt="">
-            <h4>Pulmonary</h4><br><br>
-            <div class="card-body">
-              Pulmonology diagnoses and treats lung and respiratory disorders, such as asthma, COPD,
-              pneumonia, and sleep apnea. Pulmonologists use tests like spirometry and
-              bronchoscopy to manage breathing issues,
-              improve lung function, and enhance patient quality of life.
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
 
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-          <div class="cardimg">
-            <span><img src="nurologyimg.png" alt="">
-              <h4>Neurology</h4>
-            </span><br><br>
-            <div class="card-body">
-              diagnoses and treats disorders of the brain, spinal cord, and nerves.
-              Neurologists manage conditions like Alzheimer's, Parkinson's, stroke, migraines,
-              and epilepsy through tests, medications, and therapy.
-              We also offer virtual care through teleneurology.
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/wow/wow.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-
-          <div class="cardimg">
-            <img src="orthopedics.jpg" alt="">
-            <h4>Orthopedics</h4><br><br>
-            <div class="card-body">
-              Orthopedics diagnoses and treats disorders of the musculoskeletal system,
-              including bones, joints, and muscles. Orthopedic specialists manage conditions like fractures,
-              arthritis, osteoporosis, and sports injuries, using surgical and
-              non-surgical methods to restore mobility and alleviate pain.
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-
-          <div class="cardimg">
-            <img src="dentalimg.jpg" alt="">
-            <h4>Dental Surgery</h4><br><br>
-            <div class="card-body">
-              Dental surgery treats various oral health issues through surgical procedures.
-              Specialists perform operations like extractions, implants, root canals, and
-              reconstructive surgery to restore oral function,
-              alleviate pain, and enhance smiles.
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-12 cardbox">
-
-          <div class="cardimg">
-            <img src="laboratoryimg.jpg" alt="">
-            <h4>Laboratory</h4><br><br>
-            <div class="card-body">
-              Laboratory medicine diagnoses and monitors diseases through medical testing.
-              Our Lab professionals analyze blood, tissue, and fluid samples to detect conditions
-              like infections, cancer, and genetic disorders,
-              providing crucial information for patient care and treatment.
-              <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="sectforcont">
-    <div class="row">
-      <div class="sect4cont"></div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="bgblue">
-          <h3>Features</h3>
-          <h1>Why Choose US?</h1>
-          <p>Medics offers a convenient, accessible, and cost-effective way to receive medical care remotely.
-            With Medics, patients can consult board-certified physicians from the comfort of their own homes,
-            reducing travel time and wait periods. Medics also expands access to specialized care, especially
-            for rural or underserved communities. Additionally, Medics platforms often provide secure and
-            private online portals for medical history, prescriptions, and test results, streamlining communication
-            and care coordination. By choosing Medics, patients can enjoy flexibility, efficiency, and enhanced
-            continuity of care,
-            improving overall health outcomes and quality of life.</p>
-          <div class="listing">
-            <ul>
-              <li><img src="Doctor.png" alt=""></li>
-              <li>Experience
-                <h4>Doctors</h4>
-              </li>
-              <li><img src="mark.png" alt=""></li>
-              <li>Quality
-                <h4>Services</h4>
-              </li>
-            </ul>
-            <ul>
-              <li><img src="first_aid.jpg" alt=""></li>
-              <li>Positive
-                <h4>Consultation</h4>
-              </li>
-              <li><img src="support.png" alt=""></li>
-              <li> 24hours <h4>Support</h4>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-md-4 col-sm-12">
-        <div class="futureimg">
-          <img src="featureimg1.jpg" alt="">
-        </div>
-      </div>
-
-
-
-
-    </div>
-    </div>
-  </section>
-
-
-  <!-- section 5 of the page -->
-  <section class="sect4">
-    <h2 class="mt-5 mb-3" style="color: white;">Doctor</h2>
-    <h1 class="mb-4">Our Experience Doctors</h1>
-    <div class="doctor">
-      <div class="row">
-
-        <div class="card1">
-          <img src="team-3.jpg" alt="">
-          <div class="cardbody">
-            <h5>Barry Bar </h5>
-            <h6>Pediatrics</h6>
-          </div>
-
-          <ul>
-            <a href="">
-              <li><img src="facebookicon.png" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="twitter.avif" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="whatsappicon.png" alt=""></li>
-            </a>
-          </ul>
-
-        </div>
-
-        <div class="card1">
-          <img src="team-1.jpg" alt="">
-          <div class="cardbody">
-            <h5>Walter King </h5>
-            <h6>Cardiology</h6>
-          </div>
-
-          <ul>
-            <a href="">
-              <li><img src="facebookicon.png" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="twitter.avif" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="whatsappicon.png" alt=""></li>
-            </a>
-          </ul>
-
-        </div>
-
-        <div class="card1">
-          <img src="team-2.jpg" alt="">
-          <div class="cardbody">
-            <h5>Tony Creed </h5>
-            <h6>PrimaryCare</h6>
-          </div>
-
-          <ul>
-            <a href="">
-              <li><img src="facebookicon.png" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="twitter.avif" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="whatsappicon.png" alt=""></li>
-            </a>
-          </ul>
-
-        </div>
-
-        <div class="card1">
-          <img src="team-4.jpg" alt="">
-          <div class="cardbody">
-            <h5>Perry Pardon </h5>
-            <h6>Surgery</h6>
-          </div>
-
-          <ul>
-            <a href="">
-              <li><img src="facebookicon.png" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="twitter.avif" alt=""></li>
-            </a>
-            <a href="">
-              <li><img src="whatsappicon.png" alt=""></li>
-            </a>
-          </ul>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="mt-5">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Address</h3>
-        <ul class="line">
-          <li><b>&#61987;</b> 123 street Gaa Odota</li>
-          <li><b>&#128222;</b> +234-814-047-0626</li>
-          <li><b>&#128231;</b> Info@example.com</li>
-          <ul class="social">
-            <li><a href=""><img src="twitter.avif" alt=""></a></li>
-            <li><a href=""><img src="facebookicon.png" alt=""></a></li>
-            <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
-          </ul>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Services</h3>
-        <ul>
-          <li style="font-weight: 900;"><b><b>&#x3E;</b></b> Cadiology</li>
-          <li style="font-weight: 900;">&#x3E; Surgery</li>
-          <li style="font-weight: 900;">&#x3E; Pulmonary</li>
-          <li style="font-weight: 900;">&#x3E; Neurology</li>
-          <li style="font-weight: 900;">&#x3E; Orthopedics</li>
-          <li style="font-weight: 900;">&#x3E; Laboratory</li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Quick Links</h3>
-        <ul>
-          <li>&#x3E;<a href=""> About Us</a></li>
-          <li>&#x3E; <a href="/contact"> Contact Us</a></li>
-          <li>&#x3E; <a href=""> Our Services</a></li>
-          <li>&#x3E; <a href="/terms"> Terms & Condition</a></li>
-          <li>&#x3E; <a href=""> Support</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Quick Message</h3>
-        <h5>Drop us a Quick Message For Assistance Here</h5>
-        <h4 id="commenttext"></h4>
-        <form action="/patient/quickmessage" method="post" id="commentform">
-          <input type="email" name="email" class="email" id="email" placeholder="Email.." required><br><br>
-          <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
-          <button type="submit" onclick="" id="commentsub">Add Comment</button>
-        </form>
-
-      </div>
-    </div>
-    </div>
-    <p>&copy; 2024 MEDIC'S HEALTH. All Rights Reserved.</p>
-  </footer>
-
-
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
-      "></script>
-
-  <script src="home.js"></script>
+    <!-- Template Javascript -->
+    <script src="/main.js"></script>
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+      "></script> --}}
+    <script src="/home.js"></script>
 </body>
 
 </html>
