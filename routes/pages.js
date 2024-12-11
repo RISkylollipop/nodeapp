@@ -6,14 +6,14 @@ const { isAuthenticateddoctororadmin } = require("../middlewares/authdoctor");
 
 
 router.get(``, (req, res)=>{
-    res.render(`home`)
+    res.render(`index`)
 })
 router.get(`/`, (req, res)=>{
-    res.render(`home`)
+    res.render(`index`)
 })
 
 router.get(`/home`, (req, res)=>{
-    res.render(`home`)
+    res.render(`index`)
 })
 
 // PATIENTS
