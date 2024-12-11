@@ -66,9 +66,9 @@ router.get(`/admin`, (req, res)=>{
 //     res.render(`adduser`)
 // })
 
-router.get(`/home/home`, (req, res)=>{
-    res.render(`home`)
-})
+// router.get(`/home/home`, (req, res)=>{
+//     res.render(`home`)
+// })
 router.get(`/admin/login`, (req,res)=>{
     res.render(`userlogin`)
 })
