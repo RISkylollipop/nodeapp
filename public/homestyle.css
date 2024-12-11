@@ -18,9 +18,13 @@ footer {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 body {
-	background-color: #CCC5B9;
-	padding-top: 60px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb; /* Light background for readability */
+    color: #333;
+    line-height: 1.6;
 }
 
 /* section3 starts here */
@@ -43,7 +47,7 @@ body {
 .sect2bg h2 {
 	display: block;
 	position: absolute;
-	top: 60%;
+	top: 40%;
 	font-size: 70px;
 	color: white;
 	right: 10%;
@@ -86,7 +90,7 @@ body {
 .aboutus {
 	margin-left: 10%;
 	line-height: 1.8rem;
-	color: white;
+	/* color: white; */
 }
 
 .aboutus h1 {
@@ -207,6 +211,8 @@ p {
 
 }
 
+
+
 .bgblue h3 {
 	font-size: 25px;
 	border: 3px solid lightblue;
@@ -246,13 +252,14 @@ p {
 	margin-left: 5%;
 }
 
+
 .sect4 {
 	margin-top: 30px;
 }
 
 .doctor {
 	padding-left: 30px;
-	color: white;
+	
 }
 
 .card1 {
@@ -302,10 +309,11 @@ p {
 	border-radius: 20px;
 }
 
+
 .sect4 h1 {
 	text-align: center;
 	font-size: 50px;
-	color: white;
+	
 }
 
 .doctor h2 {
@@ -314,15 +322,42 @@ p {
 	color: white;
 }
 
-footer {
+/* footer {
 	position: absolute;
 	width: 100%;
 	margin-bottom: 0;
 	background-color: #fefae0;
 	padding: 5% 30px 0 30px;
+} */
+
+.carousel-item img{
+	display: block;
+	border-radius: 50%;
+	border: 10px solid rgb(106, 106, 230);
+	margin: 20px auto;
+	margin-bottom: 150px;
+}
+.carousel h5, p{
+	color: black;
 }
 
-footer p {
+.carousel-control-next{
+	font-weight: bold;
+	color: rgb(93, 87, 87);
+}
+footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+footer .btn-link{
+	color: white;
+}
+ footer p {
 	text-align: center;
 	font-size: 20px;
 }
@@ -330,9 +365,10 @@ footer p {
 
 footer ul li {
 	list-style: none;
+}
+ul li .linklist {
 	margin-left: -40px;
 }
-
 /* Media Screen Started Here */
 
 
@@ -716,11 +752,30 @@ row::after {
 	footer {
 		padding-top: 5%;
 	}
+	.linklist{
+		margin-left: -40px;
+	}
+	.linklist li a{
+		color: white;
+		text-decoration: none;
+		font-size: 20px;
+		transition: 2s;
+	}
+	.linklist li a:hover{
+		font-size: 17px;
+		color: wheat;
+		transition: 1s;
+	}
 
+ul .social {
+	margin-top: 10px;
+	margin-left: -50px;
+}
+ul .social li{
+ border-radius: 50%;
+}
 	.social li {
 		display: inline-table;
-		margin-top: 5px;
-		padding-left: -20px;
 	}
 
 	.col-lg-1 {

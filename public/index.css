@@ -1,0 +1,228 @@
+/* Reset some browser defaults for consistency */
+body,
+h1, h2, h3, h4, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.header li {
+    list-style: none;
+}
+
+.header a:hover {
+    color: #007bff;
+}
+/* Main Sections */
+.sectblue {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.services {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.services h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.cardimg {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cardimg:hover {
+    transform: translateY(-10px);
+}
+.cardimg img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btnabout {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnabout:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #007bff;
+}
+
+
+
+@media (max-width: 768px) {
+    .header nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services h1 {
+        font-size: 2rem;
+    }
+
+    .cardimg {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+
+
+
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background-color: #f9fafb; 
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #004d99; 
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+main p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007acc; /* Bright blue for calls to action */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.button:hover {
+    background-color: #005f99; /* Darker blue for hover */
+}
+
+footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+   
+    width: 100%;
+} 
+
+ /* @media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main h2 {
+        font-size: 1.25rem;
+    }
+}  */

@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css"> --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/home.css">
+  {{!--
+  <link rel="stylesheet" href="/home.css"> --}}
+  {{!--
+  <link rel="stylesheet" href="/index.css"> --}}
   <link rel="stylesheet" href="/homestyle.css">
 </head>
 
@@ -173,7 +176,7 @@
               and arrhythmias through tests, medications, and interventions, improving heart health and saving lives.
 
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -190,7 +193,7 @@
               bronchoscopy to manage breathing issues,
               improve lung function, and enhance patient quality of life.
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -208,7 +211,7 @@
               We also offer virtual care through teleneurology.
 
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -228,7 +231,7 @@
               arthritis, osteoporosis, and sports injuries, using surgical and
               non-surgical methods to restore mobility and alleviate pain.
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -245,7 +248,7 @@
               reconstructive surgery to restore oral function,
               alleviate pain, and enhance smiles.
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -261,7 +264,7 @@
               like infections, cancer, and genetic disorders,
               providing crucial information for patient care and treatment.
               <br><br>
-              <button><b style="font-weight: 900;">+</b> Read More</button>
+              <button>a>+</> Read More</button>
             </div>
           </div>
         </div>
@@ -325,7 +328,7 @@
 
   <!-- section 5 of the page -->
   <section class="sect4">
-    <h2 class="mt-5 mb-3" style="color: white;">Doctor</h2>
+    <h2 class="mt-5 mb-3">Doctor</h2>
     <h1 class="mb-4">Our Experience Doctors</h1>
     <div class="doctor">
       <div class="row">
@@ -417,76 +420,137 @@
     </div>
   </section>
 
-  <footer class="mt-5">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Address</h3>
-        <ul class="line">
-          <li><b>&#61987;</b> 123 street Gaa Odota</li>
-          <li><b>&#128222;</b> +234-814-047-0626</li>
-          <li><b>&#128231;</b> Info@example.com</li>
-          <ul class="social">
-            <li><a href=""><img src="twitter.avif" alt=""></a></li>
-            <li><a href=""><img src="facebookicon.png" alt=""></a></li>
-            <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
+  {{!-- carousel for testimony starts --}}
+  <div class="container mt-5 mb-5 carousel">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner mb-5">
+        <div class="carousel-item active">
+          <img src="/testimonial-1.jpg" alt="...">
+          <div class="carousel-caption d-none d-md-block mb-3">
+            <h5 class="mt-5" style="margin-top: 70px;">Swan Mary</h5>
+            <p>Telemedicine made it easy for me to consult a doctor from home. I was able to get a
+              prescription for my cold without leaving the house.".</p>
+          </div>
+        </div>
+        <div class="carousel-item mb-5">
+          <img src="/testimonial-2.jpg" alt="..." >
+          <div class="carousel-caption d-none d-md-block mb-3">
+            <h5 class="mt-5" style="margin-top: 70px;">Kelvin Pete</h5>
+            <p>I felt heard and understood during my virtual appointment. The doctor was thorough and gave
+                            me clear instructions for managing my condition."</p>
+          </div>
+        </div>
+        <div class=" carousel-item mb-5">
+              <img src="/testimonial-3.jpg" alt="">
+              <div class="carousel-caption d-none d-md-block mb-3">
+                <h5 class="mt-5" style="margin-top: 70px;">Marvelous Kate</h5>
+            <p>CI was able to get quick mental health support when I needed it most, without the stress of
+                            traveling. It was comforting to talk to someone immediately." .</p>
+              </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden=""></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"  aria-hidden=""></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    {{!-- carousel for testimony ends --}}
+
+
+
+    {{!-- footer starts here --}}
+    <footer class="mt-4">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h3>Address</h3>
+          <ul class="linklist">
+            <li><b>&#61987;</b> 123 street Gaa Odota</li>
+            <li><b>&#128222;</b> +234-814-047-0626</li>
+            <li><b>&#128231;</b> Info@example.com</li>
+            <ul class="social">
+              <li><a href=""><i class="bi bi-facebook"></i></a></li>
+              <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+              <li><a href=""><i class="bi bi-whatsapp"></i></a></li>
+            </ul>
           </ul>
-        </ul>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h3>Services</h3>
+          <a href="" class="btn btn-link"> Cadiology</a>
+          <a href="" class="btn btn-link"> Surgery</a>
+          <a href="" class="btn btn-link"> Pulmonary</a>
+          <a href="" class="btn btn-link"> Neurology</a>
+          <a href="" class="btn btn-link"> Orthopedics</a>
+          <a href="" class="btn btn-link"> Laboratory</a>
+
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h3>Quick Links</h3>
+          <a class="btn btn-link" href="/contact" style="color: white;">About Us</a>
+          <a class="btn btn-link" href="/contact">Contact Us</a>
+          <a class="btn btn-link" href="/services">Our Services</a>
+          <a class="btn btn-link" href="/terms">Terms & Condition</a>
+          <a class="btn btn-link" href="/contact">Contact Us</a>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h3>Quick Message</h3>
+          <h5>Drop us a Quick Message For Assistance Here</h5>
+          <h4 id="commenttext"></h4>
+          <form action="/quickmessage" method="post" id="commentform">
+            <input type="email" name="email" class="email" id="email" placeholder="Email.." required><br><br>
+            <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
+            <button type="submit" onclick="" id="commentsub">Add Comment</button>
+          </form>
+
+        </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Services</h3>
-        <ul>
-          <li style="font-weight: 900;"><b><b>&#x3E;</b></b> Cadiology</li>
-          <li style="font-weight: 900;">&#x3E; Surgery</li>
-          <li style="font-weight: 900;">&#x3E; Pulmonary</li>
-          <li style="font-weight: 900;">&#x3E; Neurology</li>
-          <li style="font-weight: 900;">&#x3E; Orthopedics</li>
-          <li style="font-weight: 900;">&#x3E; Laboratory</li>
-        </ul>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="text-align: center;">
+              &copy; <a class="border-bottom" href="#">2024 MEDIC'S HEALTH.</a>, All Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              Created and Design By <a href=""><i class="bi bi-whatsapp"></i> Kelani Yunus</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Quick Links</h3>
-        <ul>
-          <li>&#x3E;<a href=""> About Us</a></li>
-          <li>&#x3E; <a href="/contact"> Contact Us</a></li>
-          <li>&#x3E; <a href=""> Our Services</a></li>
-          <li>&#x3E; <a href=""> Terms & Condition</a></li>
-          <li>&#x3E; <a href=""> Support</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h3>Quick Message</h3>
-        <h5>Drop us a Quick Message For Assistance Here</h5>
-        <h4 id="commenttext"></h4>
-        <form action="/quickmessage" method="post" id="commentform">
-          <input type="email" name="email" class="email" id="email" placeholder="Email.." required><br><br>
-          <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
-          <button type="submit" onclick="" id="commentsub">Add Comment</button>
-        </form>
-
-      </div>
-    </div>
-    </div>
-
-    <p>&copy; 2024 MEDIC'S HEALTH. All Rights Reserved.</p>
-  </footer>
+    </footer>
 
 
 
 
 
 
-
-
-
-
-  {{!--
-  <script src="/js/bootstrap.bundle.min.js"></script> --}}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    {{!--
+    <script src="/js/bootstrap.bundle.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
       "></script>
-  <script src="home.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>

@@ -26,11 +26,11 @@
 // module.exports = db;
 
 
-const fs = require('fs');
 const mysql = require(`mysql2`)
 require(`dotenv`).config();
+const fs = require('fs');
 
-const db = mysql.createPool ({
+const db = mysql.createConnection ({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASS,
@@ -44,7 +44,7 @@ const db = mysql.createPool ({
     
 })
 
-db.getConnection((err, result)=>{
+db.connect((err, result)=>{
 
     if(!err){
         console.log(`Database Started`);
