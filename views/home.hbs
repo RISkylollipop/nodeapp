@@ -590,7 +590,7 @@
                         </div>
                         <div class="ms-4">
                             <p class="mb-2">Mail Us Now</p>
-                            <h5 class="mb-0">Medicsupport@gmail.com</h5>
+                            <h5 class="mb-5" style="font-size:small">Medicsupport@gmail.com</h5>
                         </div>
                     </div>
                 </div>
@@ -613,6 +613,7 @@
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" name="emergency" id="emergency"
                                         style="height: 55px;">
+                                        <option value="N/A" disabled selected>Select Case</option>
                                         <optgroup label="Minor Acute Illnesses">
                                             <option value="fever">Fever</option>
                                             <option value="cold-flu">Cold and Flu Symptoms</option>
@@ -689,16 +690,17 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
+                                    
                                     <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" name="date" data-target="#date"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                        <input type="date"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" name="time" data-target="#time"
+                                            placeholder="Select Time" name="time" data-target="#time"
                                             data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
