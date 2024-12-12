@@ -56,7 +56,7 @@ app.get(`/calendar`, (req, res)=>{
 })
 
 router.get(`/dashboard/edit-profile`, (req, res)=>{
-    console.log(req.url);
+    // console.log(req.url);
     
     res.render(`viewprofile`)
 

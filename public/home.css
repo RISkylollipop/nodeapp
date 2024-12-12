@@ -6,7 +6,7 @@ footer {
     position: absolute;
     width: 100%;
     margin-bottom: 0;
-    background-color: #fefae0;
+    background-color: #1B2C51;
     padding: 5% 30px 0 30px;
 }
 footer p {
@@ -17,13 +17,22 @@ footer ul li{
     list-style: none;
     margin-left: -40px;
 }
+
+.btn-link{
+    color: white;
+    content: none;
+}
 .container-fluid {
     display: block;
     width: 100%;
 }
-.container{
-    margin-top: 100px;
+
+.container-reg, .container-log{
+    margin-top: 10%;
 }
+/* .container{
+    margin-top: 100px;
+} */
 .header{
     position: fixed;
     top: 0;
@@ -157,6 +166,8 @@ td {
     }
 }
 
+ 
+
 @media (min-width: 350px) and (max-width: 450px) {
     .table>div {
         flex: 1 1 100%;
@@ -229,6 +240,12 @@ td {
         font-size: 12px;
         width: fit-content;
 
+    }
+}
+
+@media (min-width: 600px) {
+    .card{
+        width: 50%;
     }
 }
 
