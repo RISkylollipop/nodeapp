@@ -9,10 +9,14 @@ footer {
     background-color: #1B2C51;
     padding: 5% 30px 0 30px;
 }
+footer h3{
+    color: white;
+}
 footer p {
     text-align: center;
     font-size: 20px;
 }
+
 footer ul li{
     list-style: none;
     margin-left: -40px;

@@ -68,3 +68,36 @@ const {fullname, email, message, phone} = req.body
 
     
 }
+
+
+exports.Homeappointment = (req, res)=>{
+    // console.log(req.body);
+
+    // fullname: email: phone: emergency: date: time: 
+    
+    const {fullname, email, phone, emergency, date, time , emergency_message } = req.body
+
+    let convertdate = new Date(date)
+    const today = Date.now()
+    let comparedate = convertdate.getTime()
+    // console.log(comparedate);
+    // console.log(today);
+    
+
+    if(comparedate < today){
+        return res.render(`home`, {error: `Please input a correct Future Date`})
+    }else{
+        db.query(`insert into homeappointment set ?`, {fullname:fullname, email:email, phone:phone, emergency_type:emergency, date:date, time:time, emergency_message:emergency_message}, (err, result)=>{
+            if(err){console.log(err);
+            }else{
+                res.render(`home`, {message: `Emergency Appointment Booked Successfully`})
+                
+            }
+        })
+    }
+    
+    
+}
+
+
+

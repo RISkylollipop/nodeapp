@@ -35,7 +35,7 @@ exports.doctorlogin = (req, res) => {
                 sameSite: 'Lax',
 
             }
-            res.cookie(`userRegister`, token, cookieoptions)
+            res.cookie(`doctorRegister`, token, cookieoptions)
             res.redirect(`/doctor/dashboard`)
         })
     }

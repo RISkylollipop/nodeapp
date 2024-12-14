@@ -209,7 +209,7 @@ exports.userlogin = (req, res) => {
                     sameSite: 'Lax'
 
                 }
-                res.cookie(`userRegister`, token, cookieoptions)
+                res.cookie(`adminRegister`, token, cookieoptions)
                 res.redirect(`/admin/dashboard`)
             }
         })
