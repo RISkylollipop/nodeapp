@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link href="/medic.ico" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/medic.ico" rel="icon">
   {{!-- <link rel="shortcut icon" href="/medic.ico" type="image/x-icon"> --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap"
@@ -14,12 +14,12 @@
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/character.css">
 </head>
 
+
 <body>
-  <script src="/logout.js"></script>
-  <div class="container-fluid header">
+ <div class="container-fluid header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="/images/logotele1.jpg" alt="LOGO"></a>
@@ -63,7 +63,7 @@
                 <li><a class="dropdown-item" href="/admin/viewpatient">View Patients</a></li>
                 <li><a class="dropdown-item" href="/admin/viewdoctor">View Available Doctors</a></li>
                 <li><a class="dropdown-item" href="/admin/viewappointment">View Appointment</a></li>
-                <li><a class="dropdown-item" href="/admin/charcater">View Vouchers</a></li>
+                <li><a class="dropdown-item" href="/charcater">View Vouchers</a></li>
                 <li><a class="dropdown-item" href="/admin/schedules">View/Create Schedules</a></li>
                 <hr class="dropdown-divider">
             </li>
@@ -75,37 +75,72 @@
     </nav>
   </div>
 
-<header></header>
-<main></main>
-<div class="side">
-  
+<div class="container header">
+
 </div>
+    <div class="card">
+        {{#if error}}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{error}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+
+        {{#if message}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+
+        <form action="/character" method="post">
+            <h3>Voucher Generator</h3>
+             <div class="form-floating mb-3 mt-3">
+            <input type="email"  class="form-control" name="email" placeholder="Admin Email" required>
+            <label for="email">Admin Email</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+            <input type="number"  class="form-control" id="number" name="voucher" placeholder="Voucher" readonly required>
+            <label for="number">Voucher</label>
+            </div>
+            <br>
+            <div class="mt-3 mb-3">
+            <button type="submit" id="generate">Generate</button>
+            </div>
+
+            <br>
+            <div style="justify-items: stretch;">
+                <p>Please Confirm Token Generation</p>
+                <input type="checkbox" name="status" value="active" required>
+            </div>
+            <br>
+            <input type="submit" value="Submit & Save">
+        </form>
+    </div>
+
+    {{!-- Table Starts Here --}}
+    <table class="table">
 
 
-  <h3 class="dash">Welcome {{admin.firstname}}</h3>
+<h3 style="text-align: center; margin-bottom:-20px" class="mb-0 mt-4">Available Vouchers For Doctors Registration</h3>
+        <thead class="mt-0">
+            <th>Voucher_id</th>
+            <th>Admin Email</th>
+            <th>Voucher</th>
+            <th>Status</th>
+        </thead>
+        {{#each rows}}
+        <tr>
+            <td>{{this.voucher_id}}</td>
+            <td>{{this.Admin_email}}</td>
+            <td>{{this.voucher}}</td>
+            <td>{{this.status}}</td>
+        </tr>
+        {{/each}}
+    </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <footer class="mt-5">
+{{!-- Footer Starts Here --}}
+<footer class="mt-5">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12">
         <h3>Address</h3>
@@ -149,6 +184,10 @@
 
     <p>&copy; 2024 MEDIC'S HEALTH. All Rights Reserved.</p>
   </footer>
+
+{{!-- Footer Ends Here --}}
+
+
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -166,5 +205,6 @@
   <script src="home.js"></script>
 
 </body>
+
 
 </html>

@@ -9,35 +9,40 @@ footer {
     background-color: #1B2C51;
     padding: 5% 30px 0 30px;
 }
-footer h3{
+
+footer h3 {
     color: white;
 }
+
 footer p {
     text-align: center;
     font-size: 20px;
 }
 
-footer ul li{
+footer ul li {
     list-style: none;
     margin-left: -40px;
 }
 
-.btn-link{
+.btn-link {
     color: white;
     content: none;
 }
+
 .container-fluid {
     display: block;
     width: 100%;
 }
 
-.container-reg, .container-log{
+.container-reg,
+.container-log {
     margin-top: 10%;
 }
+
 /* .container{
     margin-top: 100px;
 } */
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -57,12 +62,7 @@ ul li {
 
 }
 
-ul .social li {
-    display: inline;
-    list-style: none;
-    padding-top: 10px;
-    margin-left: -40px;
-}
+
 
 .bi-person-circle {
     font-size: 40px;
@@ -111,6 +111,19 @@ ul .social li {
     height: fit-content;
 }
 
+#appointment_type {
+    display: block;
+    margin: 20px auto;
+    height: 55px;
+    width: 100%;
+}
+
+textarea {
+    margin-top: 20px;
+    display: block;
+    margin: 5px auto;
+    max-width: 100%;
+}
 
 th,
 td {
@@ -170,7 +183,7 @@ td {
     }
 }
 
- 
+
 
 @media (min-width: 350px) and (max-width: 450px) {
     .table>div {
@@ -248,7 +261,7 @@ td {
 }
 
 @media (min-width: 600px) {
-    .card{
+    .card {
         width: 50%;
     }
 }

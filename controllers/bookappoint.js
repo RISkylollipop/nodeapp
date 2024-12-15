@@ -11,7 +11,7 @@ exports.book = (req, res) => {
     // appointment_date: 
     // appointment_time: 
 
-    const { firstname, lastname, email, phone, appointment_date, appointment_time, status } = req.body;
+    const { firstname, lastname, email, phone, appointment_date, appointment_time, status, appointment_note, appointment_type } = req.body;
     // console.log(req.body);
     doctor_id = parseInt(req.body.doctorlist)
     // console.log(doctor_id);
@@ -31,7 +31,7 @@ exports.book = (req, res) => {
             //    console.log(patientid);
 
         }
-        db.query(`insert into appointment set ?`, { firstname: firstname, appointment_date: appointment_date, email: email, appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, status:status }, (err, result) => {
+        db.query(`insert into appointment set ?`, { firstname: firstname, appointment_date: appointment_date, email: email, appointment_type:appointment_type, appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, status:status, appointment_note:appointment_note }, (err, result) => {
             if (err) console.log(err);
             else {
                 res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}` })

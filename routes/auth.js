@@ -58,6 +58,7 @@ router.post(`/schedules/find`, bookappointment.findschedule)
 
 
 router.post(`/doctorregister`, register.doctorregister)
+router.post(`/admin/character`, register.character)
 router.post(`/login`, doctorlogin.doctorlogin)
 router.post(`/adduser`, register.adduser)
 router.post(`/userlogin`, login.userlogin)

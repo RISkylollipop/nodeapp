@@ -1,4 +1,5 @@
 const express = require(`express`)
+const db = require('../database')
 const router = express.Router();
 const cookieParser = require(`cookie-parser`)
 const {isAuthenticated} = require(`../middlewares/auth`);
@@ -108,20 +109,37 @@ router.get('/terms', (req, res)=>{
 router.get(`/services`, (req, res)=>{
     res.status(200).render(`ourservice`)
 })
+
+
+router.get(`/admin/character`, isAuthenticateddoctororadmin, (req, res)=>{
+    db.query(`select * from characters where status = 'active'`, (err, rows)=>{
+        if(err){console.log(err);
+        }else{
+            res.render(`character`, { rows })
+        }
+    })
+   
+})
 router.get(`/logout`, (req, res)=>{
-    res.clearCookie(`userRegister`)
+    res.clearCookie(`Register`)
     res.redirect(`/signin`)
 })
 router.get(`/doctorlogout`, (req, res)=>{
-    res.clearCookie(`userRegister`)
+    res.clearCookie(`doctorRegister`)
     res.redirect(`/doctor/login`)
 })
 
 router.get(`/adminlogout`, (req, res)=>{
-    res.clearCookie(`userRegister`)
+    res.clearCookie(`adminRegister`)
     res.redirect(`/admin/login`)
 })
 
+router.get(`/doctoradminlogout`, (req, res)=>{
+    res.clearCookie(`doctorRegister`)
+    res.clearCookie(`adminRegister`)
+    
+    res.redirect(`/`)
+})
 
 
 
@@ -139,12 +157,14 @@ router.get(`/editappointment/:id`,isAuthenticateddoctororadmin)
 router.get(`/doctor/cancel/:id`, isAuthenticateddoctororadmin)
 router.get(`/doctor/editappointment/:id`, isAuthenticateddoctororadmin)
 router.post(`/doctor/editappointment/:id`, isAuthenticateddoctororadmin)
+router.get(`/admin/character`, isAuthenticateddoctororadmin)
 
 router.get(`/dashboard/edit-profile/:id`, isAuthenticated)
 router.post(`/dashboard/edit-profile/:id`, isAuthenticated)
 
 router.get(`/doctor/schedules`, isAuthenticateddoctororadmin)
 router.get(`/admin/schedules`, isAuthenticateddoctororadmin)
+router.get(`/admin/character`, isAuthenticateddoctororadmin)
 
 router.post(`/doctor/schedules`, isAuthenticateddoctororadmin )
 router.post(`/schedules/find`,isAuthenticateddoctororadmin)

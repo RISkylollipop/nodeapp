@@ -30,6 +30,7 @@ Added a message us form connected to the Database to Contact Us Page
 Added our location Map to the Footer
 Added Contact us Page
 Added our Service Page
+Modify Doctor Registration That will now request Voucher Code Gotten from admin before Successfull Registration
 
 
 COPYRIGHT 2024 MEDIC'S HEALTH. All Rights Reserved.
