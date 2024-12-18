@@ -1,5 +1,5 @@
-drop database hospital_old -- If exited
-create database hospital_old; -- Your database name
+DROP DATABASE IF EXISTS hospital_new; -- If exited
+create database hospital_new; -- Your database name
 use hospital_old;
 
 create table patients(
@@ -88,17 +88,27 @@ alter table messages
 auto_increment = 1000;
 
 
+create table characters(
+character_id int primary key auto_increment,
+Admin_email varchar(150),
+characters varchar(100),
+status varchar (50)
+);
+
+alter table characters
+rename column character_id to voucher_id;
 
 
-
-
-
-
-
-
-
-
-
+create table homeappointment(
+appointment_id int primary key auto_increment,
+fullname varchar(200) ,
+email varchar(150) ,
+phone varchar(50) ,
+Emergency_type varchar(100) ,
+date date ,
+time varchar(30) ,
+emergency_message varchar(255)
+);
 
 
 
@@ -205,72 +215,72 @@ db.query(admins,(err, result)=>{
     }
 })
 
-// const doctorschedule = `
-//     create table doctor_schedules(
-// schedule_id int primary key auto_increment,
-// doctor_id int,
-// email varchar(200),
-// status varchar(50),
-// note varchar(250),
-// appointment_type varchar(250),
-// schedule_date datetime
-// );
+ const doctorschedule = `
+     create table doctor_schedules(
+ schedule_id int primary key auto_increment,
+ doctor_id int,
+ email varchar(200),
+ status varchar(50),
+ note varchar(250),
+ appointment_type varchar(250),
+ schedule_date datetime
+ );
 
-// alter table doctor_schedules
-// auto_increment = 1001;
-// `;
-
-
+ alter table doctor_schedules
+ auto_increment = 1001;
+ `;
 
 
-// db.query(doctorschedule,(err, result)=>{
-//     if(!err){
-//         console.log(`schedule Table Created`);
+
+
+ db.query(doctorschedule,(err, result)=>{
+     if(!err){
+         console.log(`schedule Table Created`);
         
-//     }else{
-//         console.log(err);
+     }else{
+         console.log(err);
         
-//     }
-// })
+     }
+ })
 
 
-// const comments = `create table comments(
-// comment_id int primary key auto_increment,
-// comment varchar (250),
-// email varchar(100)
+ const comments = `create table comments(
+ comment_id int primary key auto_increment,
+ comment varchar (250),
+ email varchar(100)
 
-// );
-// alter table comments
-// auto_increment = 1000;`
+ );
+ alter table comments
+ auto_increment = 1000;`
 
 
-// db.query(comments,(err, result)=>{
-//     if(!err){
-//         console.log(`comment Table Created`);
+ db.query(comments,(err, result)=>{
+     if(!err){
+         console.log(`comment Table Created`);
         
-//     }else{
-//         console.log(err);
+     }else{
+         console.log(err);
         
-//     }
-// })
+     }
+ })
 
-// const message = `create table messages(
-// message_id int primary key auto_increment,
-// fullname varchar (250),
-// email varchar(100),
-// phone varchar(50),
-// message varchar(255)
+ const message = `create table messages(
+ message_id int primary key auto_increment,
+ fullname varchar (250),
+ email varchar(100),
+ phone varchar(50),
+ message varchar(255)
 
-// );
-// alter table messages
-// auto_increment = 1000;`
+ );
+ alter table messages
+ auto_increment = 1000;`
 
-// db.query(message,(err, result)=>{
-//     if(!err){
-//         console.log(`message Table Created`);
+ db.query(message,(err, result)=>{
+     if(!err){
+         console.log(`message Table Created`);
         
-//     }else{
-//         console.log(err);
+     }else{
+         console.log(err);
         
-//     }
-// })
+     }
+ })

@@ -59,6 +59,15 @@
                   class="bi bi-telephone-fill"></i></a>
             </li> --}}
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    {{!-- <li class="breadcrumb-item"><a href="/">Patint Page</a></li> --}}
+    <li class="breadcrumb-item btn btn-light" onclick="goBack()"><a href="">Dashboard</a></li>
+    {{!-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
+    <li class="breadcrumb-item active"  aria-current="page"><a href="#">View Appointment</a></li>
+  </ol>
+</nav>
 
             <form action="/viewappointment" method="POST" class="d-flex" role="search">
               <input class="form-control me-2" name="find" type="search" placeholder="Search" aria-label="Search">
