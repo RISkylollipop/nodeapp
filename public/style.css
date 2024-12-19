@@ -17,6 +17,8 @@
     font-weight: 900 !important;
 }
 
+
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -460,6 +462,17 @@
     color: var(--dark);
 }
 
+
+.ourpatient{
+    background-color: #f8f9fa;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    
+
+    
+}
 
 /*** Footer ***/
 .footer .btn.btn-social {

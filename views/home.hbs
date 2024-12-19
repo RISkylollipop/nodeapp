@@ -34,6 +34,7 @@
     <link href="/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
+
     <link href="/style.css" rel="stylesheet">
 </head>
 
@@ -90,7 +91,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
         <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0 text-primary"><img src="/images/logotele1.jpg" alt="">     Medics</h1>
+            <h1 class="m-0 text-primary"><img src="/images/logotele1.jpg" alt=""> Medics</h1>
             {{!-- <i class="far fa-hospital me-3"></i> --}}
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -102,8 +103,8 @@
                 <a href="/services" class="nav-item nav-link">Service</a>
                 <a href="/contact" class="nav-item nav-link">Contact</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >Pages</a>
-                    <div class="dropdown-menu rounded-0 rounded-bottom m-0" >
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/patient" class="dropdown-item">Patient Page</a>
                         <a href="/doctor" class="dropdown-item">Doctor Page</a>
                         <a href="/admin" class="dropdown-item">Admin Page</a>
@@ -115,15 +116,15 @@
         </div>
     </nav>
     <!-- Navbar End -->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    {{!-- <li class="breadcrumb-item"><a href="#">Doctor Page</a></li> --}}
-    {{!-- <li class="breadcrumb-item btn btn-light" onclick="goBack()"><a href="">Dashboard</a></li> --}}
-    {{!-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
-    <li class="breadcrumb-item active"  aria-current="page"><a href="/">Home Page</a></li>
-  </ol>
-</nav>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            {{!-- <li class="breadcrumb-item"><a href="#">Doctor Page</a></li> --}}
+            {{!-- <li class="breadcrumb-item btn btn-light" onclick="goBack()"><a href="">Dashboard</a></li> --}}
+            {{!-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
+            <li class="breadcrumb-item active" aria-current="page"><a href="/">Home Page</a></li>
+        </ol>
+    </nav>
 
     <!-- Header Start -->
     <div class="container-fluid header bg-primary p-0 mb-5">
@@ -698,11 +699,11 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    
+
                                     <div class="date" id="date" data-target-input="nearest">
-                                        <input type="date"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#date" name="date" data-toggle="datetimepicker" style="height: 55px;" required>
+                                        <input type="date" class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choose Date" data-target="#date" name="date"
+                                            data-toggle="datetimepicker" style="height: 55px;" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -713,29 +714,32 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" rows="5"
-                                        placeholder="Describe the Problem" name="emergency_message" required></textarea>
+                                    <textarea class="form-control border-0" rows="5" placeholder="Describe the Problem"
+                                        name="emergency_message" required></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Emergency Appointment</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Emergency
+                                        Appointment</button>
                                 </div>
 
-                              <div>
-                        {{#if error}}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            {{error}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {{/if}}
+                                <div>
+                                    {{#if error}}
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        {{error}}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    {{/if}}
 
-                        {{#if message}}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {{/if}}
+                                    {{#if message}}
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{message}}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    {{/if}}
 
-                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -744,119 +748,162 @@
         </div>
     </div>
     <!-- Appointment End -->
-
-
-    <!-- Testimonial Start -->
     <div class="container-xxl py-5">
+        <div class="container" onmousemove="countup()">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Millstones</p>
+                <h1>Our Achievements</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.1s"
+                    style="justify-content: ;">
+
+                    <div class="ourpatient" >
+                        <h3>We are proud to have:</h3>
+                        {{!-- <h2 class="text-dark mb-1" data-toggle="counter-up" id="totalcount">17023</h2> --}}
+                        <h2 class="text-dark mb-1"  id="totalcount">17025</h2>
+                        <h4 id="countershow" style="display: block; text-align: center;"></h4>
+                        <p class="text-dark mb-0">Patients who are happy with our services!</p>
+                        <p>we take pride in delivering exceptional healthcare services, ensuring happiness and trust in
+                            every step of their journey with us.</p>
+                    </div>
+
+
+                    {{!-- <div style="line-height: 0; text-align: center;">
+                        <h3 style="display: block; margin-bottom: 20px;">We have over </h3>
+
+                        <h3 id="counter" class="count"></h3>
+                        <h4 id="countershow" style="display: block; text-align: center;"></h4>
+                        <h3 id="totalcount">20000</h3>
+                        <h3 style="display: block; margin-bottom: 20px;">Happy Patients</h3>
+                        this is my own counter
+
+                    </div>
+                    --}}
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Testimonies</p>
+                    <h1>What Our Patients Says!</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-1.jpg"
+                            style="width: 100px; height: 100px;">
+                        <div class="testimonial-text rounded text-center p-4">
+                            <p>Telemedicine made it easy for me to consult a doctor from home. I was able to get
+                                a
+                                prescription for my cold without leaving the house.".</p>
+                            <h5 class="mb-1">Kelvin Pete</h5>
+                            <span class="fst-italic">Profession</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-2.jpg"
+                            style="width: 100px; height: 100px;">
+                        <div class="testimonial-text rounded text-center p-4">
+                            <p>CI was able to get quick mental health support when I needed it most, without the
+                                stress
+                                of
+                                traveling. It was comforting to talk to someone immediately.".</p>
+                            <h5 class="mb-1">Mary Swansea</h5>
+                            <span class="fst-italic">Profession</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-3.jpg"
+                            style="width: 100px; height: 100px;">
+                        <div class="testimonial-text rounded text-center p-4">
+                            <p>I felt heard and understood during my virtual appointment. The doctor was
+                                thorough and
+                                gave
+                                me clear instructions for managing my condition."</p>
+                            <h5 class="mb-1">Collins Cristian</h5>
+                            <span class="fst-italic">Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-light mb-4">Address</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Zone D24 Gaa Odota, Ilorin
+                            Kwara State,
+                            Nigeria</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2348140470626</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Medicsupport@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-light mb-4">Services</h5>
+                        <a class="btn btn-link" href="">Cardiology</a>
+                        <a class="btn btn-link" href="">Pulmonary</a>
+                        <a class="btn btn-link" href="">Neurology</a>
+                        <a class="btn btn-link" href="">Orthopedics</a>
+                        <a class="btn btn-link" href="">Laboratory</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-light mb-4">Quick Links</h5>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Our Services</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Support</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 style="color: inherit;">Feedback Message</h4>
+                        <p>
+                            we appreciate Your Feedback
+                        </p>
+                        <h4 id="commenttext"></h4>
+                        <form action="/quickmessage" method="post" id="commentform">
+                            <input type="email" name="email" class="email" id="email" placeholder="Email.."
+                                required><br><br>
+                            <textarea name="comment" id="comment" class="comment"
+                                placeholder="Comment Here"></textarea><br>
+                            <button type="submit" onclick="" id="commentsub">Add Comment</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonies</p>
-                <h1>What Our Patients Says!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-1.jpg"
-                        style="width: 100px; height: 100px;">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>Telemedicine made it easy for me to consult a doctor from home. I was able to get a
-                            prescription for my cold without leaving the house.".</p>
-                        <h5 class="mb-1">Kelvin Pete</h5>
-                        <span class="fst-italic">Profession</span>
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-mid mb-md-0">
+                        &copy; <a class="border-bottom" href="#">2024 MEDIC'S HEALTH.</a>, All Right Reserved.
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-2.jpg"
-                        style="width: 100px; height: 100px;">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>CI was able to get quick mental health support when I needed it most, without the stress of
-                            traveling. It was comforting to talk to someone immediately.".</p>
-                        <h5 class="mb-1">Mary Swansea</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="/testimonial-3.jpg"
-                        style="width: 100px; height: 100px;">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>I felt heard and understood during my virtual appointment. The doctor was thorough and gave
-                            me clear instructions for managing my condition."</p>
-                        <h5 class="mb-1">Collins Cristian</h5>
-                        <span class="fst-italic">Profession</span>
+                    <div class="col-md-6 text-center text-md-end">
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Zone D24 Gaa Odota, Ilorin Kwara State,
-                        Nigeria</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2348140470626</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Medicsupport@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="">Cardiology</a>
-                    <a class="btn btn-link" href="">Pulmonary</a>
-                    <a class="btn btn-link" href="">Neurology</a>
-                    <a class="btn btn-link" href="">Orthopedics</a>
-                    <a class="btn btn-link" href="">Laboratory</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 style="color: inherit;">Feedback Message</h4>
-                    <p>
-                        we appreciate Your Feedback
-                    </p>
-                    <h4 id="commenttext"></h4>
-                    <form action="/quickmessage" method="post" id="commentform">
-                        <input type="email" name="email" class="email" id="email" placeholder="Email.."
-                            required><br><br>
-                        <textarea name="comment" id="comment" class="comment" placeholder="Comment Here"></textarea><br>
-                        <button type="submit" onclick="" id="commentsub">Add Comment</button>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-mid mb-md-0">
-                    &copy; <a class="border-bottom" href="#">2024 MEDIC'S HEALTH.</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <!-- Footer End -->
 
@@ -880,7 +927,8 @@
 
     <!-- Template Javascript -->
     <script src="/main.js"></script>
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    {{!--
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
       "></script> --}}
     <script src="/home.js"></script>
 </body>

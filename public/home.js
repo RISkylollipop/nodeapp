@@ -59,8 +59,7 @@ let datetop = document.querySelector('.datetop')
 let today = new Date()
 let formatdate = today.toLocaleDateString()
 date.textContent = formatdate
-datetop.textContent = today
-
+// datetop.textContent = today // this will display the date in the format of the date and time to be uncommented later
 
 let commentsub = document.getElementById('commentsub')
 let commentform = document.getElementById('commentform')
@@ -70,3 +69,44 @@ commentform.addEventListener(`submit`, function commnentsubmit() {
     commenttext.textContent = "Comment Submitted successfullly"
     commenttext.style.color = "green"
 })
+
+
+
+// Counter Section for the website
+// alert("This is the counter section")
+  
+const totalcount = document.getElementById('totalcount');
+let total = parseInt(totalcount.textContent)
+// console.log(total);
+
+totalcount.style.display = "none"
+function countup() {
+
+    function countmynumber(target, duration) {
+        const counters = document.getElementById('countershow');
+        const totalcount = document.getElementById('totalcount');
+        
+        totalcount.style.display = "block"
+        totalcount.textContent = 0
+        
+        const step = 10
+        const increment = total / (duration /step)
+        
+        
+        // const intervaltime = 2000/800000
+        let currentNumber = 0
+        const timers = setInterval(() => {
+            totalcount.style.display = "none"
+            
+            currentNumber += increment
+            
+            counters.textContent = Math.floor(currentNumber);
+            if (currentNumber === target) {
+                counters.textContent = target
+                clearInterval(timers)
+            }
+        }, step);
+        }
+        countmynumber(total, 2000)
+    
+}
