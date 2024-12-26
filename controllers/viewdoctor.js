@@ -1,16 +1,9 @@
 const db = require(`../database`)
-const express = require(`express`)
-// Design by Kelani Yunus Oluwadamilare 
-// email yunuskelani2@gmail.com//
-// phone: +2348140470626
-const { search } = require("../routes/pages")
-const router = express.Router()
+
 
 exports.doctor = (req, res)=>{
     db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors where status = 'active'`, (err, rows)=>{
         if(err){
-            
-            
             console.log(err);
             
         }else{
@@ -22,12 +15,16 @@ exports.doctor = (req, res)=>{
 
 exports.find = (req, res)=>{
     const search = req.body.search
+
+    // console.log(req.body);
+    
     db.query(`select * from doctors where firstname like ? OR lastname LIKE ? OR email Like ? OR specialty like ?`, ['%' +search + '%', '%' + search + '%', '%' + search + '%', '%'+ search + `%`] , (err, rows)=>{
-        if(!err){
-            res.render(`viewdoctors`, {rows})
+        if(err){
+            console.log(err);
             
         }else{
-            console.log(err);
+            res.render(`viewdoctors`, {rows})
+           
             
         }
     })

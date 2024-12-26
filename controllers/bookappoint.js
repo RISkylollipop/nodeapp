@@ -1,7 +1,6 @@
-const { emit } = require("nodemon");
-const db = require(`../database`);
-const {sendappointmentconfirmation} = require('../services/emailServices')
- 
+const db = require('../database')
+const { sendappointmentconfirmation } = require('../services/emailServices')
+
 exports.book = (req, res) => {
     // console.log(req.body);
 
@@ -32,20 +31,24 @@ exports.book = (req, res) => {
             //    console.log(patientid);
 
         }
-        db.query(`insert into appointment set ?`, { firstname: firstname,
-             appointment_date: appointment_date, email: email, appointment_type:appointment_type,
-              appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, 
-              status:status, appointment_note:appointment_note }, async (err, result) => {
+        db.query(`insert into appointment set ?`, {
+            firstname: firstname,
+            appointment_date: appointment_date, email: email, appointment_type: appointment_type,
+            appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id,
+            status: status, appointment_note: appointment_note
+        }, async (err, result) => {
             if (err) console.log(err);
             else {
 
 
-                const  appointment_details = { firstname,appointment_date, email, appointment_type, appointment_time, doctor_id, 
-                     status, appointment_note } 
+                const appointment_details = {
+                    firstname, appointment_date, email, appointment_type, appointment_time, doctor_id,
+                    status, appointment_note
+                }
 
 
 
-              await sendappointmentconfirmation(email, appointment_details)
+                await sendappointmentconfirmation(email, appointment_details)
                 res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}` })
             }
         })
@@ -68,7 +71,7 @@ on appointment.doctor_id = doctors.doctor_id;`
 
 
     db.query(viewappointments, (err, rows) => {
-        try { 
+        try {
             res.render(`appointments`, {
 
                 rows: rows
@@ -81,30 +84,34 @@ on appointment.doctor_id = doctors.doctor_id;`
 }
 
 exports.findappointment = (req, res) => {
-    const find = req.body.find
+    // console.log(req.body);
+    let find = req.body.find
+
+
+
+
     const findappointments = `select 
-appointment_id,
-appointment_date, 
+ appointment_id,
+ appointment_date, 
 appointment.firstname, 
 appointment.email, 
 appointment.doctor_id,
-doctors.email as doctoremail,
+ doctors.email as doctoremail,
 doctors.specialty,
-appointment.status 
+ appointment.status 
 from 
 appointment join doctors
 on appointment.doctor_id = doctors.doctor_id 
 where appointment.firstname like ? or appointment.email like ? or doctors.email like ? or doctors.specialty like ? or appointment.status like ?`
 
-    db.query(findappointments, ['%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%'], (err, rows) => {
-        try {
-            res.render(`appointments`, { rows })
-        } catch (error) {
-            console.log(error);
-            res.redirect(`/viewappointment`)
-
-        }
-    })
+    db.query(findappointments, ['%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%', '%' + find + '%'],
+        (err, rows) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render(`appointments`, { rows })
+            }
+        })
 }
 
 exports.find = (req, res) => {
@@ -140,15 +147,14 @@ appointment join doctors
 on appointment.doctor_id = doctors.doctor_id;`
             db.query(viewappointments, (err, rows) => {
 
-                try {
+                if (err) {
+                    console.log(err);
+                } else {
                     res.render(`appointments`, {
 
                         rows: rows,
                         message: `Appointment Cancelled Successfully`
                     })
-                } catch (error) {
-                    console.log(error);
-                    res.redirect(`/viewappointment`)
 
                 }
             })
@@ -200,7 +206,7 @@ exports.postponeappointment = (req, res) => {
 
 
     if (datecompare < today) {
-        const viewappointments =`select appointment_id,  
+        const viewappointments = `select appointment_id,  
         appointment_date,
         appointment.firstname, 
         appointment.email, 
@@ -230,14 +236,14 @@ exports.postponeappointment = (req, res) => {
 
         // Sending of two db request at a time
 
-        const updateappointment =` update appointment set appointment_date = ?, appointment_time = ? where appointment_id = ?;
+        const updateappointment = ` update appointment set appointment_date = ?, appointment_time = ? where appointment_id = ?;
         update appointment set status = 'rescheduled' where appointment_id = ?`
 
         db.query(updateappointment, [appointment_date, appointment_time, req.params.id, req.params.id], (err, result) => {
             if (err) {
                 console.log(err);
             } else {
-                const viewappointments =` select appointment_id,  
+                const viewappointments = ` select appointment_id,  
     appointment_date,
     appointment.firstname, 
     appointment.email, 
@@ -255,8 +261,8 @@ exports.postponeappointment = (req, res) => {
                             rows: rows,
                             message: 'Appointment Postponed Successfully'
                         })
-                    } catch (error) {
-                        console.log(error);
+                    } catch (err) {
+                        console.log(err);
                         res.redirect(`/viewappointment`)
 
                     }
@@ -340,7 +346,8 @@ exports.findschedule = (req, res) => {
     // console.log(req.body);
     const findschedule = req.body.findschedule
 
-    db.query(`select * from doctor_schedules where email like ? or note like ? or appointment_type like ?`, ['%' + findschedule + '%', '%' + findschedule + '%','%' + findschedule + '%'], (err, rows) => {
+    db.query(`select * from doctor_schedules where email like ? or note like ? or appointment_type like ?`, 
+        ['%' + findschedule + '%', '%' + findschedule + '%', '%' + findschedule + '%'], (err, rows) => {
         if (err) {
             console.log(err);
         } else {

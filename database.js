@@ -27,33 +27,36 @@
 
 
 const mysql = require(`mysql2`)
-require(`dotenv`).config();
 const fs = require('fs');
+require(`dotenv`).config();
 
-const db = mysql.createConnection ({
+const db = mysql.createPool ({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASS,
     database: process.env.DATABASE,
     port: process.env.PORT || 23168,
+    connectionLimit: 10,
+    connectTimeout: 20000,
     multipleStatements: true,
     ssl: {
         ca: fs.readFileSync('./ca.pem')
     },
-
+enableKeepAlive: true,
+keepAliveInitialDelay: 10000
     
 })
 
-db.connect((err, result)=>{
+// db.getConnection((err, result)=>{
 
-    if(!err){
-        console.log(`Database Started`);
+//     if(!err){
+//         console.log(`Database Started`);
         
-    }else(
-        console.log(err)
+//     }else(
+//         console.log(err)
         
-    )
-})
+//     )
+// })
 
 // const patienttable = `create table patients(
 // patient_id int primary key auto_increment,

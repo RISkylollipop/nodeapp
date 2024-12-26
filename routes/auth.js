@@ -1,5 +1,6 @@
 const express = require(`express`)
 // const router = express.Router()
+const { sendappointmentconfirmation } = require('../services/emailServices')
 const register = require(`../controllers/register`)
 const login = require(`../controllers/login`)
 const doctorlogin = require(`../controllers/doctorlogin`)
@@ -20,7 +21,7 @@ router.post(`/bookappointment`, isAuthenticated, bookappointment.book)
 
 router.get(`/admin/viewdoctor`, isAuthenticated, viewdoctor.doctor)
 router.get(`/patient/viewdoctor`, isAuthenticated, viewdoctor.doctor)
-router.post(`/admin/viewdoctor`, isAuthenticated, viewdoctor.find)
+router.post(`/patient/viewdoctor`, isAuthenticated, viewdoctor.find)
 // // // // // // //
 router.get(`/admin/viewpatient`,  viewdoctor.viewpatient)
 router.get(`/doctor/viewpatient`,  viewdoctor.viewpatient)
@@ -37,7 +38,7 @@ router.get(`/doctor/viewappointment`,  bookappointment.viewappointment)
 router.get(`/admin/viewappointment`,  bookappointment.viewappointment)
 
 
-router.post('/viewappointment',  bookappointment.findappointment)
+router.post('/viewappointment/find',  bookappointment.findappointment)
 
 router.get(`/cancel/:id`, bookappointment.updateappointment)
 
