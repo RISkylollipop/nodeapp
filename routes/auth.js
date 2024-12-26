@@ -41,7 +41,7 @@ router.post('/viewappointment',  bookappointment.findappointment)
 
 router.get(`/cancel/:id`, bookappointment.updateappointment)
 
-router.get(`/editappointment/:id`, bookappointment.editappointment)
+// router.get(`/editappointment/:id`, bookappointment.editappointment)
 
 router.post(`/editappointment/:id`, bookappointment.postponeappointment)
 

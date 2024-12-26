@@ -27,10 +27,10 @@ exports.isAuthenticateddoctororadmin = (req, res, next) => {
     
             if (decoded.role === 'doctor') {
                 req.doctors = decoded
-                next()
+                next();
             } else if (decoded.role === 'admin') {
                 req.admins = decoded
-                next()
+                next();
             }
     
         } catch (error) {

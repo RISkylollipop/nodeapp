@@ -1,8 +1,8 @@
 `use strict;`
 const db = require(`../database`)
 const bcrypt = require(`bcryptjs`);
-const { message } = require("./comment");
-
+const jwt = require('jsonwebtoken')
+const { sendConfirmationEmail } = require('../services/emailServices')
 
 exports.register = (req, res) => {
     const { patient_id, firstname, lastname, phone, email, address, gender, date_of_birth, password, passwordconfirm, status } = req.body;
@@ -35,13 +35,19 @@ exports.register = (req, res) => {
             })
         }
         const hashedpassword = await bcrypt.hash(password, 8)
-        db.query(`insert into patients set ?`, { firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, gender: gender, date_of_birth: date_of_birth, password: hashedpassword, status: status }, (err, result) => {
+        // const token = jwt.sign({email:email}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        const tokens = jwt.sign({ email: email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        db.query(`insert into patients set ?`, { firstname: firstname, lastname: lastname,
+             email: email, phone: phone, address: address, 
+             gender: gender, date_of_birth: date_of_birth, 
+             password: hashedpassword, status: status }, async (err, result) => {
             if (err) {
                 console.log(err);
 
             } else {
+                await sendConfirmationEmail (email, tokens)
                 res.render(`register`, {
-                    message: `Registration Completed ✅`
+                    message: `Registration Completed ✅ please check your email for confirmation link`
                 })
             }
         })

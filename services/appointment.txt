@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+</head>
+<body>
+    <h1>Subject: Appointment Confirmation</h1>
+    <p>Dear [Recipient's Name],</p>
+    <p>This is to confirm your appointment with [Doctor's Name] on [Appointment Date] at [Appointment Time].</p>
+    <p>Please arrive 10 minutes early and bring any necessary documents.</p>
+    <p>Thank you,<br>
+    [Your Name]<br>
+    [Your Contact Information]</p>
+</body>
+</html>

@@ -22,8 +22,12 @@ app.use(`/`, require(`./routes/pages`))
 app.use(`/auth`, require(`./routes/auth`))
 
 
+
+
 app.use(express.static(`./public`))
 app.use(express.static(`./public/images`))
+
+app.use(isAuthenticateddoctororadmin)
 
 app.set(`view engine`, `hbs`)
 

@@ -62,7 +62,7 @@
       </div>
     </nav>
   </div>
-
+{{!-- 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -71,14 +71,14 @@
     {{!-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
     <li class="breadcrumb-item active"  aria-current="page"><a href="#">Appointment</a></li>
   </ol>
-</nav>
-  <div class="container">
+</nav> --}}
+  <div class="container mt-5">
 
     <div class="card card-cont mt-5 mb-5">
       {{!-- <img src="/profileimg.jpg" class="card-img-top" alt="profile picture"> --}}
       <!-- <i class="bi bi-person-circle"></i> -->
       <div class="card-body">
-        <h5>Welcome {{doctor.firstname}} {{admin.firstname}} Edit appointment with Patient Consent</h5>
+        <h5 style="text-align: center;">Welcome  {{doctor.firstname}} Edit appointment with Patient Consent</h5>
 
         {{#each rows}}
         <form action="/editappointment/{{this.appointment_id}}" method="post">
@@ -129,11 +129,11 @@
 
 
 
-          <input type="submit" class="btn btn-primary register" value="Book AppointMent">
+          <input type="submit" class="btn btn-primary register" value="Postponed AppointMent">
         </form>
         {{/each}}
       </div>
-    </div </div>
+    </div> </div>
 
 
 
@@ -152,9 +152,9 @@
             <li><b>&#128222;</b> +234-814-047-0626</li>
             <li><b>&#128231;</b> Info@example.com</li>
             <ul class="social">
-              <li><a href=""><img src="twitter.avif" alt=""></a></li>
-              <li><a href=""><img src="facebookicon.png" alt=""></a></li>
-              <li><a href=""><img src="whatsappicon.png" alt=""></a></li>
+              <li><a href=""><img src="/images/twitter.avif" alt=""></a></li>
+              <li><a href=""><img src="/images/facebookicon.png" alt=""></a></li>
+              <li><a href=""><img src="/images/whatsappicon.png" alt=""></a></li>
             </ul>
           </ul>
         </div>

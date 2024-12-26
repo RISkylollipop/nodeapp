@@ -13,7 +13,9 @@ exports.login = (req, res) => {
             error: `Please input Email/Password`
         })
     } else {
-        db.query(`select * from patients where email = ?`, [email], async (err, result) => {
+
+        
+        db.query(`select * from patients where email = ? `, [email], async (err, result) => {
             if (err) {
                 console.log(err);
 
@@ -22,6 +24,8 @@ exports.login = (req, res) => {
                     error: `Invalid Email or password`
                 })
             }
+            
+            
             const token = jwt.sign({role:'patient', patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email }, process.env.JWT_SECRET, {
                 expiresIn: process.env.JWT_EXPIRES
             })

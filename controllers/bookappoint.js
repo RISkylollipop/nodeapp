@@ -1,6 +1,7 @@
 const { emit } = require("nodemon");
 const db = require(`../database`);
-
+const {sendappointmentconfirmation} = require('../services/emailServices')
+ 
 exports.book = (req, res) => {
     // console.log(req.body);
 
@@ -31,9 +32,20 @@ exports.book = (req, res) => {
             //    console.log(patientid);
 
         }
-        db.query(`insert into appointment set ?`, { firstname: firstname, appointment_date: appointment_date, email: email, appointment_type:appointment_type, appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, status:status, appointment_note:appointment_note }, (err, result) => {
+        db.query(`insert into appointment set ?`, { firstname: firstname,
+             appointment_date: appointment_date, email: email, appointment_type:appointment_type,
+              appointment_time: appointment_time, patient_id: patientid, doctor_id: doctor_id, 
+              status:status, appointment_note:appointment_note }, async (err, result) => {
             if (err) console.log(err);
             else {
+
+
+                const  appointment_details = { firstname,appointment_date, email, appointment_type, appointment_time, doctor_id, 
+                     status, appointment_note } 
+
+
+
+              await sendappointmentconfirmation(email, appointment_details)
                 res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}` })
             }
         })
@@ -145,28 +157,28 @@ on appointment.doctor_id = doctors.doctor_id;`
 
 }
 
-exports.editappointment = (req, res) => {
-    const viewappointments = `select appointment_id,  
-    appointment_date,
-    appointment.firstname, 
-    appointment.email, 
-    appointment.doctor_id,
-    doctors.email as doctoremail,
-    doctors.specialty,
-    appointment.status
-    from 
-    appointment join doctors
-    on appointment.doctor_id = doctors.doctor_id where appointment_id = ?;`
-    db.query(viewappointments, [req.params.id], (err, rows) => {
-        if (err) {
-            console.log(err);
-        } else {
+// exports.editappointment = (req, res) => {
+//     const viewappointments = `select appointment_id,  
+//     appointment_date,
+//     appointment.firstname, 
+//     appointment.email, 
+//     appointment.doctor_id,
+//     doctors.email as doctoremail,
+//     doctors.specialty,
+//     appointment.status
+//     from 
+//     appointment join doctors
+//     on appointment.doctor_id = doctors.doctor_id where appointment_id = ?;`
+//     db.query(viewappointments, [req.params.id], (err, rows) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
 
 
-            res.render(`editappointment`, { rows })
-        }
-    })
-}
+//             res.render(`editappointment`, { rows })
+//         }
+//     })
+// }
 
 exports.postponeappointment = (req, res) => {
     // console.log(req.body);
