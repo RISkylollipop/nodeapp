@@ -1,17 +1,20 @@
-`<h3 style="text-align: center;">Appointment Confirmation</h3>
+
+
+
+<h3 style="text-align: center;">Appointment Confirmation</h3>
             
             <p>Dear ${appointment_detail.firstname}, ${appointment_detail.lastname},</p>
             <p>Your appointment has been booked successfully. Please check the details below:</p>
             <ul>
-                <li>Appointment ID: </li>
-                <li>Appointment Type: ${appointment_detail.appointment_type} </li>
-                <li>Appointment Time: ${appointment_detail.appointment_time} </li>
-                <li>Appointment Date: ${appointment_detail.appointment_date} </li>
-                <li>Doctor Full Name: ${doctor.doctor_firstname}, ${doctor.doctor_lastname}</li>
-                <li>Doctor Email: ${ doctor.doctor_email}</li>
-                <li>Doctor ID: ${appointment_detail.doctor_id}</li>
-                <li>Status: ${appointment_detail.status}</li>
-                <li>Note: ${appointment_detail.appointment_note}</li>
+                
+                <li style="list-style: square;">Appointment Type: ${appointment_detail.appointment_type} </li>
+                <li style="list-style: square;">Appointment Time: ${appointment_detail.appointment_time} </li>
+                <li style="list-style: square;">Appointment Date: ${appointment_detail.appointment_date} </li>
+                <li style="list-style: square;">Doctor Full Name: ${doctor.doctor_firstname}, ${doctor.doctor_lastname}</li>
+                <li style="list-style: square;">Doctor Email: ${ doctor.doctor_email}</li>
+                <li style="list-style: square;">Doctor ID: ${appointment_detail.doctor_id}</li>
+                <li style="list-style: square;">Status: ${appointment_detail.status}</li>
+                <li style="list-style: square;">Note: ${appointment_detail.appointment_note}</li>
             </ul>
-            <p>Thank you for choosing MEDIC'S HEALTH!</p><br>
-            <p>Reach us on email <a href="mailto:medicshealthdirect@gmail.com"> @ medicshealthdirect@gmail.com</a> </p>`
+            <p style="text-align: center;">Thank you for choosing MEDIC'S HEALTH!</p><br>
+            <p>Reach us on email <a href="mailto:medicshealthdirect@gmail.com"> @ medicshealthdirect@gmail.com</a> </p>
