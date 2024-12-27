@@ -1,10 +1,12 @@
 const nodemailer = require('nodemailer');
 
+require(`dotenv`).config(); // To access the .env file
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         'user': 'medicshealthdirect@gmail.com',
-        'pass': 'ddaufpxiwpfnmbnm' // generated ethereal password
+        'pass': process.env.GMAIL_PASS // generated ethereal password
     }
 });
 
