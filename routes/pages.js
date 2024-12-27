@@ -207,7 +207,7 @@ router.get(`/admin/character`, isAuthenticateddoctororadmin, (req, res) => {
 
 })
 router.get(`/logout`, (req, res) => {
-    res.clearCookie(`Register`)
+    res.clearCookie(`patientRegister`)
     res.redirect(`/signin`)
 })
 router.get(`/doctorlogout`, (req, res) => {

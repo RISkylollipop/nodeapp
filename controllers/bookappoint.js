@@ -1,5 +1,6 @@
 const db = require('../database')
-const { sendappointmentconfirmation } = require('../services/emailServices')
+const { sendappointmentconfirmation } = require('../services/emailServices');
+const { doctor } = require('./viewdoctor');
 
 exports.book = (req, res) => {
     // console.log(req.body);
@@ -40,16 +41,44 @@ exports.book = (req, res) => {
             if (err) console.log(err);
             else {
 
+                db.query(`select * from doctors where doctor_id = ?`, [doctor_id], async (err, result) => {
+                    if(err){console.log(err);
+                    }
+                    else if(result[0]){
+                        const doctor = {
+                            'doctor_email' : result[0].email,
+                             'doctor_specialty': result[0].specialty,
+                             'doctor_firstname': result[0].firstname,
+                            'doctor_lastname': result[0].lastname,
+                             'doctor_phone':result[0].phone,
+                             'doctor_address' : result[0].address,
+                            
+                        }
+                       
+                     
+                        // console.log(doctor);
+                        // console.log({result: result[0]});
+                        // console.log(doctor.doctor_email);
+                        // console.log(doctor.doctor_specialty, doctor.doctor_phone, 
+                        //     doctor.doctor_firstname, doctor.doctor_lastname);
 
-                const appointment_details = {
-                    firstname, appointment_date, email, appointment_type, appointment_time, doctor_id,
-                    status, appointment_note
-                }
+                            const appointment_details = {
+                                firstname, lastname, email, phone, 
+                                appointment_date, appointment_time, status, 
+                                appointment_note, appointment_type, doctor_id
+                            }
+                            await sendappointmentconfirmation(email, appointment_details, doctor)
+                            res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}, ${lastname}` })
+
+                    }
+                })
+
+                
 
 
 
-                await sendappointmentconfirmation(email, appointment_details)
-                res.render(`bookappointment`, { message: `Appointment Booked Successfully for Patient ${firstname}` })
+                
+              
             }
         })
     })
@@ -187,7 +216,7 @@ on appointment.doctor_id = doctors.doctor_id;`
 // }
 
 exports.postponeappointment = (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
     // declaring of req body coming from the form
 
 
